@@ -42,7 +42,7 @@ function my_connection_types() {
 		'name' => 'document_type_to_document_type',
 		'from' => 'document_type',
 		'to' => 'document_type',
-		'cardinality' => 'one-to-many',
+		'cardinality' => 'many-to-one',
 		'title' => array(
 			'from' => 'Parent document type',
 			'to' => 'Child document types'
