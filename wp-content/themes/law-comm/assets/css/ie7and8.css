@@ -1,0 +1,120 @@
+
+.container {
+	width: 970px!important;
+	position: relative;
+}
+
+
+.navbar-default .navbar-nav li {
+	text-align: center;
+	width: 14.275%;
+	float: left;
+	margin-bottom: 4px;
+	position: relative;
+	margin-bottom: 0;
+
+}
+
+.navbar-toggle {
+	display: none;
+}
+
+.navbar-collapse.collapse {
+	display: block!important;
+}
+
+#news-banner {
+height: 306px;
+}
+
+#news-banner .news-banner-text {
+width: 66.6666%;
+height: auto;
+background-color: #6894bb;
+}
+
+.navbar-default .navbar-nav li a, .navbar-default .navbar-nav > .open > a {
+background: #e1eaf1 url("../img/nav-divider.gif") no-repeat 100% 50%!important;
+}
+
+#branding {
+	height: 140px;
+}
+
+#search {
+width: 36%;
+margin: 1em 0 0 0;
+position:absolute;
+top: 0;
+right: 0;
+}
+
+.btn-default {
+	border: none!important;
+}
+
+.intro {
+	display:inline-block!important;
+}
+
+.news ul li {
+	padding-bottom: 1em;
+}
+
+.form-inline .input-group {
+vertical-align: middle;
+width: 100%;
+}
+
+.col-sm-3 {
+width: 23%;
+float: left;
+}
+
+.col-sm-9 {
+width: 70%;
+float: left;
+}
+
+.col-sm-4 {
+width: 27%;
+float: left;
+}
+
+.col-sm-8 {
+width: 67%;
+float: left;
+}
+
+.form-inline .input-group > .form-control {
+width: 75%;
+}
+
+hr {
+	clear: both;
+}
+
+.archive-links li {
+	float: left;
+	width: 40%;
+}
+
+.dropdown ul.dropdown-menu {
+width: 100%;
+margin-top: 0!important;
+}
+
+.dropdown ul.dropdown-menu li {
+width: 100%;
+text-align: left;
+display: inline-block;
+margin-bottom: 4px;
+}
+
+.navbar-default .navbar-nav li a.last-child {
+background: #e1eaf1!important;
+}
+
+.news ul li.last-child {
+border-bottom: 0;
+}
