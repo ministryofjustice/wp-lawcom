@@ -3,21 +3,6 @@
 /**
  * Initialize the meta boxes. 
  */
-add_action( 'admin_init', 'custom_meta_boxes' );
-
-function get_template_pages( $template_name ) {
-	$faq_pages = get_pages( array(
-		'meta_key' => '_wp_page_template',
-		'meta_value' => 'template-' . $template_name . '.php',
-		'hierarchical' => 0
-			) );
-	$faq_array = array();
-	foreach ( $faq_pages as $faq_page ) {
-		$faq_array[] = $faq_page->post_name;
-	}
-	return $faq_array;
-}
-
 function custom_meta_boxes() {
 	global $meta_boxes, $new_cpt_dropdown_args;
 	$admin_post_id = (filter_input( INPUT_GET, 'post' ) ? filter_input( INPUT_GET, 'post' ) : 0);
@@ -62,6 +47,7 @@ function custom_meta_boxes() {
 		}
 	}
 }
+add_action( 'admin_init', 'custom_meta_boxes' );
 
 function is_edit_page( $new_edit = null ) {
 	global $pagenow;
@@ -70,7 +56,6 @@ function is_edit_page( $new_edit = null ) {
 		return false;
 	}
 
-
 	if ( $new_edit == "edit" ) {
 		return in_array( $pagenow, array( 'post.php', ) );
 	} elseif ( $new_edit == "new" ) { //check for new post page
@@ -78,4 +63,17 @@ function is_edit_page( $new_edit = null ) {
 	} else { //check for either new or edit
 		return in_array( $pagenow, array( 'post.php', 'post-new.php' ) );
 	}
+}
+
+function get_template_pages( $template_name ) {
+	$faq_pages = get_pages( array(
+		'meta_key' => '_wp_page_template',
+		'meta_value' => 'template-' . $template_name . '.php',
+		'hierarchical' => 0
+			) );
+	$faq_array = array();
+	foreach ( $faq_pages as $faq_page ) {
+		$faq_array[] = $faq_page->post_name;
+	}
+	return $faq_array;
 }

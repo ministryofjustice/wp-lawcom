@@ -17,6 +17,7 @@ add_filter( 'ot_show_pages', '__return_false' );
 add_filter( 'ot_show_new_layout', '__return_false' );
 add_filter( 'ot_use_theme_options', '__return_true' );
 add_filter( 'ot_header_version_text', '__return_null' );
+//add_filter( 'ot_override_forced_textarea_simple', '__return_true' );
 require( trailingslashit( get_template_directory() ) . 'option-tree/ot-loader.php' );
 
 require( trailingslashit( get_template_directory() ) . 'lib/content/metaboxes/index.php' );
