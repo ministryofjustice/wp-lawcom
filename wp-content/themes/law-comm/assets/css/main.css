@@ -7070,11 +7070,6 @@ ul a {
     width: 970px;
   }
 }
-@media (min-width: 768px) {
-  .sidebar-primary .main {
-    width: 100%!important;
-  }
-}
 .img-caption {
   font-size: 0.85em;
   margin: .5em 0;
