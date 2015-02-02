@@ -11,6 +11,11 @@ $meta_boxes = array(
 		'priority' => 'high',
 		'fields' => array(
 			array(
+				'id' => 'Welcome-tab',
+				'label' => 'Welcome title and text',
+				'type' => 'tab'
+			),
+			array(
 				'id' => 'welcome-title',
 				'label' => 'Welcome title',
 				'type' => 'text',
@@ -23,27 +28,33 @@ $meta_boxes = array(
 				'desc' => 'Intro text on homepage, underneath main title'
 			),
 			array(
-				'id' => 'banner-tab',
-				'label' => 'Banner',
+				'id' => 'commission-aims-tab',
+				'label' => 'Aims list',
 				'type' => 'tab'
 			),
 			array(
-				'id' => 'banner_heading',
-				'label' => 'Banner heading',
+				'id' => 'commission-aim-1',
+				'label' => 'Commission Aim 1',
 				'type' => 'text',
-				'desc' => 'Main heading in banner area'
+				'desc' => 'First item in list of commission aims'
 			),
 			array(
-				'id' => 'banner-sub-heading',
-				'label' => 'Banner sub-heading',
+				'id' => 'commission-aim-2',
+				'label' => 'Commission Aim 2',
 				'type' => 'text',
-				'desc' => 'Sub-heading in banner area'
+				'desc' => 'Second item in list of commission aims'
 			),
 			array(
-				'id' => 'banner-link',
-				'label' => 'Banner link',
+				'id' => 'commission-aim-3',
+				'label' => 'Commission Aim 3',
 				'type' => 'text',
-				'desc' => 'The destination for the link in the banner'
+				'desc' => 'Third item in list of commission aims'
+			),
+			array(
+				'id' => 'commission-aim-4',
+				'label' => 'Commission Aim 4',
+				'type' => 'text',
+				'desc' => 'Fourth item in list of commission aims'
 			),
 			array(
 				'id' => 'quick-links-tab',
@@ -87,98 +98,15 @@ $meta_boxes = array(
 				'desc' => 'Please select the destination page for the third link'
 			),
 			array(
-				'id' => 'quick-link-4',
-				'label' => 'Quick link 4 text',
-				'type' => 'text',
-				'desc' => 'Text to display for the fourth quick link'
-			),
-			array(
-				'id' => 'quick-link-4-page',
-				'label' => 'Quick link 4 destination',
-				'type' => 'page-select',
-				'desc' => 'Please select the destination page for the fourth link'
-			),
-			array(
-				'id' => 'sidebar-text-tab',
-				'label' => 'Sidebar text',
+				'id' => 'youtube-video',
+				'label' => 'Youtube video',
 				'type' => 'tab'
 			),
 			array(
-				'id' => 'sidebar-text-title',
-				'label' => 'Sidebar text title',
-				'type' => 'text',
-				'desc' => 'Sidebar title'
-			),
-			array(
-				'id' => 'sidebar-text-p1',
-				'label' => 'Sidebar text first para',
-				'type' => 'textarea-simple',
-				'desc' => 'First paragraph of sidebar body text'
-			),
-			array(
-				'id' => 'sidebar-text-p2',
-				'label' => 'Sidebar text second para',
-				'type' => 'textarea-simple',
-				'desc' => 'Second paragraph of sidebar body text'
-			),
-			array(
-				'id' => 'sidebar-link',
-				'label' => 'Sidebar link',
-				'type' => 'page-select',
-				'desc' => 'Link under sidebar text'
-			),
-			array(
-				'id' => 'related-links',
-				'label' => 'Related links',
-				'type' => 'tab'
-			),
-			array(
-				'id' => 'related-1',
-				'label' => 'Related link 1 text',
-				'type' => 'text',
-				'desc' => 'Text to display for the first quick link'
-			),
-			array(
-				'id' => 'related-link-1',
-				'label' => 'Related link 1 URL',
-				'type' => 'text',
-				'desc' => 'The destination for the first related link'
-			),
-			array(
-				'id' => 'related-2',
-				'label' => 'Related link 2 text',
-				'type' => 'text',
-				'desc' => 'Text to display for the second quick link'
-			),
-			array(
-				'id' => 'related-link-2',
-				'label' => 'Related link 2 URL',
-				'type' => 'text',
-				'desc' => 'The destination for the second related link'
-			),
-			array(
-				'id' => 'related-3',
-				'label' => 'Related link 3 text',
-				'type' => 'text',
-				'desc' => 'Text to display for the third quick link'
-			),
-			array(
-				'id' => 'related-link-3',
-				'label' => 'Related link 3 URL',
-				'type' => 'text',
-				'desc' => 'The destination for the third related link'
-			),
-			array(
-				'id' => 'related-4',
-				'label' => 'Related link 4 text',
-				'type' => 'text',
-				'desc' => 'Text to display for the fourth quick link'
-			),
-			array(
-				'id' => 'related-link-4',
-				'label' => 'Related link 4 URL',
-				'type' => 'text',
-				'desc' => 'The destination for the fourth related link'
+				'id' => 'video-embed',
+				'label' => 'Video embed code',
+				'type' => 'textarea',
+				'desc' => 'Youtube embed code for latest media'
 			)
 		)
 	)

@@ -1,3 +1,11 @@
+
+<?php
+/*
+Template Name: Homepage
+*/
+?>
+
+
 <?php while (have_posts()) : the_post(); ?>
   <?php get_template_part( 'header'); ?>
 	
@@ -6,13 +14,13 @@
 
 		  	<div class="row">
 		      <div class="col-sm-6 intro-left">
-		      	<h2>Welcome to the official website of the Law Commission</h2>
-		        	<p>The Law Commission is the statutory independent body created by the Law Commissions Act 1965 to keep the law under review and to recommend reform where it is needed. The aim of the Commission is to ensure that the law is:</p>
+		      	<h2><?php echo get_post_meta( $post->ID, "welcome-title", true ); ?></h2>
+		        	<p><?php echo get_post_meta( $post->ID, "welcome-text", true ); ?></p>
 			        	<ul>
-				        	<li><span>fair</span></li>
-				        	<li><span>modern</span></li>
-				        	<li><span>simple</span></li>
-				        	<li><span>effective</span></li>
+				        	<li><span><?php echo get_post_meta( $post->ID, "commission-aim-1", true ); ?></span></li>
+				        	<li><span><?php echo get_post_meta( $post->ID, "commission-aim-2", true ); ?></span></li>
+				        	<li><span><?php echo get_post_meta( $post->ID, "commission-aim-3", true ); ?></span></li>
+				        	<li><span><?php echo get_post_meta( $post->ID, "commission-aim-4", true ); ?></span></li>
 			        	</ul>
 		      </div>
 		      <div class="col-sm-6 intro-right">
@@ -29,9 +37,9 @@
 			<div class="quick-links side-item">
 			<h2>Quick links</h2>
   				<ul>
-  					<li class="ql1"><a href="<?php echo get_permalink( get_post_meta( $post->ID, "quick-link-1-page", true )); ?>"><?php echo get_post_meta( $post->ID, "quick-link-1", true ); ?> ><p><span>Search to find a publication</span></p></a></li>
+  					<li class="ql1"><a href="<?php echo get_permalink( get_post_meta( $post->ID, "quick-link-1-page", true )); ?>"><?php echo get_post_meta( $post->ID, "quick-link-1", true ); ?> ><p><span>Search to find a project</span></p></a></li>
   					<li class="ql2"><a href="<?php echo get_permalink( get_post_meta( $post->ID, "quick-link-2-page", true )); ?>"><?php echo get_post_meta( $post->ID, "quick-link-2", true ); ?> ><p><span>Search to find a consultation</span></p></a></li>
-  					<li class="ql3"><a href="<?php echo get_permalink( get_post_meta( $post->ID, "quick-link-3-page", true )); ?>"><?php echo get_post_meta( $post->ID, "quick-link-3", true ); ?> ><p><span>Search to find a project</span></p></a></li>
+  					<li class="ql3"><a href="<?php echo get_permalink( get_post_meta( $post->ID, "quick-link-3-page", true )); ?>"><?php echo get_post_meta( $post->ID, "quick-link-3", true ); ?> ><p><span>Search to find a publication</span></p></a></li>
   				</ul>
   			</div>
 
@@ -46,7 +54,7 @@
  			<div class="media side-item video-container">
 				<h2>Latest media</h2>
 					<div class="videoWrapper">
-					 	<iframe width="640" height="360" src="//www.youtube.com/embed/XtpwSW_2K8Y" frameborder="0" allowfullscreen></iframe> 
+					<?php echo get_post_meta( $post->ID, "video-embed", true ); ?>
 					 </div>
 			</div>
 
