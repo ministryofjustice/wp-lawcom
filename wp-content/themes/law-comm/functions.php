@@ -23,11 +23,7 @@ $roots_includes = array(
 	'lib/comments.php', // Custom comments modifications
 	'lib/scripts.php', // Scripts and stylesheets
 	'lib/extras.php', // Custom functions
-//	'/lib/theme-options.php', // Theme options
-//	'/lib/ajax.php', // AJAX setup
-	'/lib/custom.php', // Custom functions
-	'/lib/meta-box-array.php',  // Meta box array
-	'/lib/p2p.php'  // Sets up Posts2Posts
+	'lib/content/index.php',
 );
 
 foreach ( $roots_includes as $file ) {

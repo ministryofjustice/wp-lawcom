@@ -30,8 +30,6 @@ function custom_meta_boxes() {
 
 	if ( is_edit_page() ) {
 		foreach ( $meta_boxes as $meta_box ) {
-			// Add filter to modify custom post type drop down
-			add_filter( 'ot_type_custom_post_type_select_query', 'top_level_only', 10, 1 );
 			if ( !isset( $meta_box['disabled'] ) || !$meta_box['disabled'] ) {
 				$show_metabox = false;
 				$has_slug = isset( $meta_box['slug'] );
@@ -61,9 +59,6 @@ function custom_meta_boxes() {
 					ot_register_meta_box( $meta_box );
 				}
 			}
-			if ( isset( $meta_box['top_level_only'] ) ) {
-				remove_filter( 'ot_type_custom_post_type_select_query', 'top_level_only' );
-			}
 		}
 	}
 }
@@ -82,16 +77,5 @@ function is_edit_page( $new_edit = null ) {
 		return in_array( $pagenow, array( 'post-new.php' ) );
 	} else { //check for either new or edit
 		return in_array( $pagenow, array( 'post.php', 'post-new.php' ) );
-	}
-}
-
-function top_level_only( $query ) {
-	$temp_posts = get_posts( $query );
-	print_r($temp_posts);
-	if ( is_array( $temp_posts ) && !empty( $temp_posts ) ) {
-		foreach ( $temp_posts as $post ) {
-			$ids[] = $post->ID;
-		}
-		return array_merge( $query, array( 'post_parent_in' => $ids ) );
 	}
 }
