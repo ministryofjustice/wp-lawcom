@@ -40,6 +40,6 @@ function areas_of_law() {
 		'rewrite'                    => $rewrite,
 		'capabilities'               => $capabilities,
 	);
-	register_taxonomy( 'areas-of-law', array( 'project' ), $args );
+	register_taxonomy( 'areas_of_law', array( 'project' ), $args );
 }
 add_action( 'init', 'areas_of_law', 0 );

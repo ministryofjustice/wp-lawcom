@@ -12,6 +12,12 @@ foreach ( $taxonomies as $taxonomy ) {
 		require get_template_directory() . '/lib/content/taxonomies/' . $taxonomy;
 }
 
+$widgets = scandir( get_template_directory() . "/lib/content/widgets/" );
+foreach ( $widgets as $widget ) {
+	if ( $widget[0] != "." )
+		require get_template_directory() . '/lib/content/widgets/' . $widget;
+}
+
 add_filter( 'ot_theme_mode', '__return_true' );
 add_filter( 'ot_show_pages', '__return_false' );
 add_filter( 'ot_show_new_layout', '__return_false' );
