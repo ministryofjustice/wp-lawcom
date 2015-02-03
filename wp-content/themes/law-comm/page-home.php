@@ -84,9 +84,11 @@ Template Name: Homepage
 						<?php endwhile; ?>
 
 				</ul>
-				
-			<a href="<?php bloginfo('site_url'); ?>/news/" class= "float-right em-link">All news ></a>
 
+				<div class="all-news">
+					<a href="<?php bloginfo('site_url'); ?>/news/" class= "float-right em-link">All news ></a>
+				</div>
+				
 			</div>
 
   		</div>

@@ -7593,6 +7593,11 @@ li .news-details .home-news-img-wrapper {
   display: inline-block;
   background: #efefef;
 }
+.all-news {
+  display: block;
+  margin-top: 1em;
+  overflow: hidden;
+}
 .links ul li {
   margin-bottom: .2em;
 }
