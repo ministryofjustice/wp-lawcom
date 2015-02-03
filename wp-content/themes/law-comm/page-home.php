@@ -34,31 +34,8 @@ Template Name: Homepage
 
   	<div class="row">
    		<div class="col-sm-4 min-col">
-			<div class="quick-links side-item">
-			<h2>Quick links</h2>
-  				<ul>
-  					<li class="ql1"><a href="<?php echo get_permalink( get_post_meta( $post->ID, "quick-link-1-page", true )); ?>"><?php echo get_post_meta( $post->ID, "quick-link-1", true ); ?> ><p><span>Search to find a project</span></p></a></li>
-  					<li class="ql2"><a href="<?php echo get_permalink( get_post_meta( $post->ID, "quick-link-2-page", true )); ?>"><?php echo get_post_meta( $post->ID, "quick-link-2", true ); ?> ><p><span>Search to find a consultation</span></p></a></li>
-  					<li class="ql3"><a href="<?php echo get_permalink( get_post_meta( $post->ID, "quick-link-3-page", true )); ?>"><?php echo get_post_meta( $post->ID, "quick-link-3", true ); ?> ><p><span>Search to find a publication</span></p></a></li>
-  				</ul>
-  			</div>
-
-   			<div class="twitter side-item">
-  				<h3>Twitter</h3>
-  				<a class="twitter-timeline" href="https://twitter.com/Law_Commission" data-widget-id="561108239270809601">Tweets by @Law_Commission</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-  		
-  				
-  			</div>
-
- 			<div class="media side-item video-container">
-				<h2>Latest media</h2>
-					<div class="videoWrapper">
-					<?php echo get_post_meta( $post->ID, "video-embed", true ); ?>
-					 </div>
-			</div>
-
-		</div>
+			  <?php include roots_sidebar_path(); ?>
+		  </div>
 
   		<div class="col-sm-8 max-col">
 
