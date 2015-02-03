@@ -26,7 +26,7 @@ class Media_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		echo $args['before_widget'];
   ?>
-		<div class="media video-container">
+		<div class="media video-container side-item">
 		  <h2>Latest media</h2>
 			<div class="videoWrapper">
 			  <?php echo get_post_meta( 6, "video-embed", true ); ?>

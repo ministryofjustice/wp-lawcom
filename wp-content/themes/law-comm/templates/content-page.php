@@ -1,6 +1,6 @@
-<div class="row">
 
-	<div class="col-sm-4">
+
+<div class="home-news-img-wrapper">
 
 		<?php
 $get_description = get_post(get_post_thumbnail_id())->post_excerpt;
@@ -10,12 +10,9 @@ the_post_thumbnail('large');
   }
 ?>
 
-	</div>
-
-	<div class="col-sm-8">
+</div>
 
 		<?php the_content(); ?>
 
 
-	</div>
-</div>
+

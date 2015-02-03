@@ -26,7 +26,7 @@ class Twitter_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		echo $args['before_widget'];
   ?>
-		<div class="twitter">
+		<div class="twitter side-item">
   		<h3>Twitter</h3>
   		<a class="twitter-timeline" href="https://twitter.com/Law_Commission" data-widget-id="561108239270809601">Tweets by @Law_Commission</a>
       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>

@@ -7001,8 +7001,8 @@ figure {
 .page-header h1 {
   margin-top: 0;
 }
-.min-col h2,
-.min-col h3 {
+.side-item h2,
+.side-item h3 {
   color: #006a5d;
 }
 .max-col {
@@ -7018,15 +7018,21 @@ figure {
   border-bottom: 1px solid #c5c5c5;
   padding-bottom: 1em;
 }
+.main-item h2 {
+  margin-top: 0;
+}
 @media (min-width: 768px) {
   .main-item {
     border-top: 0;
   }
 }
+@media (min-width: 768px) {
+  .sidebar-primary .main {
+    border-left: 1px solid #ccc;
+  }
+}
 .side-item {
   display: block;
-  border-bottom: 5px solid #006a5d;
-  padding-bottom: 1em;
 }
 ul {
   list-style: none;
@@ -7432,7 +7438,7 @@ figure.alignnone {
 }
 #top-banner {
   display: block;
-  margin-bottom: .5em;
+  margin-bottom: 1em;
   padding-bottom: .5em;
   border-bottom: 1px solid #c5c5c5;
   position: relative;
@@ -7615,8 +7621,12 @@ ul.filter-links li a {
 .filters,
 .stats {
   display: block;
-  border-bottom: 5px solid #006a5d;
-  padding-bottom: 1em;
+}
+.filters h2,
+.stats h2,
+.filters h3,
+.stats h3 {
+  color: #006a5d;
 }
 .case-details ul li {
   padding: .5em 1em;

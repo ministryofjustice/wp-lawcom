@@ -26,7 +26,7 @@ figure {
 		}
 }
 
-.min-col {
+.side-item {
 	h2, h3 {
 		color: @brand-primary;
 	}
@@ -46,16 +46,24 @@ figure {
 	border-top: 1px solid @thin-divider-clr;
 	border-bottom: 1px solid @thin-divider-clr;
 	padding-bottom: 1em;
+		h2 {
+			margin-top: 0;
+		}
 
 		@media (min-width: @screen-sm) {
 			border-top: 0;
 		}
 }
 
+@media (min-width: @screen-sm) {
+	.sidebar-primary .main {
+		border-left: 1px solid #ccc;
+	}
+
+}
+
 .side-item {
 	display: block;
-	border-bottom: 5px solid @brand-primary;
-	padding-bottom: 1em;
 
 		// &:last-child {
 		// 	border-bottom: 0;

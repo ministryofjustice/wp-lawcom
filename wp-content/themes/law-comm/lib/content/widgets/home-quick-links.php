@@ -26,12 +26,12 @@ class QuickLinks_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		echo $args['before_widget'];
   ?>
-		<div class="quick-links">
-  		<h2>Quick links</h2>
+		<div class="quick-links side-item">
+<!--   		<h2>Quick links</h2> -->
 			<ul>
-				<li class="ql1"><a href="<?php echo get_permalink( get_post_meta( 6, "quick-link-1-page", true )); ?>"><?php echo get_post_meta( 6, "quick-link-1", true ); ?> ><p><span>Search to find a project</span></p></a></li>
-				<li class="ql2"><a href="<?php echo get_permalink( get_post_meta( 6, "quick-link-2-page", true )); ?>"><?php echo get_post_meta( 6, "quick-link-2", true ); ?> ><p><span>Search to find a consultation</span></p></a></li>
-				<li class="ql3"><a href="<?php echo get_permalink( get_post_meta( 6, "quick-link-3-page", true )); ?>"><?php echo get_post_meta( 6, "quick-link-3", true ); ?> ><p><span>Search to find a publication</span></p></a></li>
+				<li class="ql1"><a href="<?php echo get_permalink( get_post_meta( 6, "quick-link-1-page", true )); ?>"><?php echo get_post_meta( 6, "quick-link-1", true ); ?> ></a></li>
+				<li class="ql2"><a href="<?php echo get_permalink( get_post_meta( 6, "quick-link-2-page", true )); ?>"><?php echo get_post_meta( 6, "quick-link-2", true ); ?> ></a></li>
+				<li class="ql3"><a href="<?php echo get_permalink( get_post_meta( 6, "quick-link-3-page", true )); ?>"><?php echo get_post_meta( 6, "quick-link-3", true ); ?> ></a></li>
 			</ul>
 		</div>
 		  
