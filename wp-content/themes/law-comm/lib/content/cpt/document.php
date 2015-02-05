@@ -27,7 +27,7 @@ function document() {
 		'label'               => 'Document',
 		'description'         => 'Used to store individual Documents',
 		'labels'              => $labels,
-		'supports'            => array( 'title' ),
+		'supports'            => false,
 		'taxonomies'          => array( ),
 		'hierarchical'        => false,
 		'public'              => true,

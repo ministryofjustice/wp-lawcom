@@ -40,7 +40,7 @@ class Project_Widget extends WP_Widget {
         <label for="lccp">LC/CP</label>
         <input type="text" class="form-control" id="lccp" name="lccp" placeholder="Enter LC/CP">
       </div>
-      <label for="lccp">Publication Date</label>
+      <label for="start">Publication Date</label>
       <div class="input-daterange input-group form-group">
         <input type="text" class="input-sm form-control" name="start" />
         <span class="input-group-addon">to</span>
