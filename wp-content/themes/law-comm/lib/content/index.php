@@ -72,6 +72,17 @@ function change_title($post_id, $post, $update) {
 add_action('save_post', 'change_title', 10, 3);
 
 /**
+ * remove_document_meta function.
+ * 
+ * @access public
+ * @return void
+ */
+function remove_document_meta() {
+	remove_meta_box( 'document_typediv','document', 'side' );
+}
+add_action( 'admin_menu' , 'remove_document_meta' );
+
+/**
  * my_acf_admin_head function.
  * 
  * @access public
