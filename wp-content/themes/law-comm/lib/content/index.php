@@ -61,7 +61,7 @@ function remove_editor_init() {
  * @return void
  */
 function change_title($post_id, $post, $update) {
-  if ($post->post_type == 'document' ) {   
+  if ($post->post_type == 'document' || $post->post_type == 'project' ) {   
     $title = get_field('title',$post_id);
     $content = get_field('description',$post_id);
     remove_action('save_post', 'change_title');
@@ -79,6 +79,9 @@ add_action('save_post', 'change_title', 10, 3);
  */
 function remove_document_meta() {
 	remove_meta_box( 'document_typediv','document', 'side' );
+	remove_meta_box( 'areas_of_lawdiv','project', 'side' );
+	remove_meta_box( 'commissionerdiv','project', 'side' );
+	remove_meta_box( 'teamdiv','project', 'side' );
 }
 add_action( 'admin_menu' , 'remove_document_meta' );
 

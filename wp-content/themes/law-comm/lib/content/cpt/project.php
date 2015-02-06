@@ -26,7 +26,7 @@ function project() {
 		'label'               => 'project',
 		'description'         => 'Used to store individual projects',
 		'labels'              => $labels,
-		'supports'            => array( 'title', 'page-attributes' ),
+		'supports'            => false,
 		'taxonomies'          => array( ),
 		'hierarchical'        => true,
 		'public'              => true,
