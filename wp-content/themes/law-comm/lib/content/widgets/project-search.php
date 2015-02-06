@@ -30,40 +30,19 @@ class Project_Widget extends WP_Widget {
 		<form>
   		<div class="form-group">
         <label for="title">Title</label>
-        <input type="text" class="form-control" id="title" name="title" placeholder="Enter title">
+        <input type="text" class="form-control" id="title" name="title" placeholder="Enter title" value="<?= get_query_var('title'); ?>">
       </div>
       <div class="form-group">
         <label for="keyword">Keyword</label>
-        <input type="text" class="form-control" id="keyword" name="keyword" placeholder="Enter keyword">
-      </div>
-      <div class="form-group">
-        <label for="lccp">LC/CP</label>
-        <input type="text" class="form-control" id="lccp" name="lccp" placeholder="Enter LC/CP">
-      </div>
-      <label for="start">Publication Date</label>
-      <div class="input-daterange input-group form-group">
-        <input type="text" class="input-sm form-control" name="start" />
-        <span class="input-group-addon">to</span>
-        <input type="text" class="input-sm form-control" name="end" />
+        <input type="text" class="form-control" id="keyword" name="keyword" placeholder="Enter keyword" value="<?= get_query_var('keyword'); ?>">
       </div>
       <?php $areas = get_terms('areas_of_law'); if(!empty($areas)): ?>
       <div class="form-group">
-        <label for="area-of-law">Area of Law</label>
-        <select name="area-of-law" id="area-of-law" class="form-control">
+        <label for="area_of_law">Area of Law</label>
+        <select name="area_of_law" id="area_of_law" class="form-control">
           <option value=""></option>
           <?php foreach($areas as $area): ?>
-            <option value="<?= $area->term_id ?>"><?= $area->name ?></option>
-          <?php endforeach; ?>
-        </select>
-      </div>
-      <?php endif; ?>
-      <?php $teams = get_terms('team'); if(!empty($team)): ?>
-      <div class="form-group">
-        <label for="team">Team</label>
-        <select name="team" id="team" class="form-control">
-          <option value=""></option>
-          <?php foreach($teams as $team): ?>
-            <option value="<?= $team->term_id ?>"><?= $team->name ?></option>
+            <option value="<?= $area->term_id ?>"<?php if(get_query_var('area_of_law') == $area->term_id) { echo ' selected="selected"'; } ?>><?= $area->name ?></option>
           <?php endforeach; ?>
         </select>
       </div>

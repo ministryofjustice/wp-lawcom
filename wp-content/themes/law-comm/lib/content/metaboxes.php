@@ -1,5 +1,4 @@
 <?php 
-  
 if(function_exists("register_field_group"))
 {
 	register_field_group(array (
@@ -165,44 +164,6 @@ if(function_exists("register_field_group"))
 		'title' => 'Publication',
 		'fields' => array (
 			array (
-				'key' => 'field_54d36479697f7',
-				'label' => 'Type',
-				'name' => '',
-				'type' => 'tab',
-			),
-			array (
-				'key' => 'field_54d37be93594e',
-				'label' => 'Project',
-				'name' => 'project',
-				'type' => 'relationship',
-				'return_format' => 'id',
-				'post_type' => array (
-					0 => 'project',
-				),
-				'taxonomy' => array (
-					0 => 'all',
-				),
-				'filters' => array (
-					0 => 'search',
-				),
-				'result_elements' => array (
-					0 => 'post_title',
-				),
-				'max' => '',
-			),
-			array (
-				'key' => 'field_54d36485697f8',
-				'label' => 'Primary',
-				'name' => 'primary',
-				'type' => 'taxonomy',
-				'taxonomy' => 'document_type',
-				'field_type' => 'select',
-				'allow_null' => 1,
-				'load_save_terms' => 1,
-				'return_format' => 'id',
-				'multiple' => 0,
-			),
-			array (
 				'key' => 'field_54d364c4697fc',
 				'label' => 'Content',
 				'name' => '',
@@ -258,6 +219,44 @@ if(function_exists("register_field_group"))
 				'default_value' => '',
 				'toolbar' => 'basic',
 				'media_upload' => 'no',
+			),
+			array (
+				'key' => 'field_54d36479697f7',
+				'label' => 'Options',
+				'name' => '',
+				'type' => 'tab',
+			),
+			array (
+				'key' => 'field_54d37be93594e',
+				'label' => 'Project',
+				'name' => 'project',
+				'type' => 'relationship',
+				'return_format' => 'id',
+				'post_type' => array (
+					0 => 'project',
+				),
+				'taxonomy' => array (
+					0 => 'all',
+				),
+				'filters' => array (
+					0 => 'search',
+				),
+				'result_elements' => array (
+					0 => 'post_title',
+				),
+				'max' => '',
+			),
+			array (
+				'key' => 'field_54d36485697f8',
+				'label' => 'Type',
+				'name' => 'Type',
+				'type' => 'taxonomy',
+				'taxonomy' => 'document_type',
+				'field_type' => 'select',
+				'allow_null' => 1,
+				'load_save_terms' => 1,
+				'return_format' => 'id',
+				'multiple' => 0,
 			),
 			array (
 				'key' => 'field_54d364d1697fd',
@@ -399,7 +398,7 @@ if(function_exists("register_field_group"))
 		),
 		'menu_order' => 0,
 	));
-	register_field_group(array (
+  register_field_group(array (
 		'id' => 'acf_homepage',
 		'title' => 'Homepage',
 		'fields' => array (

@@ -104,7 +104,7 @@ function my_acf_admin_head()
 				
 		$(document).live('acf/setup_fields', function(e, postbox){	
       
-      $('#acf-field-primary option').each(function(idx, el){
+      $('#acf-field-Type option').each(function(idx, el){
         
         var $el = $(el), text;
         
@@ -116,7 +116,7 @@ function my_acf_admin_head()
         
       });
       
-      $('select').trigger('change');
+      $('#acf-field-Type').trigger('change');
       
 		});
 		
@@ -125,7 +125,7 @@ function my_acf_admin_head()
 		*  Hero Type change
 		*/
 		
-		$('#acf-field-primary').live('change', function(){
+		$('#acf-field-Type').live('change', function(){
   		
 			parentCheck = $(this).find("option:selected").hasClass('parent')
       child = $(this).find("option:selected").prevAll('.parent').first().text();

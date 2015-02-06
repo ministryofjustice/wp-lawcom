@@ -19,7 +19,7 @@ function areas_of_law() {
 		'not_found'                  => 'Not Found',
 	);
 	$rewrite = array(
-		'slug'                       => 'project',
+		'slug'                       => 'areas_of_law',
 		'with_front'                 => true,
 		'hierarchical'               => false,
 	);
