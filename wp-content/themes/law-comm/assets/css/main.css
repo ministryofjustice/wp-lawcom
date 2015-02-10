@@ -7227,6 +7227,10 @@ figure.alignnone {
     width: 33%;
   }
 }
+#branding svg {
+  width: 100%;
+  max-height: 94px;
+}
 /* - - - - - - Navigation - - - - - - */
 .navbar {
   margin-bottom: .5em;
