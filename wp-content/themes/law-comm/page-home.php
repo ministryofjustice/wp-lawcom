@@ -18,7 +18,7 @@ Template Name: Homepage
 		        	<p><?php the_field('welcome_text'); ?></p>
 			        	<ul>
 				        	<li><span><?php the_field('aims_item_1'); ?></span></li>
-				        	<li><span><?php the_field('aims_item_2'); ?></li>
+				        	<li><span><?php the_field('aims_item_2'); ?></span></li>
 				        	<li><span><?php the_field('aims_item_3'); ?></span></li>
 				        	<li><span><?php the_field('aims_item_4'); ?></span></li>
 			        	</ul>
