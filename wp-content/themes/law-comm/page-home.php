@@ -14,13 +14,13 @@ Template Name: Homepage
 
 		  	<div class="row">
 		      <div class="col-sm-6 intro-left">
-		      	<h2><?php echo get_post_meta( $post->ID, "welcome-title", true ); ?></h2>
-		        	<p><?php echo get_post_meta( $post->ID, "welcome-text", true ); ?></p>
+		      	<h2><?php the_field('welcome_title'); ?></h2>
+		        	<p><?php the_field('welcome_text'); ?></p>
 			        	<ul>
-				        	<li><span><?php echo get_post_meta( $post->ID, "commission-aim-1", true ); ?></span></li>
-				        	<li><span><?php echo get_post_meta( $post->ID, "commission-aim-2", true ); ?></span></li>
-				        	<li><span><?php echo get_post_meta( $post->ID, "commission-aim-3", true ); ?></span></li>
-				        	<li><span><?php echo get_post_meta( $post->ID, "commission-aim-4", true ); ?></span></li>
+				        	<li><span><?php the_field('aims_item_1'); ?></span></li>
+				        	<li><span><?php the_field('aims_item_2'); ?></li>
+				        	<li><span><?php the_field('aims_item_3'); ?></span></li>
+				        	<li><span><?php the_field('aims_item_4'); ?></span></li>
 			        	</ul>
 		      </div>
 		      <div class="col-sm-6 intro-right">

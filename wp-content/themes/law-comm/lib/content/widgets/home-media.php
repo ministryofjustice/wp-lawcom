@@ -29,7 +29,7 @@ class Media_Widget extends WP_Widget {
 		<div class="media video-container side-item">
 		  <h2>Latest media</h2>
 			<div class="videoWrapper">
-			  <?php echo get_post_meta( 6, "video-embed", true ); ?>
+			  <?php _e( wp_oembed_get( get_field( 'youtube_link' ) ) ); ?>
 			</div>
 		</div>
 		  
