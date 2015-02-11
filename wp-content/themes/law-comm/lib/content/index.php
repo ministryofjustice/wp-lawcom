@@ -1,40 +1,34 @@
 <?php
   
+require( trailingslashit( get_template_directory() ) . 'advanced-custom-fields/acf.php' );
+require( trailingslashit( get_template_directory() ) . 'acf-gallery/acf-gallery.php' );
+require( trailingslashit( get_template_directory() ) . 'acf-options-page/acf-options-page.php' );
+require( trailingslashit( get_template_directory() ) . 'acf-repeater/acf-repeater.php' );
+require( trailingslashit( get_template_directory() ) . 'lib/content/metaboxes.php' );
+require( trailingslashit( get_template_directory() ) . 'lib/content/custom-queries.php' );
+  
 $cpts = scandir( get_template_directory() . "/lib/content/cpt/" );
 foreach ( $cpts as $cpt ) {
 	if ( $cpt[0] != "." )
 		require get_template_directory() . '/lib/content/cpt/' . $cpt;
 }
-
 $taxonomies = scandir( get_template_directory() . "/lib/content/taxonomies/" );
 foreach ( $taxonomies as $taxonomy ) {
 	if ( $taxonomy[0] != "." )
 		require get_template_directory() . '/lib/content/taxonomies/' . $taxonomy;
 }
-
 $widgets = scandir( get_template_directory() . "/lib/content/widgets/" );
 foreach ( $widgets as $widget ) {
 	if ( $widget[0] != "." )
 		require get_template_directory() . '/lib/content/widgets/' . $widget;
 }
 
-$queries = scandir( get_template_directory() . "/lib/content/custom-queries/" );
-foreach ( $queries as $query ) {
-	if ( $query[0] != "." )
-		require get_template_directory() . '/lib/content/custom-queries/' . $query;
-}
-
-require( trailingslashit( get_template_directory() ) . 'advanced-custom-fields/acf.php' );
-require( trailingslashit( get_template_directory() ) . 'acf-gallery/acf-gallery.php' );
-require( trailingslashit( get_template_directory() ) . 'acf-options-page/acf-options-page.php' );
-require( trailingslashit( get_template_directory() ) . 'acf-repeater/acf-repeater.php' );
-require( trailingslashit( get_template_directory() ) . 'lib/content/metaboxes.php' );
-
 /**
- * Hide editor on homepage.
- *
+ * remove_editor_init function.
+ * 
+ * @access public
+ * @return void
  */
-add_action('init', 'remove_editor_init');
 function remove_editor_init() {
     // if post not set, just return 
     // fix when post not set, throws PHP's undefined index warning
@@ -50,6 +44,7 @@ function remove_editor_init() {
         remove_post_type_support('page', 'editor');
     }
 }
+add_action('init', 'remove_editor_init');
 
 /**
  * change_title function.
@@ -66,7 +61,16 @@ function change_title($post_id, $post, $update) {
     $content = get_field('description',$post_id);
     remove_action('save_post', 'change_title');
     wp_update_post(array('ID' => $post_id, 'post_title' => $title, 'post_content' => $content));
-    add_action('save_post', 'change_title');
+    add_action('save_post', 'change_title'); 	
+    $tax = $post->post_type . '_keyword';
+    $terms = get_the_terms($post_id, 'project_keyword');
+    $id = "";
+    if($terms) {
+        foreach ( $terms as $term ) {
+      		$id .= $term->name . " ";
+      	} 
+      	update_field('keywords', $id, $post_id);
+  	}	
   }
 }
 add_action('save_post', 'change_title', 10, 3);
@@ -86,6 +90,60 @@ function remove_document_meta() {
 add_action( 'admin_menu' , 'remove_document_meta' );
 
 /**
+ * my_connection_types function.
+ * 
+ * @access public
+ * @return void
+ */
+function my_connection_types() {
+    p2p_register_connection_type( array(
+        'name' => 'projects_to_documents',
+        'from' => 'project',
+        'to' => 'document',
+        'cardinality' => 'one-to-many',
+        'title' => array( 'from' => 'Managed by', 'to' => 'Manages' ),
+        
+        'fields' => array(
+        'areas_of_law' => array(
+            'title' => 'Areas of Law',
+            'type' => 'text',
+        ),
+        ),
+    ) );
+}
+add_action( 'p2p_init', 'my_connection_types' );
+
+/**
+ * save_document_meta function.
+ * 
+ * @access public
+ * @param mixed $post_id
+ * @param mixed $post
+ * @param mixed $update
+ * @return void
+ */
+function save_document_meta( $post_id, $post, $update ) {
+  if ( $post->post_type == 'document' || $post->post_type == 'project' ) {  
+    $connected = new WP_Query(array(
+      'connected_type' => 'projects_to_documents',
+      'connected_items' => $post_id,
+      'post_type' => $post->post_type,
+      'nopaging' => true,
+    ));
+            
+    while( $connected->have_posts() ) : $connected->the_post();
+      if($post->post_type == 'project') {
+        p2p_update_meta(get_post()->p2p_id, 'areas_of_law', get_field("areas_of_law", $post_id));           
+      } elseif($post->post_type == 'document') {
+        $parent_id = get_field("areas_of_law", get_the_id());
+        p2p_update_meta(get_post()->p2p_id, 'areas_of_law', $parent_id[0]); 
+      }
+    endwhile;
+  }
+}
+add_action( 'save_post', 'save_document_meta', 10, 3 );
+
+/**
  * my_acf_admin_head function.
  * 
  * @access public
@@ -96,63 +154,37 @@ function my_acf_admin_head()
 	?>
 	<script type="text/javascript">
 	(function($){
-		
 		function hide_fields()
 		{
 			$('li a[data-key=field_54d37487ca2f9], li a[data-key=field_54d374b0584bb], li a[data-key=field_54d3749a584ba], li a[data-key=field_54d374c4584bc]').hide();
 		}
-				
-		$(document).live('acf/setup_fields', function(e, postbox){	
-      
-      $('#acf-field-Type option').each(function(idx, el){
-        
-        var $el = $(el), text;
-        
-        text = $el.text();
-        
+		$(document).live('acf/setup_fields', function(e, postbox){	 
+      $('#acf-field-Type option').each(function(idx, el){        
+        var $el = $(el), text;        
+        text = $el.text();        
         if(text.indexOf('—') === -1){
           $el.addClass('parent');
-        }
-        
-      });
-      
-      $('#acf-field-Type').trigger('change');
-      
-		});
-		
-		
-		/*
-		*  Hero Type change
-		*/
-		
-		$('#acf-field-Type').live('change', function(){
-  		
+        }        
+      });      
+      $('#acf-field-Type').trigger('change');      
+		});	
+		$('#acf-field-Type').live('change', function(){  		
 			parentCheck = $(this).find("option:selected").hasClass('parent')
       child = $(this).find("option:selected").prevAll('.parent').first().text();
-      parent = $(this).find("option:selected").text();
-      
+      parent = $(this).find("option:selected").text();      
 			hide_fields();
-
-      if((parentCheck && parent == "Consultation") || (!parentCheck && child == "Consultation") )
-			{
+      if((parentCheck && parent == "Consultation") || (!parentCheck && child == "Consultation") )		{
 				$('li a[data-key=field_54d3749a584ba]').show();
-			} else if((parentCheck && parent == "Other Project documents and downloads") || (!parentCheck && child == "Other Project documents and downloads" ))
-			{
+			} else if((parentCheck && parent == "Other Project documents and downloads") || (!parentCheck && child == "Other Project documents and downloads" )) {
 				$('li a[data-key=field_54d374b0584bb]').show();
-			} else if((parentCheck && parent == "Project related documents and downloads") || (!parentCheck && child == "Project related documents and downloads" ))
-			{
+			} else if((parentCheck && parent == "Project related documents and downloads") || (!parentCheck && child == "Project related documents and downloads" )) {
 				$('li a[data-key=field_54d374c4584bc]').show();
-			} else if((parentCheck && parent == "Report") || (!parentCheck && child == "Report" ))
-			{
+			} else if((parentCheck && parent == "Report") || (!parentCheck && child == "Report" )) {
 				$('li a[data-key=field_54d37487ca2f9]').show();
-			}
-			
-		});
-		
-	
+			}			
+		});	
 	})(jQuery);
 	</script>
 	<?php
 }
-
 add_action('acf/input/admin_head', 'my_acf_admin_head');

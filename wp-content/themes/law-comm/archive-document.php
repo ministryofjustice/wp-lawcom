@@ -7,12 +7,13 @@
   <?php get_search_form(); ?>
 <?php endif; ?>
 
-<?php $wp_query = project_query(); ?>
+<?php $wp_query = document_query(); ?>
 <?php if ( $wp_query->have_posts() ) : ?>
 <?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
   <?php get_template_part('templates/content', get_post_format()); ?>
 <?php endwhile; ?>
 <?php endif; ?>
+
 
 <?php if ($wp_query->max_num_pages > 1) : ?>
   <nav class="post-nav">

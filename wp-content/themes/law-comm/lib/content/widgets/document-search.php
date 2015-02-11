@@ -1,17 +1,17 @@
 <?php 
 /**
- * Adds Project_Widget widget.
+ * Adds Document_Widget widget.
  */
-class Project_Widget extends WP_Widget {
+class Document_Widget extends WP_Widget {
 
 	/**
 	 * Register widget with WordPress.
 	 */
 	function __construct() {
 		parent::__construct(
-			'project_widget', // Base ID
-			__( 'Project Search', 'text_domain' ), // Name
-			array( 'description' => __( 'Project Search', 'text_domain' ), ) // Args
+			'Document_widget', // Base ID
+			__( 'Document Search', 'text_domain' ), // Name
+			array( 'description' => __( 'Document Search', 'text_domain' ), ) // Args
 		);
 	}
 
@@ -26,7 +26,7 @@ class Project_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		echo $args['before_widget'];
   ?>
-		<h3>Search Projects</h3>
+		<h3>Search Documents</h3>
 		<form>
   		<div class="form-group">
         <label for="title">Title</label>
@@ -34,14 +34,27 @@ class Project_Widget extends WP_Widget {
           <option value="">--- Choose Project ---</option>
           <?php $pages = get_posts('numberposts=10&post_type=project'); ?>
           <?php foreach($pages as $page): ?>
-            <option value="<?= $page->ID ?>"<?php if(get_query_var('title') == $page->ID) { echo ' selected="selected"'; } ?>><?= $page->post_title ?></option>
+            <option value="<?= $page->ID ?>"<?php if(get_query_var('project') == $page->ID) { echo ' selected="selected"'; } ?>><?= $page->post_title ?></option>
           <?php endforeach; ?>
         </select>
       </div>
+      
+      <?php $areas = get_terms('document_type', 'hide_empty=0'); if(!empty($areas)): ?>
       <div class="form-group">
-        <label for="keyword">Keyword</label>
-        <input type="text" class="form-control" id="keyword" name="keyword" placeholder="Enter keyword" value="<?= get_query_var('keyword'); ?>">
+        <label for="publication">Publication</label>
+        <?php 
+          wp_dropdown_categories(array(
+            'show_option_all' => '--- Choose Publication ---',
+            'taxonomy' => 'document_type',
+            'hide_empty' => 0,
+            'hierarchical' => 1,
+            'class' => 'form-control',
+            'name' => 'publication'
+          )); 
+        ?> 
       </div>
+      <?php endif; ?>
+    
       <?php $areas = get_terms('areas_of_law'); if(!empty($areas)): ?>
       <div class="form-group">
         <label for="area_of_law">Area of Law</label>
@@ -51,6 +64,10 @@ class Project_Widget extends WP_Widget {
             <option value="<?= $area->term_id ?>"<?php if(get_query_var('area_of_law') == $area->term_id) { echo ' selected="selected"'; } ?>><?= $area->name ?></option>
           <?php endforeach; ?>
         </select>
+      </div>
+      <div class="form-group">
+        <label for="keyword">Keyword</label>
+        <input type="text" class="form-control" id="keyword" name="keyword" placeholder="Enter keyword" value="<?= get_query_var('keyword'); ?>">
       </div>
       <?php endif; ?>
       <input type="submit" value="Search" class="btn btn-primary">
@@ -86,10 +103,10 @@ class Project_Widget extends WP_Widget {
 	
 	}
 
-} // class Project_Widget
+} // class Document_Widget
 
-// register Project_Widget widget
-function register_project_widget() {
-    register_widget( 'Project_Widget' );
+// register Document_Widget widget
+function register_document_widget() {
+    register_widget( 'Document_Widget' );
 }
-add_action( 'widgets_init', 'register_project_widget' );
+add_action( 'widgets_init', 'register_Document_widget' );
