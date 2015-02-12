@@ -1,6 +1,3 @@
 [submodule "wp-content/themes/law-comm/advanced-custom-fields"]
 	path = wp-content/themes/law-comm/advanced-custom-fields
 	url = https://github.com/elliotcondon/acf.git
-[submodule "wp-content/plugins/wp-posts-posts"]
-	path = wp-content/plugins/wp-posts-posts
-	url = https://github.com/scribu/wp-posts-to-posts/

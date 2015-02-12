@@ -59,11 +59,12 @@ function change_title($post_id, $post, $update) {
   if ($post->post_type == 'document' || $post->post_type == 'project' ) {   
     $title = get_field('title',$post_id);
     $content = get_field('description',$post_id);
+    $new_slug = sanitize_title( $post->post_title );
     remove_action('save_post', 'change_title');
-    wp_update_post(array('ID' => $post_id, 'post_title' => $title, 'post_content' => $content));
+    wp_update_post(array('ID' => $post_id, 'post_title' => $title, 'post_content' => $content, 'post_name' => $new_slug));
     add_action('save_post', 'change_title'); 	
     $tax = $post->post_type . '_keyword';
-    $terms = get_the_terms($post_id, 'project_keyword');
+    $terms = get_the_terms($post_id, $tax);
     $id = "";
     if($terms) {
         foreach ( $terms as $term ) {
@@ -88,60 +89,6 @@ function remove_document_meta() {
 	remove_meta_box( 'teamdiv','project', 'side' );
 }
 add_action( 'admin_menu' , 'remove_document_meta' );
-
-/**
- * my_connection_types function.
- * 
- * @access public
- * @return void
- */
-function my_connection_types() {
-    p2p_register_connection_type( array(
-        'name' => 'projects_to_documents',
-        'from' => 'project',
-        'to' => 'document',
-        'cardinality' => 'one-to-many',
-        'title' => array( 'from' => 'Managed by', 'to' => 'Manages' ),
-        
-        'fields' => array(
-        'areas_of_law' => array(
-            'title' => 'Areas of Law',
-            'type' => 'text',
-        ),
-        ),
-    ) );
-}
-add_action( 'p2p_init', 'my_connection_types' );
-
-/**
- * save_document_meta function.
- * 
- * @access public
- * @param mixed $post_id
- * @param mixed $post
- * @param mixed $update
- * @return void
- */
-function save_document_meta( $post_id, $post, $update ) {
-  if ( $post->post_type == 'document' || $post->post_type == 'project' ) {  
-    $connected = new WP_Query(array(
-      'connected_type' => 'projects_to_documents',
-      'connected_items' => $post_id,
-      'post_type' => $post->post_type,
-      'nopaging' => true,
-    ));
-            
-    while( $connected->have_posts() ) : $connected->the_post();
-      if($post->post_type == 'project') {
-        p2p_update_meta(get_post()->p2p_id, 'areas_of_law', get_field("areas_of_law", $post_id));           
-      } elseif($post->post_type == 'document') {
-        $parent_id = get_field("areas_of_law", get_the_id());
-        p2p_update_meta(get_post()->p2p_id, 'areas_of_law', $parent_id[0]); 
-      }
-    endwhile;
-  }
-}
-add_action( 'save_post', 'save_document_meta', 10, 3 );
 
 /**
  * my_acf_admin_head function.

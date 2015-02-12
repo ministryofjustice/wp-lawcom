@@ -94,15 +94,86 @@ function project_query() {
  * @return void
  */
 function document_query() {
+  if(!empty(get_query_var('title')) || !empty(get_query_var('area_of_law'))) {
+    $projectArgs = array(
+      'post_type' => 'project',
+      'posts_per_page' => -1    
+    );
+    
+    if(!empty(get_query_var('title'))) {
+      $projectArgs['p'] = get_query_var('title');
+    }
+    
+    if(!empty(get_query_var('area_of_law'))) {
+      $projectArgs['tax_query'][] = array(
+        'taxonomy' => 'areas_of_law',
+        'terms' => get_query_var('area_of_law'),
+      );
+    } 
+    
+    $projects = get_posts($projectArgs);
+    $projectIDs = array();
+    foreach($projects as $project) {
+      $projectIDs[] = $project->ID;
+    }
+  }
+  
   $temp = $wp_query;
   $wp_query = NULL;
-  $args = array();
   $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
   
+  if(!empty($projectIDs)) {
+    $args['meta_query'][] = array(
+      'key' => 'project',
+      'value' => $projectIDs,
+      'compare' => 'IN',
+    );
+  } else {
+    $args['meta_query'][] = array(
+      'key' => 'project',
+      'value'   => "null",
+      'compare' => 'NOT IN'
+    );
+    $args['meta_query'][] = array(
+      'key' => 'project',
+      'value'   => null,
+      'compare' => 'NOT IN'
+    );
+  }
+  
+  if(!empty(get_query_var('keyword'))) {    
+    $args['meta_query'][] = array(
+      'relation' => 'OR',
+      array(
+        'key' => 'title',
+        'value' => get_query_var('keyword'),
+        'compare' => 'LIKE',
+      ),
+      array(
+        'key' => 'description',
+        'value' => get_query_var('keyword'),
+        'compare' => 'LIKE',
+      ),
+      array(
+        'key' => 'keywords',
+        'value' => get_query_var('keyword'),
+        'compare' => 'LIKE',
+      ),      
+    );    
+  }
+  
+  if(!empty(get_query_var('publication'))) {
+    $args['tax_query'][] = array(
+      'taxonomy' => 'document_type',
+      'terms' => get_query_var('publication'),
+    );
+  } 
+    
   $args['post_type'] = 'document';
   $args['paged'] = $paged;
   $args['posts_per_page'] = 10;
   $wp_query = new WP_Query();
   $wp_query->query($args); 
   return $wp_query;
+    
 }
