@@ -29,7 +29,7 @@ class Document_Widget extends WP_Widget {
 		<h3>Search Documents</h3>
 		<form>
   		<div class="form-group">
-        <label for="title">Title</label>
+        <label for="title">Project Title</label>
         <select name="title" id="title" class="form-control">
           <option value="">--- Choose Project ---</option>
           <?php $pages = get_posts('numberposts=10&post_type=project'); ?>
@@ -39,12 +39,39 @@ class Document_Widget extends WP_Widget {
         </select>
       </div>
       
-      <?php $areas = get_terms('document_type', 'hide_empty=0'); if(!empty($areas)): ?>
       <div class="form-group">
-        <label for="publication">Publication</label>
+        <label for="title">Document Title</label>
+        <select name="doc-title" id="doc-title" class="form-control">
+          <option value="">--- Choose Document ---</option>
+          <?php $pages = get_posts('numberposts=10&post_type=document'); ?>
+          <?php foreach($pages as $page): ?>
+            <option value="<?= $page->ID ?>"<?php if(get_query_var('document') == $page->ID) { echo ' selected="selected"'; } ?>><?= $page->post_title ?></option>
+          <?php endforeach; ?>
+        </select>
+      </div>
+      
+      <?php $areas = get_terms('team', 'hide_empty=0'); if(!empty($areas)): ?>
+      <div class="form-group">
+        <label for="publication">Team</label>
         <?php 
           wp_dropdown_categories(array(
-            'show_option_all' => '--- Choose Publication ---',
+            'show_option_all' => '--- Choose Team ---',
+            'taxonomy' => 'team',
+            'hide_empty' => 0,
+            'hierarchical' => 1,
+            'class' => 'form-control',
+            'name' => 'teams'
+          )); 
+        ?> 
+      </div>
+      <?php endif; ?>
+      
+      <?php $areas = get_terms('document_type', 'hide_empty=0'); if(!empty($areas)): ?>
+      <div class="form-group">
+        <label for="publication">Document Type</label>
+        <?php 
+          wp_dropdown_categories(array(
+            'show_option_all' => '--- Choose Type ---',
             'taxonomy' => 'document_type',
             'hide_empty' => 0,
             'hierarchical' => 1,
@@ -64,6 +91,16 @@ class Document_Widget extends WP_Widget {
             <option value="<?= $area->term_id ?>"<?php if(get_query_var('area_of_law') == $area->term_id) { echo ' selected="selected"'; } ?>><?= $area->name ?></option>
           <?php endforeach; ?>
         </select>
+      </div>      
+      <label for="start">Publication Date</label>
+      <div class="input-daterange input-group form-group">
+        <input type="text" class="input-sm form-control" name="start" />
+        <span class="input-group-addon">to</span>
+        <input type="text" class="input-sm form-control" name="end" />
+      </div>      
+      <div class="form-group">
+        <label for="lccp">LC/CP Number</label>
+        <input type="text" class="form-control" id="lccp" name="lccp" placeholder="Enter LC/CP" value="<?= get_query_var('lccp'); ?>">
       </div>
       <div class="form-group">
         <label for="keyword">Keyword</label>

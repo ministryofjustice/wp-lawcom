@@ -9,9 +9,14 @@
  */
 function add_query_vars_filter($vars){
   $vars[] = "title";
+  $vars[] = "doc-title";
+  $vars[] = "teams";
   $vars[] = "keyword";
   $vars[] = "area_of_law";
   $vars[] = "publication";
+  $vars[] = "lccp";
+  $vars[] = "start";
+  $vars[] = "end";
   return $vars;
 }
 add_filter('query_vars', 'add_query_vars_filter');
@@ -94,7 +99,7 @@ function project_query() {
  * @return void
  */
 function document_query() {
-  if(!empty(get_query_var('title')) || !empty(get_query_var('area_of_law'))) {
+  if(!empty(get_query_var('title')) || !empty(get_query_var('area_of_law')) || !empty(get_query_var('teams'))) {
     $projectArgs = array(
       'post_type' => 'project',
       'posts_per_page' => -1    
@@ -110,6 +115,17 @@ function document_query() {
         'terms' => get_query_var('area_of_law'),
       );
     } 
+    
+    if(!empty(get_query_var('teams'))) {
+      $projectArgs['tax_query'][] = array(
+        'taxonomy' => 'team',
+        'terms' => get_query_var('teams'),
+      );
+    }
+    
+    if($args['tax_query'] && count($args['tax_query']) > 1) {
+      $args['tax_query']['relation'] = 'AND';
+    }
     
     $projects = get_posts($projectArgs);
     $projectIDs = array();
@@ -141,6 +157,18 @@ function document_query() {
     );
   }
   
+  if(!empty(get_query_var('doc-title'))) {
+    $args['p'] = get_query_var('doc-title');
+  }
+  
+  if(!empty(get_query_var('lccp'))) {
+    $args['meta_query'][] = array(
+      'key' => 'reference_number',
+      'value' => get_query_var('lccp'),
+      'compare' => 'LIKE',
+    );
+  }  
+  
   if(!empty(get_query_var('keyword'))) {    
     $args['meta_query'][] = array(
       'relation' => 'OR',
@@ -168,10 +196,20 @@ function document_query() {
       'terms' => get_query_var('publication'),
     );
   } 
-    
+  
+  /*if(!empty(get_query_var('start')) && !empty(get_query_var('end'))) {
+    $args['meta_query'][] = array(
+      'key' => 'publication_date',
+      'value' => array(date("ymd", strtotime(get_query_var("start"))),date("ymd", strtotime(get_query_var("end")))),
+      'compare' => 'BETWEEN',
+      'type' => 'DATE'
+    );
+  }*/
+  
   $args['post_type'] = 'document';
   $args['paged'] = $paged;
   $args['posts_per_page'] = 10;
+  echo "<pre>";var_dump($args);echo "</pre>";
   $wp_query = new WP_Query();
   $wp_query->query($args); 
   return $wp_query;

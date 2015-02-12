@@ -103,7 +103,7 @@ function my_acf_admin_head()
 	(function($){
 		function hide_fields()
 		{
-			$('li a[data-key=field_54d37487ca2f9], li a[data-key=field_54d374b0584bb], li a[data-key=field_54d3749a584ba], li a[data-key=field_54d374c4584bc]').hide();
+			$('li a[data-key=field_54d37487ca2f9], li a[data-key=field_54d374b0584bb], li a[data-key=field_54d3749a584ba], li a[data-key=field_54d374c4584bc], li a[data-key=field_54db7210e5fde], li a[data-key=field_54db35cfaa0ea]').hide();
 		}
 		$(document).live('acf/setup_fields', function(e, postbox){	 
       $('#acf-field-Type option').each(function(idx, el){        
@@ -113,7 +113,8 @@ function my_acf_admin_head()
           $el.addClass('parent');
         }        
       });      
-      $('#acf-field-Type').trigger('change');      
+      $('#acf-field-Type').trigger('change');  
+      hide_fields();    
 		});	
 		$('#acf-field-Type').live('change', function(){  		
 			parentCheck = $(this).find("option:selected").hasClass('parent')
