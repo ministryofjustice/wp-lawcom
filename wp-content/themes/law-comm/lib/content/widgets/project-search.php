@@ -27,7 +27,7 @@ class Project_Widget extends WP_Widget {
 		echo $args['before_widget'];
   ?>
 		<h3>Search Projects</h3>
-		<form>
+		<form action="/project" method="get">
   		<div class="form-group">
         <label for="title">Title</label>
         <select name="title" id="title" class="form-control">

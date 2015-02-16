@@ -123,8 +123,8 @@ function document_query() {
       );
     }
     
-    if($args['tax_query'] && count($args['tax_query']) > 1) {
-      $args['tax_query']['relation'] = 'AND';
+    if($projectArgs['tax_query'] && count($projectArgs['tax_query']) > 1) {
+      $projectArgs['tax_query']['relation'] = 'AND';
     }
     
     $projects = get_posts($projectArgs);
@@ -209,7 +209,6 @@ function document_query() {
   $args['post_type'] = 'document';
   $args['paged'] = $paged;
   $args['posts_per_page'] = 10;
-  echo "<pre>";var_dump($args);echo "</pre>";
   $wp_query = new WP_Query();
   $wp_query->query($args); 
   return $wp_query;

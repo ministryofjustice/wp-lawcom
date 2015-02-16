@@ -27,7 +27,7 @@ class Document_Widget extends WP_Widget {
 		echo $args['before_widget'];
   ?>
 		<h3>Search Documents</h3>
-		<form>
+		<form action="/document" method="get">
   		<div class="form-group">
         <label for="title">Project Title</label>
         <select name="title" id="title" class="form-control">
