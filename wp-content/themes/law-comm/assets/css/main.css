@@ -7046,6 +7046,9 @@ ul a {
   border-bottom: 5px solid #006a5d;
   padding-bottom: 1em;
 }
+.widget:last-child {
+  border-bottom: 0;
+}
 .more-link {
   display: block;
   margin: 1em 0 0 0;
@@ -7232,6 +7235,10 @@ figure.alignnone {
   max-height: 94px;
 }
 /* - - - - - - Navigation - - - - - - */
+.nav:before,
+.nav:after {
+  display: none;
+}
 .navbar {
   margin-bottom: .5em;
 }
