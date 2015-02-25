@@ -40,8 +40,8 @@ if(function_exists("register_field_group"))
 				'name' => 'description',
 				'type' => 'wysiwyg',
 				'default_value' => '',
-				'toolbar' => 'basic',
-				'media_upload' => 'no',
+				// 'toolbar' => 'basic',
+				'media_upload' => 'yes',
 			),
 			array (
 				'key' => 'field_54d4984200fb3',

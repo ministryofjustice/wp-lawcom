@@ -70,3 +70,14 @@ $(document).ready(function (){
   $('.input-daterange').datepicker({
 });
 });
+
+/* Toggle open/close text on project pages */
+
+$('h4.panel-title a span').click(function() {
+    if ($(this).text() === 'Open') {
+         $(this).text('Close');
+    }
+    else {
+        $(this).text('Open');
+    }
+});
