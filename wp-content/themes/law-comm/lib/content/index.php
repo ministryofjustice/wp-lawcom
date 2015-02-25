@@ -1,12 +1,12 @@
 <?php
-  
+
 require( trailingslashit( get_template_directory() ) . 'advanced-custom-fields/acf.php' );
 require( trailingslashit( get_template_directory() ) . 'acf-gallery/acf-gallery.php' );
 require( trailingslashit( get_template_directory() ) . 'acf-options-page/acf-options-page.php' );
 require( trailingslashit( get_template_directory() ) . 'acf-repeater/acf-repeater.php' );
 require( trailingslashit( get_template_directory() ) . 'lib/content/metaboxes.php' );
 require( trailingslashit( get_template_directory() ) . 'lib/content/custom-queries.php' );
-  
+
 $cpts = scandir( get_template_directory() . "/lib/content/cpt/" );
 foreach ( $cpts as $cpt ) {
 	if ( $cpt[0] != "." )
@@ -25,12 +25,12 @@ foreach ( $widgets as $widget ) {
 
 /**
  * remove_editor_init function.
- * 
+ *
  * @access public
  * @return void
  */
 function remove_editor_init() {
-    // if post not set, just return 
+    // if post not set, just return
     // fix when post not set, throws PHP's undefined index warning
     if (isset($_GET['post'])) {
         $post_id = $_GET['post'];
@@ -48,7 +48,7 @@ add_action('init', 'remove_editor_init');
 
 /**
  * change_title function.
- * 
+ *
  * @access public
  * @param mixed $post_id
  * @param mixed $post
@@ -56,29 +56,29 @@ add_action('init', 'remove_editor_init');
  * @return void
  */
 function change_title($post_id, $post, $update) {
-  if ($post->post_type == 'document' || $post->post_type == 'project' ) {   
+  if ($post->post_type == 'document' || $post->post_type == 'project' ) {
     $title = get_field('title',$post_id);
     $content = get_field('description',$post_id);
     $new_slug = sanitize_title( $post->post_title );
     remove_action('save_post', 'change_title');
     wp_update_post(array('ID' => $post_id, 'post_title' => $title, 'post_content' => $content, 'post_name' => $new_slug));
-    add_action('save_post', 'change_title'); 	
+    add_action('save_post', 'change_title');
     $tax = $post->post_type . '_keyword';
     $terms = get_the_terms($post_id, $tax);
     $id = "";
     if($terms) {
         foreach ( $terms as $term ) {
       		$id .= $term->name . " ";
-      	} 
+      	}
       	update_field('keywords', $id, $post_id);
-  	}	
+  	}
   }
 }
 add_action('save_post', 'change_title', 10, 3);
 
 /**
  * remove_document_meta function.
- * 
+ *
  * @access public
  * @return void
  */
@@ -92,7 +92,7 @@ add_action( 'admin_menu' , 'remove_document_meta' );
 
 /**
  * my_acf_admin_head function.
- * 
+ *
  * @access public
  * @return void
  */
@@ -105,21 +105,20 @@ function my_acf_admin_head()
 		{
 			$('li a[data-key=field_54d37487ca2f9], li a[data-key=field_54d374b0584bb], li a[data-key=field_54d3749a584ba], li a[data-key=field_54d374c4584bc], li a[data-key=field_54db7210e5fde], li a[data-key=field_54db35cfaa0ea]').hide();
 		}
-		$(document).live('acf/setup_fields', function(e, postbox){	 
-      $('#acf-field-Type option').each(function(idx, el){        
-        var $el = $(el), text;        
-        text = $el.text();        
+		$(document).live('acf/setup_fields', function(e, postbox){
+      $('#acf-field-Type option').each(function(idx, el){
+        var $el = $(el), text;
+        text = $el.text();
         if(text.indexOf('—') === -1){
           $el.addClass('parent');
-        }        
-      });      
-      $('#acf-field-Type').trigger('change');  
-      hide_fields();    
-		});	
-		$('#acf-field-Type').live('change', function(){  		
+        }
+      });
+      $('#acf-field-Type').trigger('change');
+		});
+		$('#acf-field-Type').live('change', function(){
 			parentCheck = $(this).find("option:selected").hasClass('parent')
       child = $(this).find("option:selected").prevAll('.parent').first().text();
-      parent = $(this).find("option:selected").text();      
+      parent = $(this).find("option:selected").text();
 			hide_fields();
       if((parentCheck && parent == "Consultation") || (!parentCheck && child == "Consultation") )		{
 				$('li a[data-key=field_54d3749a584ba]').show();
@@ -129,8 +128,8 @@ function my_acf_admin_head()
 				$('li a[data-key=field_54d374c4584bc]').show();
 			} else if((parentCheck && parent == "Report") || (!parentCheck && child == "Report" )) {
 				$('li a[data-key=field_54d37487ca2f9]').show();
-			}			
-		});	
+			}
+		});
 	})(jQuery);
 	</script>
 	<?php
