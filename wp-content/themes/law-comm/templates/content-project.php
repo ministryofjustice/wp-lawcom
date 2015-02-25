@@ -14,7 +14,7 @@
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/y0QLiNH5ZHM" frameborder="0" allowfullscreen></iframe>
             </div>
             <a name="related"></a>
-            <p>Any relevant details about the video</p>
+            <p>Any details about the video</p>
             
 
             <div class="related">
