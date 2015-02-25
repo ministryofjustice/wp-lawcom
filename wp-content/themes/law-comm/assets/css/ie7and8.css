@@ -1,0 +1,148 @@
+
+.container {
+	width: 970px!important;
+	position: relative;
+}
+
+#branding {
+	height: 140px;
+}
+
+#search {
+width: 36%;
+margin: 1em 0 0 0;
+position:absolute;
+top: 0;
+right: 0;
+}
+
+.navbar-default .navbar-nav li {
+	text-align: center;
+	width: 12.51%;
+	float: left;
+	margin-bottom: 4px;
+	position: relative;
+	margin-bottom: 0;
+
+}
+
+.navbar-toggle {
+	display: none;
+}
+
+.navbar-collapse.collapse {
+	display: block!important;
+}
+
+.navbar-default .navbar-nav li a, .navbar-default .navbar-nav > .open > a {
+border-right: 2px solid #006a5d;
+}
+
+.dropdown ul.dropdown-menu {
+width: 100%;
+margin-top: 0!important;
+}
+
+.dropdown ul.dropdown-menu li {
+width: 100%;
+text-align: left;
+display: inline-block;
+}
+
+.navbar-default .navbar-nav li a.last-child {
+	border-right: 0;
+}
+
+.btn-default {
+	border: none!important;
+}
+
+.intro {
+	display:inline-block!important;
+}
+
+.news ul li {
+	padding-bottom: 1em;
+}
+
+.form-inline .input-group {
+vertical-align: middle;
+width: 100%;
+}
+
+#top-banner {
+	overflow: hidden;
+	padding-bottom: 2em;
+	margin-bottom: 1em;
+}
+
+#top-banner .intro-left {
+	margin-bottom: 0;
+	border-bottom: 0;
+}
+
+
+#top-banner .intro-left ul li {
+	margin-right: 1.75em;
+	width: auto!important;
+	color: #006a5d!important;
+	list-style: disc outside none;
+	display: inline-block;
+	/*float: none;*/
+	padding: 0 0 0 1em;
+}
+
+#top-banner .intro-left ul li span {
+	display: list-item;
+}
+
+
+.col-sm-3 {
+	width: 23%;
+	float: left;
+}
+
+.col-sm-9 {
+	width: 70%;
+	float: left;
+}
+
+.col-sm-4 {
+	width: 27%;
+	float: left;
+}
+
+.col-sm-8 {
+width: 66.9%;
+float: left;
+}
+
+.col-sm-6 {
+width: 49.2%;
+float: left;
+}
+
+.form-inline .input-group > .form-control {
+width: 75%;
+}
+
+hr {
+	clear: both;
+}
+
+.archive-links li {
+	float: left;
+	width: 40%;
+}
+
+.news ul li.last-child {
+border-bottom: 0;
+}
+
+.main-item {
+border-top: 0;
+}
+
+.min-col h2, .max-col h2 {
+	margin-top: .2em;
+}

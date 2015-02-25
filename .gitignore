@@ -5,6 +5,7 @@
 *.bak
 *.swp
 Thumbs.db
+.htaccess
 
 # wordpress specific
 wp-config.php
@@ -16,6 +17,10 @@ wp-content/advanced-cache.php
 wp-content/wp-cache-config.php
 wp-content/cache/*
 wp-content/cache/supercache/*
+wp-content/plugins/akismet/*
+wp-content/plugins/hello.pho
+wp-content/languages/*
+wp-content/plugins/*
 
 # wpengine specific
 .smushit-status
@@ -59,6 +64,9 @@ wp-content/mysql.sql
 /wp-includes
 /wp-content/index.php
 /wp-content/themes/twentyten
+/wp-content/themes/twentytwelve
+/wp-content/themes/twentythirteen
+/wp-content/themes/twentyfourteen
 /wp-content/themes/index.php
 /wp-content/plugins/index.php
 
@@ -96,6 +104,4 @@ wp-content/mysql.sql
 *.asf
 *.wmv
 *.avi
-
-# Netbeans
-nbproject/*
+wp-content/plugins/hello.php
