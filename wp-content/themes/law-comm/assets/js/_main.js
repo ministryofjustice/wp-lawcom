@@ -73,7 +73,7 @@ $(document).ready(function (){
 
 /* Toggle open/close text on project pages */
 
-$('h4.panel-title a span').click(function() {
+$('h3.panel-title a span').click(function() {
     if ($(this).text() === 'Open') {
          $(this).text('Close');
     }
