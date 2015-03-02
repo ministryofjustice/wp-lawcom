@@ -7698,10 +7698,19 @@ ul.filter-links li a {
           box-shadow: none;
   border: 0;
 }
-.project .panel-group .panel .right {
+.project .panel-group .panel .toggleText {
   float: right;
-  font-size: .75em;
+  font-size: .65em;
   font-weight: normal;
+  padding: 4px 36px 6px 0;
+  background-image: url("../img/down-arrow.png");
+  background-repeat: no-repeat;
+  -webkit-background-size: 28px 28px;
+          background-size: 28px;
+  background-position: 100% 20%;
+}
+.project .panel-group .panel .toggleText.open {
+  background-image: url("../img/left-arrow.png");
 }
 .project .panel-group .panel h3 {
   font-size: 24px;
@@ -7709,8 +7718,10 @@ ul.filter-links li a {
 .project .panel-group .panel h3 a {
   color: #000000;
 }
-.project .panel-group .panel h4 {
-  margin: 1em 0;
+.project .panel-group .panel h3 a:hover,
+.project .panel-group .panel h3 a:active,
+.project .panel-group .panel h3 a:focus {
+  text-decoration: none;
 }
 .project .panel-default > .panel-heading {
   border-bottom: 0;
@@ -7743,5 +7754,100 @@ a.jumpAround {
   width: 100%;
   display: inline-block;
   margin-top: 1em;
+}
+.status {
+  display: block;
+  width: 100%;
+  margin: 2em 0;
+  padding-top: 3.5em;
+  -webkit-background-size: 100% 100%;
+          background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: top left;
+}
+@media (min-width: 480px) {
+  .status {
+    padding-top: 5.5em;
+  }
+}
+.stage1 {
+  background-image: url('../img/1.png');
+}
+.stage2 {
+  background-image: url('../img/2.png');
+}
+.stage3 {
+  background-image: url('../img/3.png');
+}
+.stage4 {
+  background-image: url('../img/4.png');
+}
+.stage5 {
+  background-image: url('../img/5.png');
+}
+ul.stages {
+  list-style: none;
+  width: 100%;
+  display: table;
+  margin-left: 0;
+}
+ul.stages li {
+  display: table-cell;
+  text-align: center;
+  margin: 0;
+  font-size: .65em;
+  font-weight: 500;
+}
+@media (min-width: 480px) {
+  ul.stages li {
+    font-size: .95em;
+  }
+}
+ul.stages li:first-child {
+  text-align: left;
+  width: 18%;
+}
+ul.stages li:nth-child(2) {
+  width: 21%;
+}
+ul.stages li:last-child {
+  text-align: right;
+}
+.project .related ul {
+  margin-left: 0;
+  list-style: none;
+}
+.project .related ul li {
+  padding: 12px;
+  background: #f2f7f6;
+  border: 1px dotted #cbe1dc;
+  margin: 12px 0;
+}
+.project .related ul li h3,
+.project .related ul li h4 {
+  margin-top: 0;
+}
+.project .related .related-details li {
+  border: 0;
+  padding: 6px 0;
+  margin: 0;
+  background: transparent;
+}
+.project .related .related-details hr {
+  border-color: #cbe1dc;
+}
+.project .related .panel-body {
+  padding: 0;
+}
+.related-details .row {
+  margin: 1em 0;
+}
+.related-details table td {
+  min-width: 140px;
+  padding: 0 0 12px 0;
+}
+.file-meta {
+  font-size: .85em;
+  color: #bbb;
 }
 /*# sourceMappingURL=main.css.map */

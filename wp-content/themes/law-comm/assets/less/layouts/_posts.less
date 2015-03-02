@@ -27,20 +27,31 @@
 		border-radius: 0;
 		box-shadow: none;
 		border: 0;
-			.right {
+			.toggleText {
 				float: right;
-				font-size: .75em;
+				font-size: .65em;
 				font-weight: normal;
+				padding: 4px 36px 6px 0;
+				background-image: url("../img/down-arrow.png");
+				background-repeat: no-repeat;
+				background-size: 28px;
+				background-position: 100% 20%;
+			}
+			.toggleText.open {
+				background-image: url("../img/left-arrow.png");
 			}
 			h3 {
 				font-size: 24px;
 					a {
 						color: @dark-text-clr;
+						&:hover, &:active, &:focus {
+							text-decoration: none;
+						}
 					}
 			}
-			h4 {
-				margin: 1em 0;
-			}
+			// h4 {
+			// 	margin: 1em 0;
+			// }
 	}
 	.panel-default > .panel-heading {
 		border-bottom: 0;
@@ -78,4 +89,114 @@ a.jumpAround {
 	width: 100%;
 	display: inline-block;
 	margin-top: 1em;
+}
+
+.status {
+	display: block;
+	width: 100%;
+	margin: 2em 0;
+	padding-top: 3.5em;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: top left;
+		@media (min-width: @screen-xs) {
+			padding-top: 5.5em;
+		}
+}
+
+.stage1 {
+	background-image: url('../img/1.png');
+}
+.stage2 {
+	background-image: url('../img/2.png');
+}
+.stage3 {
+	background-image: url('../img/3.png');
+}
+.stage4 {
+	background-image: url('../img/4.png');
+}
+.stage5 {
+	background-image: url('../img/5.png');
+}
+
+ul.stages {
+	list-style: none;
+	width: 100%;
+	display: table;
+	margin-left: 0;
+	li {
+		display: table-cell;
+		text-align: center;
+		margin: 0;
+		font-size: .65em;
+		font-weight: 500;
+			@media (min-width: @screen-xs) {
+				font-size: .95em;
+			}
+			&:first-child {
+				text-align: left;
+				width: 18%;
+			}
+			&:nth-child(2){
+				width: 21%;
+			}
+			&:last-child {
+				text-align: right;
+			}
+	}
+}
+
+.project {
+	.related {
+		ul {
+			margin-left: 0;
+			list-style: none;
+				li {
+					padding: 12px;
+					background: lighten(@brand-secondary, 12%);
+					border: 1px dotted @brand-secondary;
+					margin: 12px 0;
+						// &:nth-child(even) {
+						// 	background: #f5f5f5;
+							
+						// }
+						h3, h4 {
+							margin-top: 0;
+						}
+				}
+		}
+		.related-details {
+			li {
+				border: 0;
+				padding: 6px 0;
+				margin: 0;
+				background: transparent;
+			}
+			hr {
+				border-color: @brand-secondary;
+			}
+		}
+		.panel-body {
+			padding: 0;
+		}
+	}
+}
+
+.related-details {
+	.row {
+		margin: 1em 0;
+	}
+	table {
+
+		td {
+			min-width: 140px;
+			padding: 0 0 12px 0;
+		}
+	}
+}
+
+.file-meta {
+	font-size:.85em;
+	color: #bbb;
 }
