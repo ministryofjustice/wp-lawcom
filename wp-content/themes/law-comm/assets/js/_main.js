@@ -73,7 +73,7 @@ $(document).ready(function (){
 
 /* Toggle open/close text on project pages */
 
-$('#headingOneA h3.panel-title a span').click(function() {
+$('h3.panel-title a span').click(function() {
     if ($(this).text() === 'Open') {
          $(this).text('Close');
          $(this).addClass('open');
@@ -81,35 +81,5 @@ $('#headingOneA h3.panel-title a span').click(function() {
     else {
         $(this).text('Open');
         $(this).removeClass('open');
-    }
-});
-$('#headingTwoA h3.panel-title a span').click(function() {
-    if ($(this).text() === 'Open') {
-         $(this).text('Close');
-         $(this).addClass('open');
-    }
-    else {
-        $(this).text('Open');
-        $(this).removeClass('open');        
-    }
-});
-$('#headingThreeA h3.panel-title a span').click(function() {
-    if ($(this).text() === 'Open') {
-         $(this).text('Close');
-         $(this).addClass('open');         
-    }
-    else {
-        $(this).text('Open');
-        $(this).removeClass('open');        
-    }
-});
-$('#headingFourA h3.panel-title a span').click(function() {
-    if ($(this).text() === 'Open') {
-         $(this).text('Close');
-         $(this).addClass('open');         
-    }
-    else {
-        $(this).text('Open');
-        $(this).removeClass('open');        
     }
 });
