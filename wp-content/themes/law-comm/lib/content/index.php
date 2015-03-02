@@ -4,7 +4,7 @@ require( trailingslashit( get_template_directory() ) . 'advanced-custom-fields/a
 require( trailingslashit( get_template_directory() ) . 'acf-gallery/acf-gallery.php' );
 require( trailingslashit( get_template_directory() ) . 'acf-options-page/acf-options-page.php' );
 require( trailingslashit( get_template_directory() ) . 'acf-repeater/acf-repeater.php' );
-// require( trailingslashit( get_template_directory() ) . 'lib/content/metaboxes.php' );
+require( trailingslashit( get_template_directory() ) . 'lib/content/metaboxes.php' );
 require( trailingslashit( get_template_directory() ) . 'lib/content/custom-queries.php' );
 
 $cpts = scandir( get_template_directory() . "/lib/content/cpt/" );
