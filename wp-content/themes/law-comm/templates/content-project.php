@@ -53,15 +53,15 @@
       <div class="related">
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
           <?php
-          $document_types = ['report','consultation','other-project-documents-and-downloads','project-related-documents-and-downloads'];
+          $document_types = array('report','consultation','other-project-documents-and-downloads','project-related-documents-and-downloads');
           $i = 0;
           foreach($document_types as $document_type):
           $title = get_the_title();
-          $args = [
+          $args = array(
             'post_type' => 'document',
             'document_type' => $document_type,
             'project' => $title
-          ];
+          );
           $query = new WP_Query($args);
           ?>
           <?php if($query->have_posts()): ?>
