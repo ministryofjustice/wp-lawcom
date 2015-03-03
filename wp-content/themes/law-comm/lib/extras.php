@@ -21,3 +21,10 @@ function roots_wp_title($title) {
 }
 add_filter('wp_title', 'roots_wp_title', 10);
 
+function human_filesize($bytes, $dec = 0)
+{
+    $size   = array('B', 'kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB');
+    $factor = floor((strlen($bytes) - 1) / 3);
+
+    return sprintf("%.{$dec}f", $bytes / pow(1024, $factor)) . @$size[$factor];
+}
