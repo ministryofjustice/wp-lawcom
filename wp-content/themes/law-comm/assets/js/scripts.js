@@ -3841,21 +3841,24 @@ $(document).ready(UTIL.loadEvents);
 //Add class to last menu item for old IE
 
 $(document).ready(function (){
-  $('.navbar-default .navbar-nav li:last-child a, .news ul li:last-child').addClass('last-child');
-  $('.datepicker').datepicker();
-  $('.input-daterange').datepicker({
-});
-});
+    $('.navbar-default .navbar-nav li:last-child a, .news ul li:last-child').addClass('last-child');
+    $('.datepicker').datepicker();
+    $('.input-daterange').datepicker({
+  });
+
 
 /* Toggle open/close text on project pages */
 
-$('h3.panel-title a span').click(function() {
-    if ($(this).text() === 'Open') {
-         $(this).text('Close');
-         $(this).addClass('open');
-    }
-    else {
-        $(this).text('Open');
-        $(this).removeClass('open');
-    }
+  $('h3.panel-title a span').click(function() {
+      if ($(this).text() === 'Open') {
+           $(this).text('Close');
+           $(this).addClass('open');
+      }
+      else {
+          $(this).text('Open');
+          $(this).removeClass('open');
+      }
+  });
+
 });
+
