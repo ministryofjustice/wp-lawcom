@@ -1,4 +1,4 @@
-<?php 
+<?php
 if(function_exists("register_field_group"))
 {
 	register_field_group(array (
@@ -139,9 +139,12 @@ if(function_exists("register_field_group"))
 				'key' => 'field_54d4950c50af6',
 				'label' => 'Parent Project',
 				'name' => 'parent_project',
-				'type' => 'page_link',
+				'type' => 'post_object',
 				'post_type' => array (
 					0 => 'project',
+				),
+				'taxonomy' => array (
+					0 => 'all',
 				),
 				'allow_null' => 1,
 				'multiple' => 0,
