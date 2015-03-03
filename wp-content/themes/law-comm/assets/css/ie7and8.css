@@ -146,3 +146,87 @@ border-top: 0;
 .min-col h2, .max-col h2 {
 	margin-top: .2em;
 }
+
+/* Footer */
+
+.content-info #footer-links ul {
+ 			display: block;
+ 			width: 100%;
+ 			overflow: hidden;
+ 			padding: 12px 0 0 0;
+ 		}
+	 			
+.content-info #footer-links ul li {
+	display: inline-block;
+	width: auto;
+	font-size: 1em;
+	padding: 0 12px 0 12px;
+	margin-top: 12px;
+	text-align: center;
+	margin-top: 0;
+	width: auto;
+	float: left;
+	white-space: nowrap;
+	border-right: 2px solid #000;
+	}
+
+.content-info #footer-links ul li a {
+	color: @dark-text-clr;
+	}
+
+
+/* Project pages */
+
+ul.stages  {
+		width: 100%;
+		margin-top: 6em;
+}
+
+ul.stages li {
+		display: inline-block;
+		text-align: center;
+		margin: 0;
+		font-size: .85em;
+		font-weight: 500;
+		width: 19.5%;
+		float: left;
+}
+.stage1 {
+	background-image: url('../img/1-ie.png');
+}
+.stage2 {
+	background-image: url('../img/2-ie.png');
+}
+.stage3 {
+	background-image: url('../img/3-ie.png');
+}
+.stage4 {
+	background-image: url('../img/4-ie.png');
+}
+.stage5 {
+	background-image: url('../img/5-ie.png');
+}
+
+.panel-heading {
+	position: relative;
+}
+.project .panel-group .panel .toggleText {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	background-image: none;
+	padding: 0;
+
+}
+
+.project .panel-group .panel .toggleText.open {
+	background-image: none;
+}
+
+.related-details .row .col-sm-6 ul li {
+	height: 30px;
+}
+
+a.jumpAround {
+ width: 85%; 
+}
