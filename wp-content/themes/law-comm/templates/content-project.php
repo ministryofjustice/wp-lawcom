@@ -40,7 +40,7 @@
       <?php } ?>
       <?php the_field('further_description');?>
       <?php if (get_field('youtube_video')): ?>
-        <h2>Relevant video</h2>
+        <h2>Related video</h2>
         <div class="videoWrapper">
           <?= _e( wp_oembed_get( get_field( 'youtube_video' ) ) ); ?>
         </div>
@@ -89,7 +89,7 @@
                             <?php while ( have_rows('files') ) : the_row(); ?>
                               <?php if(get_sub_field('file')): ?>
                                 <?php $img = get_headers(get_sub_field('file'), 1); ?>
-                                <li><a href="<?= get_sub_field('file'); ?>"><?= get_sub_field('title'); ?></a> <span class="file-meta">PDF, <?= human_filesize($img["Content-Length"]) ?></span></li>
+                                <li><a href="<?= get_sub_field('file'); ?>"><?= get_sub_field('title'); ?></a> <span class="file-meta">PDF, <?php if($img[0] != 'HTTP/1.0 404 Not Found'): echo human_filesize($img["Content-Length"]); endif; ?></span></li>
                               <?php endif; ?>
                             <?php endwhile; ?>
                             </ul>
