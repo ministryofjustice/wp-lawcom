@@ -7455,11 +7455,41 @@ figure.alignnone {
   color: #000000;
 }
 .content-info #footer-links {
-  display: inline-block;
-  width: auto;
-  margin: 9em auto 2.5em auto;
+  margin: 9em 0 2.5em 0;
+  display: block;
+  overflow: hidden;
 }
-.content-info #footer-links a {
+.content-info #footer-links ul {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  padding: 12px 0 0 0;
+}
+.content-info #footer-links ul li {
+  display: inline-block;
+  width: 24%;
+  font-size: .9em;
+  padding: 0 12px 0 12px;
+  margin-top: 12px;
+  text-align: center;
+}
+@media (min-width: 480px) {
+  .content-info #footer-links ul li {
+    margin-top: 0;
+    width: auto;
+    white-space: nowrap;
+    border-right: 2px solid #000000;
+  }
+  .content-info #footer-links ul li:last-child {
+    border-right: 0;
+  }
+}
+@media (min-width: 992px) {
+  .content-info #footer-links ul li {
+    font-size: 1em;
+  }
+}
+.content-info #footer-links ul a {
   color: #000000;
 }
 #top-banner {
