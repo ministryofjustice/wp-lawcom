@@ -22,4 +22,7 @@
     </ul>
   </nav>
 <?php endif; ?>
-<?php $wp_query = null; $wp_query = $temp; wp_reset_query(); ?>
+<?php
+$wp_query = null;
+if(isset($temp)) { $wp_query = $temp; }
+wp_reset_query(); ?>
