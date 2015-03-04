@@ -170,7 +170,7 @@
 
         <?php if($field = get_field('commissioners')): ?>
         <h4>Commissioner</h4>
-        <p><?php $field = get_field('commissioners'); $commissioners = get_term($field[0], "commissioner"); echo $commissioners->name; ?></p>
+        <p><?php $commissioners = get_term($field[0], "commissioner"); echo $commissioners->name; ?></p>
         <?php endif; ?>
 
         <?php if($field = get_field('start_date')): ?>
