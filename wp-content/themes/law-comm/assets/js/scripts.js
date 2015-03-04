@@ -3860,5 +3860,7 @@ $(document).ready(function (){
       }
   });
 
+  $('.panel-collapse').removeClass('in');
+
 });
 

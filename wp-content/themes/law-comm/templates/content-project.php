@@ -72,7 +72,7 @@
                   <?php $docType = get_term_by('slug', $document_type, "document_type"); echo $docType->name; ?><span class="toggleText">Open</span></a>
               </h3>
             </div>
-            <div id="collapse<?= $i; ?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOneA">
+            <div id="collapse<?= $i; ?>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOneA">
               <div class="panel-body">
                 <ul>
                 <?php while($query->have_posts()): $query->the_post(); ?>
