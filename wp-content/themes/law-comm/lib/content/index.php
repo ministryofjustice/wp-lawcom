@@ -81,7 +81,7 @@ function change_title($post_id, $post, $update) {
   	}
   }
 }
-//add_action('save_post', 'change_title', 10, 3);
+add_action('save_post', 'change_title', 10, 3);
 
 /**
  * remove_document_meta function.
