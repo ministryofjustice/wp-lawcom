@@ -7779,7 +7779,7 @@ ul.filter-links li a {
 }
 a.jumpAround {
   background: #f0f0f0;
-  padding: 20px;
+  padding: 20px 20px 0 20px;
   font-size: 1em;
   width: 100%;
   display: inline-block;
