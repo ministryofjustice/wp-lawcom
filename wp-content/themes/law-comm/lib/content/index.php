@@ -63,7 +63,7 @@ add_action('init', 'remove_editor_init');
  * @return void
  */
 function change_title($post_id, $post, $update) {
-  if ($post->post_type == 'document' || $post->post_type == 'project' ) {
+  if (!empty($post) && ($post->post_type == 'document' || $post->post_type == 'project' )) {
     $title = get_field('title',$post_id);
     $content = get_field('description',$post_id);
     $new_slug = sanitize_title( $post->post_title );
@@ -81,7 +81,7 @@ function change_title($post_id, $post, $update) {
   	}
   }
 }
-add_action('save_post', 'change_title', 10, 3);
+//add_action('save_post', 'change_title', 10, 3);
 
 /**
  * remove_document_meta function.
