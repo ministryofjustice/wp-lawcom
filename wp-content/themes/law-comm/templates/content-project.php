@@ -1,9 +1,10 @@
 <?php while (have_posts()) : the_post(); ?>
+<?php $project_title = get_the_id(); ?>
 <article <?php post_class(); ?>>
   <header><h1 class="entry-title"><?php the_title(); ?></h1></header>
   <div class="row">
     <div class="col-sm-8 max-col">
-      <?php the_field('description');?>
+      
       <h2>Current project status</h2>
       <div class="hidden">
         <p>The current status of this project is: <strong><?php the_field('implementation_status');  ?></strong>.</p>
@@ -38,6 +39,7 @@
         } ?>
         <div aria-hidden="true" class="status stage<?= $i ?>"><ul class="stages"><li>Pre-project</li><li>Pre-consultation</li><li>Consultation</li><li>Analysis of <br>responses</li><li>Complete</li></ul></div>
       <?php } ?>
+      <?php the_field('description');?>
       <?php the_field('further_description');?>
       <?php if (get_field('youtube_video')): ?>
         <h2>Related video</h2>
@@ -53,15 +55,21 @@
       <div class="related">
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
           <?php
-          $document_types = array('report','consultation','other-project-documents-and-downloads','project-related-documents-and-downloads');
+          $document_types = array('reports-related-documents','consultations-related-documents','other-documents-more-information');
           $i = 0;
           foreach($document_types as $document_type):
-          $title = get_the_title();
+          $post = get_post($project_title);
           $args = array(
             'post_type' => 'document',
             'document_type' => $document_type,
-            'project' => $title
+            'meta_query' => array(array(
+              'key' => 'project',
+              'value' => $project_title,
+              'compare' => '='
+            ))
+    
           );
+
           $query = new WP_Query($args);
           ?>
           <?php if($query->have_posts()): ?>
@@ -80,7 +88,7 @@
                   <li>
                     <div class="related-details">
                       <h3><?php if(get_field('title')): ?><?= get_field('title'); ?><?php else: ?><?php $taxoField = get_field('Type', get_the_ID()); $docType = get_term($taxoField[0], "document_type"); echo $docType->name; ?><?php endif; ?></h3>
-                      <?php the_excerpt(); ?>
+                      <!--<?php the_excerpt(); ?>-->
                       <div class="row">
                           <?php if( have_rows('files') ): ?>
                           <div class="col-sm-<?php if(have_rows('links')): ?>6<?php else: ?>12<?php endif; ?>">
@@ -151,11 +159,14 @@
         <?php $i++; ?>
         <?php endforeach; ?>
         <?php wp_reset_query(); ?>
+        <?php wp_reset_postdata(); ?>
+        <?php $query = NULL; ?>
         </div>
       </div>
     </div>
+
     <div class="col-sm-4 min-col">
-      <a href="#related" class="jumpAround">Related documents and downloads</a>
+      <a href="#related" class="jumpAround">Documents and downloads</a>
       <div class="project-details">
         <h3>Project details</h3>
         <?php if($field = get_field('areas_of_law')): ?>
