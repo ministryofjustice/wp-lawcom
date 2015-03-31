@@ -38,6 +38,8 @@
               break;
         } ?>
         <div aria-hidden="true" class="status stage<?= $i ?>"><ul class="stages"><li>Pre-project</li><li>Pre-consultation</li><li>Consultation</li><li>Analysis of <br>responses</li><li>Complete</li></ul></div>
+
+        <p><strong><?php the_field('status');  ?></strong></p>
       <?php } ?>
       <?php the_field('description');?>
       <?php the_field('further_description');?>
