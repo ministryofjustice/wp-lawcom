@@ -139,12 +139,9 @@ if(function_exists("register_field_group"))
 				'key' => 'field_54d4950c50af6',
 				'label' => 'Parent Project',
 				'name' => 'parent_project',
-				'type' => 'post_object',
+				'type' => 'page_link',
 				'post_type' => array (
 					0 => 'project',
-				),
-				'taxonomy' => array (
-					0 => 'all',
 				),
 				'allow_null' => 1,
 				'multiple' => 0,
@@ -157,15 +154,6 @@ if(function_exists("register_field_group"))
 				'default_value' => '',
 				'toolbar' => 'basic',
 				'media_upload' => 'no',
-			),
-			array (
-				'key' => 'field_54ef03cda5b69',
-				'label' => 'Further description',
-				'name' => 'further_description',
-				'type' => 'wysiwyg',
-				'default_value' => '',
-				'toolbar' => 'full',
-				'media_upload' => 'yes',
 			),
 			array (
 				'key' => 'field_54ef392a7a751',
@@ -381,15 +369,6 @@ if(function_exists("register_field_group"))
 				'display_format' => 'dd/mm/yy',
 				'first_day' => 1,
 			),
-			// array (
-			// 	'key' => 'field_54d364ba697fb',
-			// 	'label' => 'Description',
-			// 	'name' => 'description',
-			// 	'type' => 'wysiwyg',
-			// 	'default_value' => '',
-			// 	'toolbar' => 'basic',
-			// 	'media_upload' => 'no',
-			// ),
 			array (
 				'key' => 'field_54d36479697f7',
 				'label' => 'Options',
@@ -581,3 +560,5 @@ if(function_exists("register_field_group"))
 		'menu_order' => 0,
 	));
 }
+
+
