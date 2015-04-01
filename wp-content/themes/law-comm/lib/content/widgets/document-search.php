@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Adds Document_Widget widget.
  */
@@ -24,64 +24,55 @@ class Document_Widget extends WP_Widget {
 	 * @param array $instance Saved values from database.
 	 */
 	public function widget( $args, $instance ) {
+    if(is_post_type_archive( 'document' )):
 		echo $args['before_widget'];
   ?>
 		<h3>Search Documents</h3>
 		<form action="/document" method="get">
   		<div class="form-group">
         <label for="title">Project Title</label>
-        <select name="title" id="title" class="form-control">
-          <option value="">--- Choose Project ---</option>
-          <?php $pages = get_posts('numberposts=10&post_type=project'); ?>
-          <?php foreach($pages as $page): ?>
-            <option value="<?= $page->ID ?>"<?php if(get_query_var('project') == $page->ID) { echo ' selected="selected"'; } ?>><?= $page->post_title ?></option>
-          <?php endforeach; ?>
-        </select>
+        <input type="text" name="title" id="title" class="form-control" value="<?= test_input(get_query_var( 'title' )); ?>">
       </div>
-      
+
       <div class="form-group">
         <label for="title">Document Title</label>
-        <select name="doc-title" id="doc-title" class="form-control">
-          <option value="">--- Choose Document ---</option>
-          <?php $pages = get_posts('numberposts=10&post_type=document'); ?>
-          <?php foreach($pages as $page): ?>
-            <option value="<?= $page->ID ?>"<?php if(get_query_var('document') == $page->ID) { echo ' selected="selected"'; } ?>><?= $page->post_title ?></option>
-          <?php endforeach; ?>
-        </select>
+        <input type="text" name="doc-title" id="doc-title" class="form-control" value="<?= test_input(get_query_var( 'doc-title' )); ?>">
       </div>
-      
+
       <?php $areas = get_terms('team', 'hide_empty=0'); if(!empty($areas)): ?>
       <div class="form-group">
         <label for="publication">Team</label>
-        <?php 
+        <?php
           wp_dropdown_categories(array(
             'show_option_all' => '--- Choose Team ---',
             'taxonomy' => 'team',
             'hide_empty' => 0,
             'hierarchical' => 1,
             'class' => 'form-control',
-            'name' => 'teams'
-          )); 
-        ?> 
+            'name' => 'teams',
+            'selected' => test_input(get_query_var( 'teams' ))
+          ));
+        ?>
       </div>
       <?php endif; ?>
-      
+
       <?php $areas = get_terms('document_type', 'hide_empty=0'); if(!empty($areas)): ?>
       <div class="form-group">
         <label for="publication">Document Type</label>
-        <?php 
+        <?php
           wp_dropdown_categories(array(
             'show_option_all' => '--- Choose Type ---',
             'taxonomy' => 'document_type',
             'hide_empty' => 0,
             'hierarchical' => 1,
             'class' => 'form-control',
-            'name' => 'publication'
-          )); 
-        ?> 
+            'name' => 'publication',
+            'selected' => test_input(get_query_var( 'publication' ))
+          ));
+        ?>
       </div>
       <?php endif; ?>
-    
+
       <?php $areas = get_terms('areas_of_law'); if(!empty($areas)): ?>
       <div class="form-group">
         <label for="area_of_law">Area of Law</label>
@@ -91,28 +82,25 @@ class Document_Widget extends WP_Widget {
             <option value="<?= $area->term_id ?>"<?php if(get_query_var('area_of_law') == $area->term_id) { echo ' selected="selected"'; } ?>><?= $area->name ?></option>
           <?php endforeach; ?>
         </select>
-      </div>      
-      <label for="start">Publication Date</label>
-      <div class="input-daterange input-group form-group">
-        <input type="text" class="input-sm form-control" name="start" />
-        <span class="input-group-addon">to</span>
-        <input type="text" class="input-sm form-control" name="end" />
-      </div>      
-      <div class="form-group">
-        <label for="lccp">LC/CP Number</label>
-        <input type="text" class="form-control" id="lccp" name="lccp" placeholder="Enter LC/CP" value="<?= get_query_var('lccp'); ?>">
-      </div>
-      <div class="form-group">
-        <label for="keyword">Keyword</label>
-        <input type="text" class="form-control" id="keyword" name="keyword" placeholder="Enter keyword" value="<?= get_query_var('keyword'); ?>">
       </div>
       <?php endif; ?>
+      <label for="start">Publication Date</label>
+      <div class="input-daterange input-group form-group">
+        <input type="text" class="input-sm form-control" name="start" value="<?= test_input(get_query_var( 'start' )); ?>" />
+        <span class="input-group-addon">to</span>
+        <input type="text" class="input-sm form-control" name="end" value="<?= test_input(get_query_var( 'end' )); ?>" />
+      </div>
+      <div class="form-group">
+        <label for="lccp">LC/CP Number</label>
+        <input type="text" class="form-control" id="lccp" name="lccp" placeholder="Enter LC/CP" value="<?= test_input(get_query_var('lccp')); ?>">
+      </div>
       <input type="submit" value="Search" class="btn btn-primary">
-      <input type="reset" value="Clear" class="btn btn-default">	
+      <input type="reset" value="Clear" class="btn btn-default">
 		</form>
-		  
-	<?php	
+
+	<?php
 		echo $args['after_widget'];
+    endif;
 	}
 
 	/**
@@ -137,7 +125,7 @@ class Document_Widget extends WP_Widget {
 	 * @return array Updated safe values to be saved.
 	 */
 	public function update( $new_instance, $old_instance ) {
-	
+
 	}
 
 } // class Document_Widget

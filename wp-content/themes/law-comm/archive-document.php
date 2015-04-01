@@ -7,13 +7,13 @@
   <?php get_search_form(); ?>
 <?php endif; ?>
 
-<?php 
-  $wp_query = document_query(); 
+<?php
+  $wp_query = document_query();
   //p2p_type( 'projects_to_documents' )->each_connected( $wp_query );
 ?>
 <?php if ( $wp_query->have_posts() ) : ?>
 <?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
-  <?php $project = get_field('project');  ?> 
+  <?php $project = get_field('project');  ?>
   <?php if($project): ?>
     <a href="/project/<?= $project->post_name; ?>/#<?= $post->post_name; ?>">Project: <?= $project->title; ?> | Publication: <?= $post->title; ?></a><br />
   <?php endif; ?>
@@ -29,4 +29,9 @@
     </ul>
   </nav>
 <?php endif; ?>
-<?php $wp_query = null; $wp_query = $temp; wp_reset_query(); ?>
+<?php
+if(!empty($temp)) {
+  $wp_query = null; $wp_query = $temp;
+}
+wp_reset_query();
+?>

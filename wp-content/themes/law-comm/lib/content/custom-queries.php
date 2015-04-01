@@ -57,26 +57,21 @@ function project_query() {
 
   $title = test_input(get_query_var('title'));
   if(!empty($title)) {
-    $args['p'] = $title;
-  }
-
-  $keyword = test_input(get_query_var('keyword'));
-  if(!empty($keyword)) {
     $args['meta_query'][] = array(
       'relation' => 'OR',
       array(
         'key' => 'title',
-        'value' => $keyword,
+        'value' => $title,
         'compare' => 'LIKE',
       ),
       array(
         'key' => 'description',
-        'value' => $keyword,
+        'value' => $title,
         'compare' => 'LIKE',
       ),
       array(
         'key' => 'keywords',
-        'value' => $keyword,
+        'value' => $title,
         'compare' => 'LIKE',
       ),
     );
@@ -122,7 +117,24 @@ function document_query() {
     );
 
     if(!empty($title)) {
-      $projectArgs['p'] = $title;
+      $projectArgs['meta_query'][] = array(
+        'relation' => 'OR',
+        array(
+          'key' => 'title',
+          'value' => $title,
+          'compare' => 'LIKE',
+        ),
+        array(
+          'key' => 'description',
+          'value' => $title,
+          'compare' => 'LIKE',
+        ),
+        array(
+          'key' => 'keywords',
+          'value' => $title,
+          'compare' => 'LIKE',
+        ),
+      );
     }
 
     if(!empty($area_of_law)) {
@@ -139,7 +151,7 @@ function document_query() {
       );
     }
 
-    if($projectArgs['tax_query'] && count($projectArgs['tax_query']) > 1) {
+    if(!empty($projectArgs['tax_query']) && count($projectArgs['tax_query']) > 1) {
       $projectArgs['tax_query']['relation'] = 'AND';
     }
 
@@ -150,8 +162,10 @@ function document_query() {
     }
   }
 
-  $temp = $wp_query;
-  $wp_query = NULL;
+  if(!empty($wp_query)) {
+    $temp = $wp_query;
+    $wp_query = NULL;
+  }
   $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
   if(!empty($projectIDs)) {
@@ -175,7 +189,24 @@ function document_query() {
 
   $doc_title = test_input(get_query_var('doc-title'));
   if(!empty($doc_title)) {
-    $args['p'] = $doc_title;
+    $args['meta_query'][][] = array(
+      'relation' => 'OR',
+      array(
+        'key' => 'title',
+        'value' => $doc_title,
+        'compare' => 'LIKE',
+      ),
+      array(
+        'key' => 'description',
+        'value' => $doc_title,
+        'compare' => 'LIKE',
+      ),
+      array(
+        'key' => 'keywords',
+        'value' => $doc_title,
+        'compare' => 'LIKE',
+      ),
+    );
   }
 
   $lccp = test_input(get_query_var('lccp'));
@@ -184,28 +215,6 @@ function document_query() {
       'key' => 'reference_number',
       'value' => $lccp,
       'compare' => 'LIKE',
-    );
-  }
-
-  $keyword = test_input(get_query_var('keyword'));
-  if(!empty($keyword)) {
-    $args['meta_query'][] = array(
-      'relation' => 'OR',
-      array(
-        'key' => 'title',
-        'value' => $keyword,
-        'compare' => 'LIKE',
-      ),
-      array(
-        'key' => 'description',
-        'value' => $keyword,
-        'compare' => 'LIKE',
-      ),
-      array(
-        'key' => 'keywords',
-        'value' => $keyword,
-        'compare' => 'LIKE',
-      ),
     );
   }
 
@@ -220,9 +229,12 @@ function document_query() {
   $start = test_input(get_query_var('start'));
   $end = test_input(get_query_var('end'));
   if(!empty($start) && !empty($end)) {
+    $stime = DateTime::createFromFormat("m/d/Y", $start);
+    $etime = DateTime::createFromFormat("m/d/Y", $end);
+
     $args['meta_query'][] = array(
       'key' => 'publication_date',
-      'value' => array(date("ymd", strtotime($start)),date("ymd", strtotime($end))),
+      'value' => array(date_format($stime, 'Y-m-d'),date_format($etime, 'Y-m-d')),
       'compare' => 'BETWEEN',
       'type' => 'DATE'
     );

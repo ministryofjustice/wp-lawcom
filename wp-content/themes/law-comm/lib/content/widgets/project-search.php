@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Adds Project_Widget widget.
  */
@@ -24,19 +24,14 @@ class Project_Widget extends WP_Widget {
 	 * @param array $instance Saved values from database.
 	 */
 	public function widget( $args, $instance ) {
+    if(is_post_type_archive( 'project' )):
 		echo $args['before_widget'];
   ?>
 		<h3>Search Projects</h3>
 		<form action="/project" method="get">
   		<div class="form-group">
         <label for="title">Title</label>
-        <select name="title" id="title" class="form-control">
-          <option value="">--- Choose Project ---</option>
-          <?php $pages = get_posts('numberposts=10&post_type=project'); ?>
-          <?php foreach($pages as $page): ?>
-            <option value="<?= $page->ID ?>"<?php if(get_query_var('title') == $page->ID) { echo ' selected="selected"'; } ?>><?= $page->post_title ?></option>
-          <?php endforeach; ?>
-        </select>
+        <input type="text" name="title" id="title" class="form-control" value="<?= test_input(get_query_var( 'title' )); ?>">
       </div>
       <?php $areas = get_terms('areas_of_law'); if(!empty($areas)): ?>
       <div class="form-group">
@@ -49,16 +44,13 @@ class Project_Widget extends WP_Widget {
         </select>
       </div>
       <?php endif; ?>
-      <div class="form-group">
-        <label for="keyword">Keyword</label>
-        <input type="text" class="form-control" id="keyword" name="keyword" placeholder="Enter keyword" value="<?= get_query_var('keyword'); ?>">
-      </div>
       <input type="submit" value="Search" class="btn btn-primary">
-      <input type="reset" value="Clear" class="btn btn-default">	
+      <input type="reset" value="Clear" class="btn btn-default">
 		</form>
-		  
-	<?php	
+
+	<?php
 		echo $args['after_widget'];
+    endif;
 	}
 
 	/**
@@ -83,7 +75,7 @@ class Project_Widget extends WP_Widget {
 	 * @return array Updated safe values to be saved.
 	 */
 	public function update( $new_instance, $old_instance ) {
-	
+
 	}
 
 } // class Project_Widget

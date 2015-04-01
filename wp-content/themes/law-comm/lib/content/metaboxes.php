@@ -356,7 +356,7 @@ if(function_exists("register_field_group"))
 				'label' => 'Publication Date',
 				'name' => 'publication_date',
 				'type' => 'date_picker',
-				'date_format' => 'dd/mm/yy',
+				'date_format' => 'yy-mm-dd',
 				'display_format' => 'dd/mm/yy',
 				'first_day' => 1,
 			),
@@ -365,7 +365,7 @@ if(function_exists("register_field_group"))
 				'label' => 'Response Date',
 				'name' => 'response_date',
 				'type' => 'date_picker',
-				'date_format' => 'dd/mm/yy',
+				'date_format' => 'yy-mm-dd',
 				'display_format' => 'dd/mm/yy',
 				'first_day' => 1,
 			),
@@ -560,5 +560,3 @@ if(function_exists("register_field_group"))
 		'menu_order' => 0,
 	));
 }
-
-
