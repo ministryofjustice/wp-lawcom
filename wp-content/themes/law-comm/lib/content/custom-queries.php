@@ -92,6 +92,7 @@ function project_query() {
   $args['post_type'] = 'project';
   $args['paged'] = $paged;
   $args['posts_per_page'] = 10;
+  $args['order'] = 'ASC';
   $wp_query = new WP_Query();
   $wp_query->query($args);
 
@@ -243,6 +244,7 @@ function document_query() {
   $args['post_type'] = 'document';
   $args['paged'] = $paged;
   $args['posts_per_page'] = 10;
+  $args['order'] = 'ASC';
   $wp_query = new WP_Query();
   $wp_query->query($args);
   return $wp_query;
