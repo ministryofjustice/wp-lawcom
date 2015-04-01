@@ -83,13 +83,33 @@
 }
 
 a.jumpAround {
-	background: #f0f0f0;
-	padding: 20px 20px 0 20px;
+	margin: 0 0 24px 0;
+	padding: 10px;
+	background: @brand-primary;
+	color: @light-text-clr;
 	font-size: 1em;
 	width: 100%;
 	display: inline-block;
 	margin-top: 1em;
+	text-align: center;
+	position: relative;
+		&:after {
+		top: 100%;
+		left: 50%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+		border-color: rgba(136, 183, 213, 0);
+		border-top-color: @brand-primary;
+		border-width: 12px;
+		margin-left: -12px;
+	}
 }
+
+
 
 .status {
 	display: block;
