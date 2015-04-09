@@ -86,7 +86,7 @@ Template Name: Homepage
 				</ul>
 
 				<div class="all-news">
-					<a href="<?php bloginfo('site_url'); ?>/news/" class= "float-right em-link">All news ></a>
+					<a href="<?php bloginfo('url'); ?>/news/" class= "float-right em-link">All news ></a>
 				</div>
 				
 			</div>
