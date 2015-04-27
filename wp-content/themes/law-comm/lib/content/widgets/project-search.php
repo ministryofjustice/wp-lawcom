@@ -30,7 +30,7 @@ class Project_Widget extends WP_Widget {
 		<h3>Search Projects</h3>
 		<form action="/project" method="get">
   		<div class="form-group">
-        <label for="title">Title</label>
+        <label for="title">Title or keyword</label>
         <input type="text" name="title" id="title" class="form-control" value="<?= test_input(get_query_var( 'title' )); ?>">
       </div>
       <?php $areas = get_terms('areas_of_law'); if(!empty($areas)): ?>
