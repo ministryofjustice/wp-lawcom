@@ -222,10 +222,10 @@
         <p><?php the_field('end_date');  ?></p>
         <?php endif; ?>
 
-        <?php if($parent = get_field('parent_project')): ?>
+        <?php /*<?php if($parent = get_field('parent_project')): ?>
         <h4>Parent project</h4>
         <p><a href="<?= get_permalink($parent->ID ); ?>"><?php echo get_the_title( $parent->ID ); ?></p>
-        <?php endif; ?>
+        <?php endif; ?>*/ ?>
       </div>
     </div>
   </div>
