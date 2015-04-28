@@ -4,7 +4,9 @@ require( trailingslashit( get_template_directory() ) . 'advanced-custom-fields/a
 require( trailingslashit( get_template_directory() ) . 'acf-gallery/acf-gallery.php' );
 require( trailingslashit( get_template_directory() ) . 'acf-options-page/acf-options-page.php' );
 require( trailingslashit( get_template_directory() ) . 'acf-repeater/acf-repeater.php' );
+require( trailingslashit( get_template_directory() ) . 'acf-field-date-time-picker/date_time_picker-v4.php' );
 require( trailingslashit( get_template_directory() ) . 'lib/content/metaboxes.php' );
+require( trailingslashit( get_template_directory() ) . 'lib/content/document_meta_box.php' );
 require( trailingslashit( get_template_directory() ) . 'lib/content/custom-queries.php' );
 
 $cpts = scandir( get_template_directory() . "/lib/content/cpt/" );
@@ -143,3 +145,31 @@ function my_acf_admin_head()
 	<?php
 }
 add_action('acf/input/admin_head', 'my_acf_admin_head');
+
+function my_acf_admin_head2() {
+    ?>
+    <script type="text/javascript">
+    (function($) {
+        $(document).ready(function(){
+            if($('.field_key-field_553e9161db1f9')) {
+              $('.field_key-field_553e9161db1f9').append( $('#title') );
+              $('#title-prompt-text').hide();
+            }
+
+            $('.field_key-field_553e916adb1fa').append( $('#postdivrich') );
+        });
+    })(jQuery);
+    </script>
+    <style type="text/css">
+        .field_type-message #wp-content-editor-tools {
+            background: transparent;
+            padding-top: 0;
+        }
+        .acf_postbox .field_type-message p.label {
+          display: block !important;
+        }
+    </style>
+    <?php
+}
+add_action('acf/input/admin_head', 'my_acf_admin_head2');
+?>

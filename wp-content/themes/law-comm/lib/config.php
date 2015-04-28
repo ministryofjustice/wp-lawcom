@@ -49,6 +49,7 @@ function roots_display_sidebar() {
       'is_404',
       'is_front_page',
       array('is_singular', array('project')),
+      array('is_singular', array('lecture')),
     ),
     /**
      * Page template checks (via is_page_template())

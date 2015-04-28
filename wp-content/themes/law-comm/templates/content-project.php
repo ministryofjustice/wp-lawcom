@@ -4,43 +4,69 @@
   <header><h1 class="entry-title"><?php the_title(); ?></h1></header>
   <div class="row">
     <div class="col-sm-8 max-col">
-      
-      <h2>Current project status</h2>
-      <div class="hidden">
-        <p>The current status of this project is: <strong><?php the_field('implementation_status');  ?></strong>.</p>
-        <h3>List of project stages:</h3>
-        <ol>
-          <li>Pre-project</li>
-          <li>Pre-consultation</li>
-          <li>Consultation</li>
-          <li>Analysis of responses</li>
-          <li>Complete</li>
-        </ol>
-      </div>
+      <?php $parent = url_to_postid(get_field('parent_project')); ?>
+      <?php if(!empty($parent)): ?>
+        <h4>Parent Project: <a href="<?= get_permalink($parent); ?>"><?= get_the_title($parent); ?></a></h4>
+      <?php endif; ?>
       <?php
-      $implementation_status = get_field('implementation_status');
-      if($implementation_status){
-        switch ($implementation_status) {
-          case "Pre-project":
-              $i = 1;
-              break;
-          case "Pre-consultation":
-              $i = 2;
-              break;
-          case "Consultation":
-              $i = 3;
-              break;
-          case "Analysis of responses":
-              $i = 4;
-              break;
-          case "Complete":
-              $i = 5;
-              break;
-        } ?>
-        <div aria-hidden="true" class="status stage<?= $i ?>"><ul class="stages"><li>Pre-project</li><li>Pre-consultation</li><li>Consultation</li><li>Analysis of <br>responses</li><li>Complete</li></ul></div>
+      $args = array(
+        'post_type' => 'project',
+        'posts_per_page' => -1,
+        'meta_query' => array(
+          array(
+            'key'     => 'parent_project',
+            'value'   => $post->ID,
+          ),
+        ),
+      );
+      $query = new WP_Query($args);
+      ?>
+      <?php if ( $query->have_posts() ): ?>
+        <h2>Child Projects</h2>
+        <p><ul>
+        <?php while ( $query->have_posts() ): $query->the_post(); ?>
+          <li><a href="<?= get_permalink(); ?>"><?= get_the_title(); ?></a></li>
+        <?php endwhile; ?>
+        </ul></p>
+      <?php else: ?>
+        <h2>Current project status</h2>
+        <div class="hidden">
+          <p>The current status of this project is: <strong><?php the_field('implementation_status');  ?></strong>.</p>
+          <h3>List of project stages:</h3>
+          <ol>
+            <li>Pre-project</li>
+            <li>Pre-consultation</li>
+            <li>Consultation</li>
+            <li>Analysis of responses</li>
+            <li>Complete</li>
+          </ol>
+        </div>
+        <?php
+        $implementation_status = get_field('implementation_status');
+        if($implementation_status){
+          switch ($implementation_status) {
+            case "Pre-project":
+                $i = 1;
+                break;
+            case "Pre-consultation":
+                $i = 2;
+                break;
+            case "Consultation":
+                $i = 3;
+                break;
+            case "Analysis of responses":
+                $i = 4;
+                break;
+            case "Complete":
+                $i = 5;
+                break;
+          } ?>
+          <div aria-hidden="true" class="status stage<?= $i ?>"><ul class="stages"><li>Pre-project</li><li>Pre-consultation</li><li>Consultation</li><li>Analysis of <br>responses</li><li>Complete</li></ul></div>
 
-        <p><strong><?php the_field('status');  ?></strong></p>
-      <?php } ?>
+          <p><strong><?php the_field('status');  ?></strong></p>
+        <?php } ?>
+      <?php endif; ?>
+      <?php wp_reset_postdata(); ?>
       <?php the_field('description');?>
       <?php the_field('further_description');?>
       <?php if (get_field('youtube_video')): ?>
