@@ -7446,6 +7446,20 @@ figure.alignnone {
     width: 33.33333333%;
   }
 }
+.signup .form-group {
+  background: #cbe1dc;
+  padding: 10px;
+}
+.signup .form-group input.btn {
+  margin: 10px 0;
+}
+.signup .form-group label {
+  font-weight: normal;
+}
+.signup .form-group p {
+  font-size: .9em;
+  margin: 0;
+}
 .content-info {
   background: #cbe1dc;
   display: inline-block;
@@ -7704,6 +7718,9 @@ ul.filter-links li a {
 }
 .case-details table tr td {
   padding: 0 2em 1em 0;
+}
+.min-col .widget:first-child h3 {
+  margin-top: 0;
 }
 .project .max-col {
   border-left: 0;
