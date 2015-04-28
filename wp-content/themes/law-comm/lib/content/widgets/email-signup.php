@@ -29,9 +29,9 @@ class Signup_Widget extends WP_Widget {
   <div class="signup side-item">
   		<h3>Publication updates</h3>
 			<div class="form-group">
-		  		<label for="emailSignup">Email address</label>
+		  		<label for="email">Email address</label>
                 <form action="https://public.govdelivery.com/accounts/UKMOJ/subscribers/qualify" method="post">
-                  <input type="text" class="form-control" name="emailSignup"  id="emailSignup">
+                  <input type="text" class="form-control" name="email"  id="email">
                   <input type="submit" alt="Subscribe" class="btn btn-default" value="Subscribe">
                </form>
                <p>Also gives you access to other government law-related updates.</p>
