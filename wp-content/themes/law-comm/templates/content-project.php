@@ -6,7 +6,9 @@
     <div class="col-sm-8 max-col">
       <?php $parent = url_to_postid(get_field('parent_project')); ?>
       <?php if(!empty($parent)): ?>
-        <h4>Parent Project: <a href="<?= get_permalink($parent); ?>"><?= get_the_title($parent); ?></a></h4>
+        <div class="emph-box">
+        <h2>Parent Project: <a href="<?= get_permalink($parent); ?>"><?= get_the_title($parent); ?></a></h2>
+        </div>
       <?php endif; ?>
       <?php
       $args = array(
@@ -22,12 +24,13 @@
       $query = new WP_Query($args);
       ?>
       <?php if ( $query->have_posts() ): ?>
+        <div class="emph-box">
         <h2>Child Projects</h2>
-        <p><ul>
+        <ul>
         <?php while ( $query->have_posts() ): $query->the_post(); ?>
           <li><a href="<?= get_permalink(); ?>"><?= get_the_title(); ?></a></li>
         <?php endwhile; ?>
-        </ul></p>
+        </ul></div>
       <?php else: ?>
         <h2>Current project status</h2>
         <div class="hidden">

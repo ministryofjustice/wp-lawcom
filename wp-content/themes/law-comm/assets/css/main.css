@@ -7728,6 +7728,9 @@ ul.filter-links li a {
 .project .min-col {
   border-left: 0;
 }
+.project h1 {
+  margin: 0 0 .75em 0;
+}
 .project h2 {
   margin: 1em 0 .5em 0;
 }
@@ -7802,7 +7805,6 @@ a.jumpAround {
   font-size: 1em;
   width: 100%;
   display: inline-block;
-  margin-top: 1em;
   text-align: center;
   position: relative;
 }
@@ -7914,5 +7916,19 @@ ul.stages li:last-child {
 .file-meta {
   font-size: .85em;
   color: #bbb;
+}
+.emph-box {
+  background: #f0f0f0;
+  padding: 10px;
+  margin: 0 0 40px 0;
+  font-size: .9em;
+}
+.emph-box h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #000000;
+}
+.emph-box ul {
+  margin-top: 10px;
 }
 /*# sourceMappingURL=main.css.map */
