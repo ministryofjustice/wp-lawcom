@@ -7722,33 +7722,41 @@ ul.filter-links li a {
 .min-col .widget:first-child h3 {
   margin-top: 0;
 }
-.project .max-col {
+.project .max-col,
+.lecture .max-col {
   border-left: 0;
 }
-.project .min-col {
+.project .min-col,
+.lecture .min-col {
   border-left: 0;
 }
-.project h1 {
+.project h1,
+.lecture h1 {
   margin: 0 0 .75em 0;
 }
-.project h2 {
+.project h2,
+.lecture h2 {
   margin: 1em 0 .5em 0;
 }
-.project ul {
+.project ul,
+.lecture ul {
   list-style: disc;
   margin-left: 24px;
 }
-.project img {
+.project img,
+.lecture img {
   margin: 2em 0;
 }
-.project .panel-group .panel {
+.project .panel-group .panel,
+.lecture .panel-group .panel {
   margin-bottom: 0;
   border-radius: 0;
   -webkit-box-shadow: none;
           box-shadow: none;
   border: 0;
 }
-.project .panel-group .panel .toggleText {
+.project .panel-group .panel .toggleText,
+.lecture .panel-group .panel .toggleText {
   float: right;
   font-size: .65em;
   font-weight: normal;
@@ -7759,27 +7767,35 @@ ul.filter-links li a {
           background-size: 28px;
   background-position: 100% 20%;
 }
-.project .panel-group .panel .toggleText.open {
+.project .panel-group .panel .toggleText.open,
+.lecture .panel-group .panel .toggleText.open {
   background-image: url("../img/left-arrow.png");
 }
-.project .panel-group .panel h3 {
+.project .panel-group .panel h3,
+.lecture .panel-group .panel h3 {
   font-size: 24px;
 }
-.project .panel-group .panel h3 a {
+.project .panel-group .panel h3 a,
+.lecture .panel-group .panel h3 a {
   color: #000000;
 }
 .project .panel-group .panel h3 a:hover,
+.lecture .panel-group .panel h3 a:hover,
 .project .panel-group .panel h3 a:active,
-.project .panel-group .panel h3 a:focus {
+.lecture .panel-group .panel h3 a:active,
+.project .panel-group .panel h3 a:focus,
+.lecture .panel-group .panel h3 a:focus {
   text-decoration: none;
 }
-.project .panel-default > .panel-heading {
+.project .panel-default > .panel-heading,
+.lecture .panel-default > .panel-heading {
   border-bottom: 0;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
   border-color: transparent;
 }
-.project .panel-default > .panel-heading + .panel-collapse > .panel-body {
+.project .panel-default > .panel-heading + .panel-collapse > .panel-body,
+.lecture .panel-default > .panel-heading + .panel-collapse > .panel-body {
   border-top: 0;
 }
 .project-details {
