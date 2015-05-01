@@ -10,7 +10,7 @@
         <a href="<?= get_field('transcript'); ?>">Click here for the transcript</a>
       <?php endif; ?>
       <?php if (get_field('video')): ?>
-        <h2>Related video</h2>
+        <h2>Video</h2>
         <div class="videoWrapper">
           <?= _e( wp_oembed_get( get_field( 'video' ) ) ); ?>
         </div>

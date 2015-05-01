@@ -7947,4 +7947,9 @@ ul.stages li:last-child {
 .emph-box ul {
   margin-top: 10px;
 }
+.post-summary {
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #c5c5c5;
+}
 /*# sourceMappingURL=main.css.map */
