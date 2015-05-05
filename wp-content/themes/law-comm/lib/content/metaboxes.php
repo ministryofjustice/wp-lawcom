@@ -154,11 +154,9 @@ if(function_exists("register_field_group"))
 				'label' => 'Date',
 				'name' => 'date',
 				'type' => 'date_picker',
-				'show_date' => 'true',
-				'date_format' => 'd/m/y',
-				'show_week_number' => 'false',
-				'save_as_timestamp' => 'true',
-				'get_as_timestamp' => 'false',
+				'date_format' => 'yymmdd',
+				'display_format' => 'dd/mm/yy',
+				'first_day' => 1,
 			),
 			array (
 				'key' => 'field_553e98191e3d6',
@@ -271,6 +269,17 @@ if(function_exists("register_field_group"))
 				'default_value' => '',
 				'toolbar' => 'basic',
 				'media_upload' => 'no',
+			),
+			array (
+				'key' => 'field_554397fec5b39',
+				'label' => 'Is corporate',
+				'name' => 'is_corporate',
+				'type' => 'checkbox',
+				'choices' => array (
+					'Yes' => 'Yes',
+				),
+				'default_value' => '',
+				'layout' => 'vertical',
 			),
 			array (
 				'key' => 'field_54ef392a7a751',
