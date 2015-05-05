@@ -15,19 +15,15 @@
 <?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
   <?php $project = get_field('project');  ?>
   <?php if($project): ?>
-    <a href="/project/<?= $project->post_name; ?>/#<?= $post->post_name; ?>">Project: <?= $project->title; ?> | Publication: <?= $post->title; ?></a><br />
+    <a class="doc-list" href="/project/<?= $project->post_name; ?>/#<?= $post->post_name; ?>">Project: <?= $project->title; ?> | Publication: <?= $post->title; ?></a>
   <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>
 
-<?php if ($wp_query->max_num_pages > 1) : ?>
-  <nav class="post-nav">
-    <ul class="pager">
-      <li class="previous"><?php next_posts_link(__('&larr; Older posts', 'roots')); ?></li>
-      <li class="next"><?php previous_posts_link(__('Newer posts &rarr;', 'roots')); ?></li>
-    </ul>
-  </nav>
-<?php endif; ?>
+<div class="pagination">
+<?php echo paginate_links(); ?>
+</div>
+
 <?php
 if(!empty($temp)) {
   $wp_query = null; $wp_query = $temp;
