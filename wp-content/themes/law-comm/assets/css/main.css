@@ -7952,4 +7952,10 @@ ul.stages li:last-child {
   padding-bottom: 1em;
   border-bottom: 1px solid #c5c5c5;
 }
+.doc-list {
+  margin-bottom: .75em;
+  padding-bottom: .75em;
+  display: block;
+  border-bottom: 1px dotted #ccc;
+}
 /*# sourceMappingURL=main.css.map */
