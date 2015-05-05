@@ -271,17 +271,6 @@ if(function_exists("register_field_group"))
 				'media_upload' => 'no',
 			),
 			array (
-				'key' => 'field_554397fec5b39',
-				'label' => 'Is corporate',
-				'name' => 'is_corporate',
-				'type' => 'checkbox',
-				'choices' => array (
-					'Yes' => 'Yes',
-				),
-				'default_value' => '',
-				'layout' => 'vertical',
-			),
-			array (
 				'key' => 'field_54ef392a7a751',
 				'label' => 'Youtube video',
 				'name' => 'youtube_video',
@@ -472,6 +461,16 @@ if(function_exists("register_field_group"))
 				'first_day' => 1,
 			),
 			array (
+				'key' => 'field_5548dbbc4bd49',
+				'label' => 'Description',
+				'name' => 'description',
+				'type' => 'wysiwyg',
+				'instructions' => 'Description field for corporate documents (annual reports etc)',
+				'default_value' => '',
+				'toolbar' => 'full',
+				'media_upload' => 'no',
+			),
+			array (
 				'key' => 'field_54d36479697f7',
 				'label' => 'Options',
 				'name' => '',
@@ -520,7 +519,7 @@ if(function_exists("register_field_group"))
 						'label' => 'Title',
 						'name' => 'title',
 						'type' => 'text',
-						'column_width' => '',
+						'column_width' => 30,
 						'default_value' => '',
 						'placeholder' => '',
 						'prepend' => '',
@@ -533,9 +532,22 @@ if(function_exists("register_field_group"))
 						'label' => 'File',
 						'name' => 'file',
 						'type' => 'file',
-						'column_width' => '',
+						'column_width' => 30,
 						'save_format' => 'url',
 						'library' => 'all',
+					),
+					array (
+						'key' => 'field_554898f85c2a5',
+						'label' => 'Description',
+						'name' => 'description',
+						'type' => 'textarea',
+						'instructions' => 'Optional descriptive text for, e.g. annual reports',
+						'column_width' => 40,
+						'default_value' => '',
+						'placeholder' => '',
+						'maxlength' => '',
+						'rows' => '',
+						'formatting' => 'br',
 					),
 				),
 				'row_min' => 0,
@@ -662,3 +674,4 @@ if(function_exists("register_field_group"))
 		'menu_order' => 0,
 	));
 }
+
