@@ -13,8 +13,8 @@
 
 	    while ( have_rows('files') ) : the_row();
 
-	        echo '<h4><a href="' . get_sub_field('file') . '">' . get_sub_field('title') . '</a></h4>';
-			echo '<p>' . the_sub_field('description') . '</p>'; 
+	        echo '<div class="doc-list"><h4><a href="' . get_sub_field('file') . '">' . get_sub_field('title') . '</a></h4>';
+			echo '<p>' . the_sub_field('description') . '</p></div>'; 
 
 	    endwhile;
 
