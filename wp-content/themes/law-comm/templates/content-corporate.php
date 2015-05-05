@@ -24,14 +24,14 @@ the_post_thumbnail('large');
     $args=array(
       'post_type' => 'post',
       'post_status' => 'publish',
-      'post_type'    => 'project',
+      'post_type'    => 'document',
       'posts_per_page' => 10,
       'paged' => $paged,
-      'meta_query' => array(
+      'tax_query' => array(
         array(
-          'key' => 'is_corporate',
-          'value' => 'Yes',
-          'compare' => 'LIKE'
+          'taxonomy' => 'document_type',
+          'field' => 'slug',
+          'terms' => 'corporate'
         ),
       )
     );
