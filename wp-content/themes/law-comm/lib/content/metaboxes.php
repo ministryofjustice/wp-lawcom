@@ -587,6 +587,19 @@ if(function_exists("register_field_group"))
 						'formatting' => 'html',
 						'maxlength' => '',
 					),
+					array (
+						'key' => 'field_5549d5083283f',
+						'label' => 'Description',
+						'name' => 'description',
+						'type' => 'textarea',
+						'instructions' => 'Optional descriptive text for external links',
+						'column_width' => 40,
+						'default_value' => '',
+						'placeholder' => '',
+						'maxlength' => '',
+						'rows' => '',
+						'formatting' => 'br',
+					),
 				),
 				'row_min' => 0,
 				'row_limit' => '',
@@ -674,4 +687,3 @@ if(function_exists("register_field_group"))
 		'menu_order' => 0,
 	));
 }
-
