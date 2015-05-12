@@ -16,7 +16,7 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-<!-- generator="WordPress/4.2.1" created="2015-05-06 08:57" -->
+<!-- generator="WordPress/4.2.2" created="2015-05-12 14:04" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.1/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,7 +29,7 @@
 	<title>Law Commission</title>
 	<link>http://localhost:8888/lawcommission</link>
 	<description>Just another WordPress site</description>
-	<pubDate>Wed, 06 May 2015 08:57:11 +0000</pubDate>
+	<pubDate>Tue, 12 May 2015 14:04:59 +0000</pubDate>
 	<language></language>
 	<wp:wxr_version>1.1</wp:wxr_version>
 	<wp:base_site_url>http://localhost:8888/lawcommission</wp:base_site_url>
@@ -510,11 +510,11 @@
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key>field_54d496e3ac377</wp:meta_key>
-			<wp:meta_value><![CDATA[a:14:{s:3:"key";s:19:"field_54d496e3ac377";s:5:"label";s:6:"Status";s:4:"name";s:6:"status";s:4:"type";s:4:"text";s:12:"instructions";s:0:"";s:8:"required";s:1:"0";s:13:"default_value";s:0:"";s:11:"placeholder";s:0:"";s:7:"prepend";s:0:"";s:6:"append";s:0:"";s:10:"formatting";s:4:"html";s:9:"maxlength";s:0:"";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";s:5:"value";s:0:"";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:11;}]]></wp:meta_value>
+			<wp:meta_value><![CDATA[a:14:{s:3:"key";s:19:"field_54d496e3ac377";s:5:"label";s:6:"Status";s:4:"name";s:6:"status";s:4:"type";s:4:"text";s:12:"instructions";s:0:"";s:8:"required";s:1:"0";s:13:"default_value";s:0:"";s:11:"placeholder";s:0:"";s:7:"prepend";s:0:"";s:6:"append";s:0:"";s:10:"formatting";s:4:"html";s:9:"maxlength";s:0:"";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:19:"field_54d496eaac378";s:8:"operator";s:2:"==";s:5:"value";s:11:"Pre-project";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:11;}]]></wp:meta_value>
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key>field_54d496eaac378</wp:meta_key>
-			<wp:meta_value><![CDATA[a:12:{s:3:"key";s:19:"field_54d496eaac378";s:5:"label";s:21:"Implementation Status";s:4:"name";s:21:"implementation_status";s:4:"type";s:6:"select";s:12:"instructions";s:0:"";s:8:"required";s:1:"0";s:7:"choices";a:5:{s:11:"Pre-project";s:11:"Pre-project";s:16:"Pre-consultation";s:16:"Pre-consultation";s:12:"Consultation";s:12:"Consultation";s:21:"Analysis of responses";s:21:"Analysis of responses";s:8:"Complete";s:8:"Complete";}s:13:"default_value";s:0:"";s:10:"allow_null";s:1:"0";s:8:"multiple";s:1:"0";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";s:5:"value";s:0:"";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:12;}]]></wp:meta_value>
+			<wp:meta_value><![CDATA[a:12:{s:3:"key";s:19:"field_54d496eaac378";s:5:"label";s:21:"Implementation Status";s:4:"name";s:21:"implementation_status";s:4:"type";s:6:"select";s:12:"instructions";s:0:"";s:8:"required";s:1:"0";s:7:"choices";a:5:{s:11:"Pre-project";s:11:"Pre-project";s:16:"Pre-consultation";s:16:"Pre-consultation";s:12:"Consultation";s:12:"Consultation";s:21:"Analysis of responses";s:21:"Analysis of responses";s:8:"Complete";s:8:"Complete";}s:13:"default_value";s:0:"";s:10:"allow_null";s:1:"0";s:8:"multiple";s:1:"0";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"1";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:19:"field_555203ee7279b";s:8:"operator";s:2:"!=";s:5:"value";s:1:"1";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:12;}]]></wp:meta_value>
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key>field_54d4984200fb3</wp:meta_key>
@@ -534,11 +534,11 @@
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key>field_54db35cfaa0ea</wp:meta_key>
-			<wp:meta_value><![CDATA[a:8:{s:3:"key";s:19:"field_54db35cfaa0ea";s:5:"label";s:6:"Search";s:4:"name";s:0:"";s:4:"type";s:3:"tab";s:12:"instructions";s:0:"";s:8:"required";s:1:"0";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";s:5:"value";s:0:"";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:13;}]]></wp:meta_value>
+			<wp:meta_value><![CDATA[a:8:{s:3:"key";s:19:"field_54db35cfaa0ea";s:5:"label";s:6:"Search";s:4:"name";s:0:"";s:4:"type";s:3:"tab";s:12:"instructions";s:0:"";s:8:"required";s:1:"0";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";s:5:"value";s:0:"";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:14;}]]></wp:meta_value>
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key>field_54db35deaa0eb</wp:meta_key>
-			<wp:meta_value><![CDATA[a:14:{s:3:"key";s:19:"field_54db35deaa0eb";s:5:"label";s:8:"Keywords";s:4:"name";s:8:"keywords";s:4:"type";s:4:"text";s:12:"instructions";s:0:"";s:8:"required";s:1:"0";s:13:"default_value";s:0:"";s:11:"placeholder";s:0:"";s:7:"prepend";s:0:"";s:6:"append";s:0:"";s:10:"formatting";s:4:"html";s:9:"maxlength";s:0:"";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";s:5:"value";s:0:"";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:14;}]]></wp:meta_value>
+			<wp:meta_value><![CDATA[a:14:{s:3:"key";s:19:"field_54db35deaa0eb";s:5:"label";s:8:"Keywords";s:4:"name";s:8:"keywords";s:4:"type";s:4:"text";s:12:"instructions";s:0:"";s:8:"required";s:1:"0";s:13:"default_value";s:0:"";s:11:"placeholder";s:0:"";s:7:"prepend";s:0:"";s:6:"append";s:0:"";s:10:"formatting";s:4:"html";s:9:"maxlength";s:0:"";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";s:5:"value";s:0:"";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:15;}]]></wp:meta_value>
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key>field_54ef392a7a751</wp:meta_key>
@@ -586,11 +586,11 @@
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key>field_54d496e3ac377</wp:meta_key>
-			<wp:meta_value><![CDATA[a:14:{s:3:"key";s:19:"field_54d496e3ac377";s:5:"label";s:6:"Status";s:4:"name";s:6:"status";s:4:"type";s:4:"text";s:12:"instructions";s:0:"";s:8:"required";s:1:"0";s:13:"default_value";s:0:"";s:11:"placeholder";s:0:"";s:7:"prepend";s:0:"";s:6:"append";s:0:"";s:10:"formatting";s:4:"html";s:9:"maxlength";s:0:"";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";s:5:"value";s:0:"";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:11;}]]></wp:meta_value>
+			<wp:meta_value><![CDATA[a:14:{s:3:"key";s:19:"field_54d496e3ac377";s:5:"label";s:6:"Status";s:4:"name";s:6:"status";s:4:"type";s:4:"text";s:12:"instructions";s:0:"";s:8:"required";s:1:"0";s:13:"default_value";s:0:"";s:11:"placeholder";s:0:"";s:7:"prepend";s:0:"";s:6:"append";s:0:"";s:10:"formatting";s:4:"html";s:9:"maxlength";s:0:"";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:19:"field_54d496eaac378";s:8:"operator";s:2:"==";s:5:"value";s:11:"Pre-project";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:11;}]]></wp:meta_value>
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key>field_54d496eaac378</wp:meta_key>
-			<wp:meta_value><![CDATA[a:12:{s:3:"key";s:19:"field_54d496eaac378";s:5:"label";s:21:"Implementation Status";s:4:"name";s:21:"implementation_status";s:4:"type";s:6:"select";s:12:"instructions";s:0:"";s:8:"required";s:1:"0";s:7:"choices";a:5:{s:11:"Pre-project";s:11:"Pre-project";s:16:"Pre-consultation";s:16:"Pre-consultation";s:12:"Consultation";s:12:"Consultation";s:21:"Analysis of responses";s:21:"Analysis of responses";s:8:"Complete";s:8:"Complete";}s:13:"default_value";s:0:"";s:10:"allow_null";s:1:"0";s:8:"multiple";s:1:"0";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";s:5:"value";s:0:"";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:12;}]]></wp:meta_value>
+			<wp:meta_value><![CDATA[a:12:{s:3:"key";s:19:"field_54d496eaac378";s:5:"label";s:21:"Implementation Status";s:4:"name";s:21:"implementation_status";s:4:"type";s:6:"select";s:12:"instructions";s:0:"";s:8:"required";s:1:"0";s:7:"choices";a:5:{s:11:"Pre-project";s:11:"Pre-project";s:16:"Pre-consultation";s:16:"Pre-consultation";s:12:"Consultation";s:12:"Consultation";s:21:"Analysis of responses";s:21:"Analysis of responses";s:8:"Complete";s:8:"Complete";}s:13:"default_value";s:0:"";s:10:"allow_null";s:1:"0";s:8:"multiple";s:1:"0";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"1";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:19:"field_555203ee7279b";s:8:"operator";s:2:"!=";s:5:"value";s:1:"1";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:12;}]]></wp:meta_value>
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key>field_54d4984200fb3</wp:meta_key>
@@ -610,11 +610,11 @@
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key>field_54db35cfaa0ea</wp:meta_key>
-			<wp:meta_value><![CDATA[a:8:{s:3:"key";s:19:"field_54db35cfaa0ea";s:5:"label";s:6:"Search";s:4:"name";s:0:"";s:4:"type";s:3:"tab";s:12:"instructions";s:0:"";s:8:"required";s:1:"0";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";s:5:"value";s:0:"";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:13;}]]></wp:meta_value>
+			<wp:meta_value><![CDATA[a:8:{s:3:"key";s:19:"field_54db35cfaa0ea";s:5:"label";s:6:"Search";s:4:"name";s:0:"";s:4:"type";s:3:"tab";s:12:"instructions";s:0:"";s:8:"required";s:1:"0";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";s:5:"value";s:0:"";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:14;}]]></wp:meta_value>
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key>field_54db35deaa0eb</wp:meta_key>
-			<wp:meta_value><![CDATA[a:14:{s:3:"key";s:19:"field_54db35deaa0eb";s:5:"label";s:8:"Keywords";s:4:"name";s:8:"keywords";s:4:"type";s:4:"text";s:12:"instructions";s:0:"";s:8:"required";s:1:"0";s:13:"default_value";s:0:"";s:11:"placeholder";s:0:"";s:7:"prepend";s:0:"";s:6:"append";s:0:"";s:10:"formatting";s:4:"html";s:9:"maxlength";s:0:"";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";s:5:"value";s:0:"";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:14;}]]></wp:meta_value>
+			<wp:meta_value><![CDATA[a:14:{s:3:"key";s:19:"field_54db35deaa0eb";s:5:"label";s:8:"Keywords";s:4:"name";s:8:"keywords";s:4:"type";s:4:"text";s:12:"instructions";s:0:"";s:8:"required";s:1:"0";s:13:"default_value";s:0:"";s:11:"placeholder";s:0:"";s:7:"prepend";s:0:"";s:6:"append";s:0:"";s:10:"formatting";s:4:"html";s:9:"maxlength";s:0:"";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:4:"null";s:8:"operator";s:2:"==";s:5:"value";s:0:"";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:15;}]]></wp:meta_value>
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key>field_54ef392a7a751</wp:meta_key>
@@ -623,6 +623,10 @@
 		<wp:postmeta>
 			<wp:meta_key>field_54ef3ce837e20</wp:meta_key>
 			<wp:meta_value><![CDATA[a:13:{s:3:"key";s:19:"field_54ef3ce837e20";s:5:"label";s:17:"Video description";s:4:"name";s:17:"video_description";s:4:"type";s:8:"textarea";s:12:"instructions";s:33:"Description of video, if required";s:8:"required";s:1:"0";s:13:"default_value";s:0:"";s:11:"placeholder";s:0:"";s:9:"maxlength";s:0:"";s:4:"rows";s:0:"";s:10:"formatting";s:2:"br";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:19:"field_54d496eaac378";s:8:"operator";s:2:"==";s:5:"value";s:11:"Pre-project";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:5;}]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key>field_555203ee7279b</wp:meta_key>
+			<wp:meta_value><![CDATA[a:10:{s:3:"key";s:19:"field_555203ee7279b";s:5:"label";s:29:"Disable Implementation Status";s:4:"name";s:29:"disable_implementation_status";s:4:"type";s:10:"true_false";s:12:"instructions";s:76:"Disable the implementation status graphic for projects that don't require it";s:8:"required";s:1:"0";s:7:"message";s:0:"";s:13:"default_value";s:1:"0";s:17:"conditional_logic";a:3:{s:6:"status";s:1:"0";s:5:"rules";a:1:{i:0;a:3:{s:5:"field";s:19:"field_54d496eaac378";s:8:"operator";s:2:"==";s:5:"value";s:11:"Pre-project";}}s:8:"allorany";s:3:"all";}s:8:"order_no";i:13;}]]></wp:meta_value>
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key>rule</wp:meta_key>

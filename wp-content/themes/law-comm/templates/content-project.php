@@ -32,7 +32,15 @@
         <?php endwhile; ?>
         </ul></div>
       <?php else: ?>
-        <h2>Current project status</h2>
+      
+       <?php if( get_field('disable_implementation_status') )
+          {
+            echo "";
+          }
+        else
+        { ?>
+
+      <h2>Current project status</h2>
         <div class="hidden">
           <p>The current status of this project is: <strong><?php the_field('implementation_status');  ?></strong>.</p>
           <h3>List of project stages:</h3>
@@ -66,6 +74,8 @@
           } ?>
           <div aria-hidden="true" class="status stage<?= $i ?>"><ul class="stages"><li>Pre-project</li><li>Pre-consultation</li><li>Consultation</li><li>Analysis of <br>responses</li><li>Complete</li></ul></div>
 
+        <?php }; ?>
+        
           <p><strong><?php the_field('status');  ?></strong></p>
         <?php } ?>
       <?php endif; ?>

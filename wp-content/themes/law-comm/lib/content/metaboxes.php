@@ -359,6 +359,17 @@ if(function_exists("register_field_group"))
 				'label' => 'Implementation Status',
 				'name' => 'implementation_status',
 				'type' => 'select',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_555203ee7279b',
+							'operator' => '!=',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
 				'choices' => array (
 					'Pre-project' => 'Pre-project',
 					'Pre-consultation' => 'Pre-consultation',
@@ -369,6 +380,15 @@ if(function_exists("register_field_group"))
 				'default_value' => '',
 				'allow_null' => 0,
 				'multiple' => 0,
+			),
+			array (
+				'key' => 'field_555203ee7279b',
+				'label' => 'Disable Implementation Status',
+				'name' => 'disable_implementation_status',
+				'type' => 'true_false',
+				'instructions' => 'Disable the implementation status graphic for projects that don\'t require it',
+				'message' => '',
+				'default_value' => 0,
 			),
 			array (
 				'key' => 'field_54db35cfaa0ea',
