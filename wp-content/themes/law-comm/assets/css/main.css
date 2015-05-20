@@ -7598,12 +7598,18 @@ figure.alignnone {
 }
 .quick-links ul li.ql1 {
   background: #cbe1dc url('../img/projects-icon.png') no-repeat 10px 50%;
+  -webkit-background-size: 39px 45px;
+          background-size: 39px 45px;
 }
 .quick-links ul li.ql2 {
   background: #cbe1dc url('../img/consultations-icon.png') no-repeat 10px 50%;
+  -webkit-background-size: 32px 45px;
+          background-size: 32px 45px;
 }
 .quick-links ul li.ql3 {
   background: #cbe1dc url('../img/publications-icon.png') no-repeat 10px 50%;
+  -webkit-background-size: 42px 45px;
+          background-size: 42px 45px;
 }
 .news ul li {
   float: none;
