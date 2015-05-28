@@ -475,10 +475,13 @@ if(function_exists("register_field_group"))
 				'key' => 'field_54d491d1e9934',
 				'label' => 'Response Date',
 				'name' => 'response_date',
-				'type' => 'date_picker',
-				'date_format' => 'yy-mm-dd',
-				'display_format' => 'dd/mm/yy',
-				'first_day' => 1,
+				'type' => 'text',
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
 			),
 			array (
 				'key' => 'field_5548dbbc4bd49',
@@ -707,3 +710,4 @@ if(function_exists("register_field_group"))
 		'menu_order' => 0,
 	));
 }
+
