@@ -39,7 +39,7 @@ class Document_Widget extends WP_Widget {
         <input type="text" name="doc-title" id="doc-title" class="form-control" value="<?= test_input(get_query_var( 'doc-title' )); ?>">
       </div>
 
-      <?php $areas = get_terms('team', 'hide_empty=0'); if(!empty($areas)): ?>
+      <!--<?php $areas = get_terms('team', 'hide_empty=0'); if(!empty($areas)): ?>
       <div class="form-group">
         <label for="publication">Team</label>
         <?php
@@ -54,7 +54,7 @@ class Document_Widget extends WP_Widget {
           ));
         ?>
       </div>
-      <?php endif; ?>
+      <?php endif; ?>-->
 
       <?php $areas = get_terms('document_type', 'hide_empty=0'); if(!empty($areas)): ?>
       <div class="form-group">
@@ -90,10 +90,10 @@ class Document_Widget extends WP_Widget {
         <span class="input-group-addon">to</span>
         <input type="text" class="input-sm form-control" name="end" value="<?= test_input(get_query_var( 'end' )); ?>" />
       </div>
-      <div class="form-group">
+      <!--<div class="form-group">
         <label for="lccp">LC/CP Number</label>
         <input type="text" class="form-control" id="lccp" name="lccp" placeholder="Enter LC/CP" value="<?= test_input(get_query_var('lccp')); ?>">
-      </div>
+      </div>-->
       <input type="submit" value="Search" class="btn btn-primary">
       <input type="reset" value="Clear" class="btn btn-default">
 		</form>
