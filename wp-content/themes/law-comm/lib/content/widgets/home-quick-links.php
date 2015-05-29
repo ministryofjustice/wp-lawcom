@@ -29,9 +29,9 @@ class QuickLinks_Widget extends WP_Widget {
 		<div class="quick-links side-item">
 <!--   		<h2>Quick links</h2> -->
 			<ul>
-				<li class="ql1"><a href="<?php echo get_permalink( get_post_meta( 6, "quick-link-1-page", true )); ?>"><?php echo get_post_meta( 6, "quick-link-1", true ); ?> ></a></li>
-				<li class="ql2"><a href="<?php echo get_permalink( get_post_meta( 6, "quick-link-2-page", true )); ?>"><?php echo get_post_meta( 6, "quick-link-2", true ); ?> ></a></li>
-				<li class="ql3"><a href="<?php echo get_permalink( get_post_meta( 6, "quick-link-3-page", true )); ?>"><?php echo get_post_meta( 6, "quick-link-3", true ); ?> ></a></li>
+				<li class="ql1"><a href="/project/">Find a Project ></a></li>
+				<li class="ql2"><a href="/document?title=&doc-title=&publication=20&area_of_law=&start=&end=">Find a Consultation ></a></li>
+				<li class="ql3"><a href="/document/">Find a Publication ></a></li>
 			</ul>
 		</div>
 		  
