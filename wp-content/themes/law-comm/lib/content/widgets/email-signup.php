@@ -27,14 +27,12 @@ class Signup_Widget extends WP_Widget {
 		echo $args['before_widget'];
   ?>
   <div class="signup side-item">
-  		<h3>Publication updates</h3>
+  		<h3>Request updates</h3>
 			<div class="form-group">
-		  		<label for="email">Email address</label>
-                <form action="https://public.govdelivery.com/accounts/UKMOJ/subscribers/qualify" method="post">
-                  <input type="text" class="form-control" name="email"  id="email">
+               <p>Also gives you access to other government law-related updates</p>
+                  <a href="https://public.govdelivery.com/accounts/UKMOJ/subscriber/new">
                   <input type="submit" alt="Subscribe" class="btn btn-default" value="Subscribe">
-               </form>
-               <p>Also gives you access to other government law-related updates.</p>
+                  </a>
 			</div>
             
 	</div>
