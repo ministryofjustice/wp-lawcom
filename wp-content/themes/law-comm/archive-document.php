@@ -20,6 +20,7 @@
     <?php if (!empty($date)): ?>
 
       <p><strong>Publication date:</strong> <?php echo $date->format('j F Y') ?></p>
+      <p><strong>Response date:</strong> <?php the_field('response_date'); ?></p>
 
       <?php endif; ?>
       <hr>
