@@ -6,7 +6,7 @@
     <div class="col-sm-8 max-col">
       <?php the_content( ); ?>
       <?php if (get_field('transcript')): ?>
-        <h3><a href="<?= get_field('transcript'); ?>">Click here for the transcript</a></h3>
+        <h4><a href="<?= get_field('transcript'); ?>">Click here for the transcript</a></h4>
         
       <?php endif; ?>
       <?php if (get_field('video')): ?>
@@ -28,7 +28,7 @@
         <?php $fields = get_the_terms($post->ID, 'type'); if(!empty($fields)): ?>
         <h4>Type</h4>
         <?php foreach($fields as $field): ?>
-          <?= $field->name; ?>,
+          <?= $field->name; ?>
         <?php endforeach; ?>
         <?php endif; ?>
 
