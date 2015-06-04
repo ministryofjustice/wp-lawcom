@@ -29,7 +29,7 @@ class Signup_Widget extends WP_Widget {
   <div class="signup side-item">
   		<h3>Request updates</h3>
 			<div class="form-group">
-               <p>Also gives you access to other government law-related updates</p>
+               <p>Find out about new publications and consultations, or get a weekly digest of our tweets.</p>
                   <a href="https://public.govdelivery.com/accounts/UKMOJ/subscriber/new">
                   <input type="submit" alt="Subscribe" class="btn btn-default" value="Subscribe">
                   </a>
