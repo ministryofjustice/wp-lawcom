@@ -7728,6 +7728,18 @@ ul.filter-links li a {
 .min-col .widget:first-child h3 {
   margin-top: 0;
 }
+.content .main ul {
+  margin-left: 24px;
+}
+.content .main ul li {
+  list-style: disc;
+}
+.content .main .row ul {
+  margin-left: 0px;
+}
+.content .main .row ul li {
+  list-style: none;
+}
 .project .max-col,
 .lecture .max-col {
   border-left: 0;
