@@ -92,7 +92,7 @@
 
       <a name="related"></a>
 
-      <h2>Related documents and downloads</h2>
+      <!-- <h2>Related documents and downloads</h2> -->
       <div class="related">
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
           <?php
@@ -128,7 +128,7 @@
                   <?php if(have_rows('files') || have_rows('links')): ?>
                   <li>
                     <div class="related-details">
-                      <h3><?php if(get_field('title')): ?><?= get_field('title'); ?><?php else: ?><?php $taxoField = get_field('Type', get_the_ID()); $docType = get_term($taxoField[0], "document_type"); echo $docType->name; ?><?php endif; ?></h3>
+                      <!-- <h3><?php if(get_field('title')): ?><?= get_field('title'); ?><?php else: ?><?php $taxoField = get_field('Type', get_the_ID()); $docType = get_term($taxoField[0], "document_type"); echo $docType->name; ?><?php endif; ?></h3> -->
                       <!--<?php the_excerpt(); ?>-->
                       <div class="row">
                           <?php if( have_rows('files') ): ?>
@@ -163,10 +163,11 @@
                               <td><strong>Reference:</strong></td> <td><?php the_field('reference_number'); ?></td>
                             </tr>
                           <?php endif; ?>
-                          <?php if($document_type != 'consultation'): ?>
-                            <?php if(get_field('publication_date')): ?>
+                          <?php if($document_type == 'consultations-related-documents'): ?>
+                            <?php $date = DateTime::createFromFormat('Y-m-d', get_field('publication_date')); ?>
+                            <?php if (!empty($date)): ?>
                               <tr>
-                                <td><strong>Publication date:</strong></td><td><?php the_field('publication_date'); ?></td>
+                                <td><strong>Publication date:</strong></td><td><?php echo $date->format('j F Y') ?></td>
                               </tr>
                             <?php endif; ?>
                             <?php if(get_field('response_date')): ?>
