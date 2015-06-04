@@ -6,8 +6,8 @@
     <div class="col-sm-8 max-col">
       <?php the_content( ); ?>
       <?php if (get_field('transcript')): ?>
-        <h2>Transcript</h2>
-        <a href="<?= get_field('transcript'); ?>">Click here for the transcript</a>
+        <h3><a href="<?= get_field('transcript'); ?>">Click here for the transcript</a></h3>
+        
       <?php endif; ?>
       <?php if (get_field('video')): ?>
         <h2>Video</h2>
@@ -39,7 +39,10 @@
 
         <?php if($field = get_field('date')): ?>
         <h4>Date</h4>
-        <p><?php the_field('date');  ?></p>
+         <?php $date = DateTime::createFromFormat('Ymd', get_field('date')); ?>
+         <?php if (!empty($date)): ?>
+        <p><?php echo $date->format('j F Y') ?></p>
+        <?php endif; ?>
         <?php endif; ?>
 
         <?php if($field = get_field('topic')): ?>
