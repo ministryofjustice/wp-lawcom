@@ -7631,20 +7631,12 @@ li .news-details h3 {
   color: #000000;
 }
 li .news-details .home-news-img-wrapper {
-  height: 190px;
-  width: 100%;
+  height: auto;
+  width: 49%;
+  padding: 0 .5em .5em .5em;
   overflow: hidden;
-  margin: 0 0 1em 0;
-}
-@media (min-width: 768px) {
-  li .news-details .home-news-img-wrapper {
-    height: 230px;
-  }
-}
-@media (min-width: 992px) {
-  li .news-details .home-news-img-wrapper {
-    height: 270px;
-  }
+  margin: 0 0 0 1em;
+  float: right;
 }
 .news-meta {
   margin: 1em 0;
