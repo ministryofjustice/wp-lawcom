@@ -25,7 +25,7 @@ Template Name: Homepage
 		      </div>
 		      <div class="col-sm-6 intro-right">
 
-		      <img src="<?php bloginfo('template_directory'); ?>/assets/img/intro-home.jpg"/>
+		      <?php the_post_thumbnail( 'full' ); ?>
 
 		      </div>
 	    	</div>
