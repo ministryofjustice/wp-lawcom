@@ -127,6 +127,7 @@
                 <?php while($query->have_posts()): $query->the_post(); ?>
                   <?php if(have_rows('files') || have_rows('links')): ?>
                   <li>
+                  <a name="<?= $post->post_name; ?>"></a>
                     <div class="related-details">
                       <!-- <h3><?php if(get_field('title')): ?><?= get_field('title'); ?><?php else: ?><?php $taxoField = get_field('Type', get_the_ID()); $docType = get_term($taxoField[0], "document_type"); echo $docType->name; ?><?php endif; ?></h3> -->
                       <!--<?php the_excerpt(); ?>-->

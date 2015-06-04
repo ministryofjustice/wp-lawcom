@@ -88,3 +88,12 @@ $(document).ready(function (){
 
 });
 
+/*  Open document boxes when there's a # in the url */
+$(document).ready(function (){
+  $(function() {
+      if ( document.location.href.indexOf('#') > -1 ) {
+          $('.collapse').css("display", "block");
+      }
+  });
+});
+
