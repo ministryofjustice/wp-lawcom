@@ -24,7 +24,7 @@ the_post_thumbnail('large');
       'post_status' => 'publish',
       'post_type'    => 'lecture',
       'type' => $type,
-      'order'   => 'ASC',
+      'order'   => 'DESC',
       'posts_per_page' => -1
       );
     $my_query = null;
