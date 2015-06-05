@@ -7536,6 +7536,7 @@ figure.alignnone {
   color: #006a5d;
   font-size: 1.2em;
   font-weight: 500;
+  list-style: disc;
 }
 @media (min-width: 480px) {
   #top-banner .intro-left ul li {
