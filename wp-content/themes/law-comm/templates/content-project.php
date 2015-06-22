@@ -7,7 +7,7 @@
       <?php $parent = url_to_postid(get_field('parent_project')); ?>
       <?php if(!empty($parent)): ?>
         <div class="emph-box">
-        <h2>Parent Project: <a href="<?= get_permalink($parent); ?>"><?= get_the_title($parent); ?></a></h2>
+        <h2>Main project: <a href="<?= get_permalink($parent); ?>"><?= get_the_title($parent); ?></a></h2>
         </div>
       <?php endif; ?>
       <?php
@@ -25,14 +25,14 @@
       ?>
       <?php if ( $query->have_posts() ): ?>
         <div class="emph-box">
-        <h2>Child Projects</h2>
+        <h2>Sub-projects</h2>
         <ul>
         <?php while ( $query->have_posts() ): $query->the_post(); ?>
           <li><a href="<?= get_permalink(); ?>"><?= get_the_title(); ?></a></li>
         <?php endwhile; ?>
         </ul></div>
       <?php else: ?>
-      
+
        <?php if( get_field('disable_implementation_status') )
           {
             echo "";
@@ -72,10 +72,25 @@
                 $i = 5;
                 break;
           } ?>
-          <div aria-hidden="true" class="status stage<?= $i ?>"><ul class="stages"><li>Pre-project</li><li>Pre-consultation</li><li>Consultation</li><li>Analysis of <br>responses</li><li>Complete</li></ul></div>
+          <div aria-hidden="true" class="status stage<?= $i ?>">
+            <ul class="stages">
+              <li class="r1">Initiation</li>
+              <li class="r2">Pre-consultation</li>
+              <li class="r3">Consultation</li>
+              <li class="r4">Policy development</li>
+              <li class="r5">Reporting</li>
+            </ul>
+          </div>
+          <ul class="rollovers">
+            <li id="r1"<?php if($i == 1): echo ' class="default"'; endif; ?>><strong>Initiation:</strong> Could include discussing scope and terms of reference with lead Government Department</li>
+            <li id="r2"<?php if($i == 2): echo ' class="default"'; endif; ?>><strong>Pre-consultation:</strong> Could include approaching interest groups and specialists, producing scoping and issues papers, finalising terms of project</li>
+            <li id="r3"<?php if($i == 3): echo ' class="default"'; endif; ?>><strong>Consultation:</strong> Likely to include consultation events and paper, making provisional proposals for comment</li>
+            <li id="r4"<?php if($i == 4): echo ' class="default"'; endif; ?>><strong>Policy development:</strong> Will include analysis of consultation responses. Could include further issues papers and consultation on draft Bill</li>
+            <li id="r5"<?php if($i == 5): echo ' class="default"'; endif; ?>><strong>Reporting:</strong> Usually recommendations for law reform but can be advice to government, scoping report or other recommendations</li>
+          </ul>
 
         <?php }; ?>
-        
+
           <p><strong><?php the_field('status');  ?></strong></p>
         <?php } ?>
       <?php endif; ?>
@@ -83,7 +98,6 @@
       <?php the_field('description');?>
       <?php the_field('further_description');?>
       <?php if (get_field('youtube_video')): ?>
-        <h2>Related video</h2>
         <div class="videoWrapper">
           <?= _e( wp_oembed_get( get_field( 'youtube_video' ) ) ); ?>
         </div>
@@ -108,7 +122,7 @@
               'value' => $project_title,
               'compare' => '='
             ))
-    
+
           );
 
           $query = new WP_Query($args);

@@ -16,8 +16,6 @@ the_post_thumbnail('large');
 
     <hr>
 
-  <h2>Related projects</h2>
-
 		<?php
 
     global $post;

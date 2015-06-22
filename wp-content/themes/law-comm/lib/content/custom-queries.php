@@ -230,6 +230,14 @@ function document_query() {
     );
   }
 
+  if(!empty($publication) && $publication == 17) {
+    $args['meta_query'][] = array(
+      'key' => 'response_date',
+      'value' => '2014-01-01',
+      'compare' => '>',
+    );
+  }
+
   $start = test_input(get_query_var('start'));
   $end = test_input(get_query_var('end'));
   if(!empty($start) && !empty($end)) {

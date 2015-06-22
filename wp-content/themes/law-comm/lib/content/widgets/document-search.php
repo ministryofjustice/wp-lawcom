@@ -27,10 +27,10 @@ class Document_Widget extends WP_Widget {
     if(is_post_type_archive( 'document' )):
 		echo $args['before_widget'];
   ?>
-		<h3>Search Documents</h3>
+		<h3>Search Publications and Consultations</h3>
 		<form action="/document" method="get">
   		<div class="form-group">
-        <label for="title">Project Title</label>
+        <label for="title">Project Title or Keywords</label>
         <input type="text" name="title" id="title" class="form-control" value="<?= test_input(get_query_var( 'title' )); ?>">
       </div>
 

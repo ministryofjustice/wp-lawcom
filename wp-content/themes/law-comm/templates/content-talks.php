@@ -18,13 +18,15 @@ the_post_thumbnail('large');
 
 
 		<?php
-    $type = $post->post_name; 
+    $type = $post->post_name;
     $args=array(
       'post_type' => 'post',
       'post_status' => 'publish',
       'post_type'    => 'lecture',
       'type' => $type,
       'order'   => 'DESC',
+      'orderby'   => 'meta_value_num',
+      'meta_key'  => 'date',
       'posts_per_page' => -1
       );
     $my_query = null;

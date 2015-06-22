@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Adds QuickLinks_Widget widget.
  */
@@ -30,12 +30,12 @@ class QuickLinks_Widget extends WP_Widget {
 <!--   		<h2>Quick links</h2> -->
 			<ul>
 				<li class="ql1"><a href="/project/">Find a Project ></a></li>
-				<li class="ql2"><a href="/document?title=&doc-title=&publication=20&area_of_law=&start=&end=">Find a Consultation ></a></li>
+				<li class="ql2"><a href="/document/?title=&doc-title=&publication=17&area_of_law=&start=&end=">Find a Open Consultation ></a></li>
 				<li class="ql3"><a href="/document/">Find a Publication ></a></li>
 			</ul>
 		</div>
-		  
-	<?php	
+
+	<?php
 		echo $args['after_widget'];
 	}
 
@@ -61,7 +61,7 @@ class QuickLinks_Widget extends WP_Widget {
 	 * @return array Updated safe values to be saved.
 	 */
 	public function update( $new_instance, $old_instance ) {
-	
+
 	}
 
 } // class QuickLinks_Widget

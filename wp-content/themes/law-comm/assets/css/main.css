@@ -7722,17 +7722,50 @@ ul.filter-links li a {
 .min-col .widget:first-child h3 {
   margin-top: 0;
 }
-.content .main ul {
+.content .main .col-sm-8 ul {
   margin-left: 24px;
+  margin-bottom: 20px;
 }
-.content .main ul li {
+.content .main .col-sm-8 ul li {
   list-style: disc;
 }
-.content .main .row ul {
-  margin-left: 0px;
+.news.main-item ul {
+  margin-left: 0 !important;
 }
-.content .main .row ul li {
+.single-project .col-sm-8.max-col p strong:first-of-type {
+  font-size: 125%;
+  margin-bottom: 30px;
+  display: block;
+}
+.panel-group ul,
+.stages {
+  margin-left: 0px !important;
+}
+.panel-group ul li,
+.stages li {
+  list-style: none !important;
+}
+.status {
+  padding: 0 !important;
+}
+.stages li {
+  padding-top: 80px;
+  cursor: pointer;
+  position: relative;
+}
+.rollovers {
+  margin: 0 0 20px 0 !important;
+}
+.rollovers li {
+  display: none;
   list-style: none;
+  padding: 15px;
+  margin: 0;
+  background: #ccc;
+}
+.rollovers li.active,
+.rollovers li.default {
+  display: block;
 }
 .project .max-col,
 .lecture .max-col {

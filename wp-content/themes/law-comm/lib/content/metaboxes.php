@@ -1,4 +1,5 @@
 <?php
+
 if(function_exists("register_field_group"))
 {
 	register_field_group(array (
@@ -252,7 +253,7 @@ if(function_exists("register_field_group"))
 			),
 			array (
 				'key' => 'field_54d4950c50af6',
-				'label' => 'Parent Project',
+				'label' => 'Main Project',
 				'name' => 'parent_project',
 				'type' => 'page_link',
 				'post_type' => array (
@@ -268,7 +269,7 @@ if(function_exists("register_field_group"))
 				'type' => 'wysiwyg',
 				'default_value' => '',
 				'toolbar' => 'full',
-				'media_upload' => 'no',
+				'media_upload' => 'yes',
 			),
 			array (
 				'key' => 'field_54ef392a7a751',
@@ -371,12 +372,12 @@ if(function_exists("register_field_group"))
 					'allorany' => 'all',
 				),
 				'choices' => array (
-					'Pre-project' => 'Pre-project',
-					'Pre-consultation' => 'Pre-consultation',
-					'Consultation' => 'Consultation',
-					'Analysis of responses' => 'Analysis of responses',
-					'Complete' => 'Complete',
-				),
+          'Pre-project' => 'Initiation',
+          'Pre-consultation' => 'Pre-consultation',
+          'Consultation' => 'Consultation',
+          'Analysis of responses' => 'Policy development',
+          'Complete' => 'Reporting',
+        ),
 				'default_value' => '',
 				'allow_null' => 0,
 				'multiple' => 0,

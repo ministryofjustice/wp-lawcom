@@ -8,8 +8,8 @@ Template Name: Homepage
 
 <?php while (have_posts()) : the_post(); ?>
   <?php get_template_part( 'header'); ?>
-	
-	
+
+
 	  	<div id="top-banner" class="container-fluid">
 
 		  	<div class="row">
@@ -48,9 +48,9 @@ Template Name: Homepage
 					// Get meta value containing array of entries
 					$latest_news_args = array(
 						'post_type' => 'post',
-						'category' => 'press-release',
+						'cat' => 1,
 						'posts_per_page' => 5);
-					
+
 					$latest_news_query = new WP_Query( $latest_news_args );
 					// Iterate over entries and display
 					while ( $latest_news_query->have_posts() ) : $latest_news_query->the_post();
@@ -75,20 +75,20 @@ Template Name: Homepage
 
 										<?php endif; ?>
 										<?php the_excerpt(); ?>
-								
-							
+
+
 							</div>
 							</li>
-						
+
 
 						<?php endwhile; ?>
 
 				</ul>
 
 				<div class="all-news">
-					<a href="<?php bloginfo('url'); ?>/news/" class= "float-right em-link">All news ></a>
+					<a href="<?php bloginfo('url'); ?>/category/news/" class= "float-right em-link">All news ></a>
 				</div>
-				
+
 			</div>
 
   		</div>
