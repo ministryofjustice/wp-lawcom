@@ -231,11 +231,11 @@ function document_query() {
   }
 
   if(!empty($publication) && $publication == 17) {
-    /*$args['meta_query'][] = array(
+    $args['meta_query'][] = array(
       'key' => 'open_consultation',
       'value' => 1,
-      'compare' => '!=',
-    );*/
+      'compare' => '==',
+    );
   }
 
   $start = test_input(get_query_var('start'));
