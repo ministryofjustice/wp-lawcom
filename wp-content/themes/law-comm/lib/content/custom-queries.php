@@ -179,7 +179,7 @@ function document_query() {
       'compare' => 'IN',
     );
   } else {
-    $args['meta_query'][] = array(
+    /*$args['meta_query'][] = array(
       'key' => 'project',
       'value'   => "null",
       'compare' => 'NOT IN'
@@ -188,7 +188,7 @@ function document_query() {
       'key' => 'project',
       'value'   => null,
       'compare' => 'NOT IN'
-    );
+    );*/
   }
 
   $doc_title = test_input(get_query_var('doc-title'));
@@ -231,11 +231,11 @@ function document_query() {
   }
 
   if(!empty($publication) && $publication == 17) {
-    $args['meta_query'][] = array(
-      'key' => 'response_date',
-      'value' => '2014-01-01',
-      'compare' => '>',
-    );
+    /*$args['meta_query'][] = array(
+      'key' => 'open_consultation',
+      'value' => 1,
+      'compare' => '!=',
+    );*/
   }
 
   $start = test_input(get_query_var('start'));

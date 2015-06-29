@@ -30,7 +30,7 @@ class QuickLinks_Widget extends WP_Widget {
 <!--   		<h2>Quick links</h2> -->
 			<ul>
 				<li class="ql1"><a href="/project/">Find a Project ></a></li>
-				<li class="ql2"><a href="/document/?title=&doc-title=&publication=17&area_of_law=&start=&end=">Find a Open Consultation ></a></li>
+				<li class="ql2"><a href="/document/?title=&doc-title=&publication=17&area_of_law=&start=&end=">Find Open Consultations ></a></li>
 				<li class="ql3"><a href="/document/">Find a Publication ></a></li>
 			</ul>
 		</div>

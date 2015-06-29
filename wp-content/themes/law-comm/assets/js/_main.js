@@ -99,16 +99,10 @@ $(document).ready(function (){
   $( ".stages li" ).hover(
     function() {
       var className = $(this).attr('class');
-      if($('#'+className).hasClass('default')) {
-
-      } else {
-        $('.rollovers li.default').css("display", "none");
-        $('#'+className).addClass( "active" );
-      }
+      $('#'+className).addClass( "active" );
     }, function() {
       var className = $(this).attr('class');
       $('#'+className).removeClass( "active" );
-      $('.rollovers li.default').css("display", "block");
     }
   );
 

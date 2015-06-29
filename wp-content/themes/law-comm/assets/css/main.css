@@ -7042,6 +7042,15 @@ ul {
 ul a {
   color: #006a5d;
 }
+.page .main ul {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+.col-sm-4.min-col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 .widget {
   border-bottom: 5px solid #006a5d;
   padding-bottom: 1em;
@@ -7763,8 +7772,7 @@ ul.filter-links li a {
   margin: 0;
   background: #ccc;
 }
-.rollovers li.active,
-.rollovers li.default {
+.rollovers li.active {
   display: block;
 }
 .project .max-col,

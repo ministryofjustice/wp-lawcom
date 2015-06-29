@@ -14,8 +14,15 @@
 <?php if ( $wp_query->have_posts() ) : ?>
 <?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
   <?php $project = get_field('project');  ?>
-  <?php if($project): ?>
-    <h3><a class="doc-list" href="/project/<?= $project->post_name; ?>/#<?= $post->post_name; ?>">Publication: <?= $post->title; ?></a></h3>
+  <?php
+    if(!empty($project->post_name)) {
+      $url = "/project/" . $project->post_name . "/#" . $post->post_name;;
+    } else {
+      $url = get_permalink( );
+    }
+  ?>
+  <?php //if($project): ?>
+    <h3><a class="doc-list" href="<?= $url; ?>">Publication: <?= $post->title; ?></a></h3>
     <?php $date = DateTime::createFromFormat('Y-m-d', get_field('publication_date')); ?>
     <?php if (!empty($date)): ?>
 
@@ -24,7 +31,7 @@
 
       <?php endif; ?>
       <hr>
-  <?php endif; ?>
+  <?php //endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>
 
