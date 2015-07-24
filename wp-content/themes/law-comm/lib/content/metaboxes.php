@@ -376,7 +376,7 @@ if(function_exists("register_field_group"))
           'Pre-consultation' => 'Pre-consultation',
           'Consultation' => 'Consultation',
           'Analysis of responses' => 'Policy development',
-          'Complete' => 'Reporting',
+          'Complete' => 'Reported',
         ),
         'default_value' => '',
         'allow_null' => 0,

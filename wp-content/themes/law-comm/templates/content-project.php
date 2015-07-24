@@ -78,7 +78,7 @@
               <li class="r2">Pre-consultation</li>
               <li class="r3">Consultation</li>
               <li class="r4">Policy development</li>
-              <li class="r5">Reporting</li>
+              <li class="r5">Reported</li>
             </ul>
           </div>
           <ul class="rollovers">
@@ -86,7 +86,7 @@
             <li id="r2"<?php if($i == 2): echo ' class="default"'; endif; ?>><strong>Pre-consultation:</strong> Could include approaching interest groups and specialists, producing scoping and issues papers, finalising terms of project</li>
             <li id="r3"<?php if($i == 3): echo ' class="default"'; endif; ?>><strong>Consultation:</strong> Likely to include consultation events and paper, making provisional proposals for comment</li>
             <li id="r4"<?php if($i == 4): echo ' class="default"'; endif; ?>><strong>Policy development:</strong> Will include analysis of consultation responses. Could include further issues papers and consultation on draft Bill</li>
-            <li id="r5"<?php if($i == 5): echo ' class="default"'; endif; ?>><strong>Reporting:</strong> Usually recommendations for law reform but can be advice to government, scoping report or other recommendations</li>
+            <li id="r5"<?php if($i == 5): echo ' class="default"'; endif; ?>><strong>Reported:</strong> Usually recommendations for law reform but can be advice to government, scoping report or other recommendations</li>
           </ul>
 
         <?php }; ?>
