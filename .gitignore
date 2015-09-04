@@ -6,6 +6,8 @@
 *.swp
 Thumbs.db
 .htaccess
+.idea
+node_modules
 
 # wordpress specific
 wp-config.php
@@ -67,6 +69,7 @@ wp-content/mysql.sql
 /wp-content/themes/twentytwelve
 /wp-content/themes/twentythirteen
 /wp-content/themes/twentyfourteen
+/wp-content/themes/twentyfifteen
 /wp-content/themes/index.php
 /wp-content/plugins/index.php
 
@@ -104,4 +107,3 @@ wp-content/mysql.sql
 *.asf
 *.wmv
 *.avi
-wp-content/plugins/hello.php
