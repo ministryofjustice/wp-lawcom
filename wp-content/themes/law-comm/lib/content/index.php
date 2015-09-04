@@ -64,14 +64,29 @@ add_action('init', 'remove_editor_init');
  * @param mixed $update
  * @return void
  */
-function change_title($post_id, $post, $update) {
+function change_title($post_id, $post = null, $update = false) {
+  // Sometimes we're only passed a $post_id
+  // Not exactly sure why, but it only seems to happen when saving a scheduled update post being managed by TAO Schedule Update.
+  if (is_null($post)) {
+    $post = get_post($post_id);
+  }
+
   if (!empty($post) && ($post->post_type == 'document' || $post->post_type == 'project' )) {
     $title = get_field('title',$post_id);
     $content = get_field('description',$post_id);
     $new_slug = sanitize_title( $post->post_title );
-    remove_action('save_post', 'change_title');
-    wp_update_post(array('ID' => $post_id, 'post_title' => $title, 'post_content' => $content, 'post_name' => $new_slug));
-    add_action('save_post', 'change_title');
+
+    if ($title !== false) {
+      // Only update title if the ACF 'title' field is not empty
+      // This is done to avoid updating the post whilst creating a 'scheduled post' (duplicate) with
+      // TAO Schedule Update, but before meta fields have been saved to the post.
+      // Hook 'TAO_ScheduleUpdate\\create_publishing_post' is run once the duplication is complete,
+      // at which point we'll do this again.
+      remove_action('save_post', 'change_title');
+      wp_update_post(array('ID' => $post_id, 'post_title' => $title, 'post_content' => $content, 'post_name' => $new_slug));
+      add_action('save_post', 'change_title');
+    }
+
     $tax = $post->post_type . '_keyword';
     $terms = get_the_terms($post_id, $tax);
     $id = "";
@@ -84,6 +99,12 @@ function change_title($post_id, $post, $update) {
   }
 }
 add_action('save_post', 'change_title', 10, 3);
+
+function change_title_after_tao_schedule_post_duplicate($post_id) {
+  $post = get_post($post_id);
+  change_title($post_id, $post, true);
+}
+add_action('TAO_ScheduleUpdate\\create_publishing_post', 'change_title_after_tao_schedule_post_duplicate');
 
 /**
  * remove_document_meta function.
