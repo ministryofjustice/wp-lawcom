@@ -16,14 +16,14 @@ function roots_get_search_form($form) {
 add_filter('get_search_form', 'roots_get_search_form');
 
 function project_has_documents($projectId) {
-  $documents = new WP_Query([
+  $documents = new WP_Query(array(
     'post_type' => 'document',
     'meta_query' => array(array(
       'key' => 'project',
       'value' => $projectId,
       'compare' => '='
     ))
-  ]);
+  ));
 
   return $documents->have_posts();
 }
