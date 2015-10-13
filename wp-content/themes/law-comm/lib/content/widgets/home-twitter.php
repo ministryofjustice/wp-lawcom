@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Adds Twitter_Widget widget.
  */
@@ -28,11 +28,14 @@ class Twitter_Widget extends WP_Widget {
   ?>
 		<div class="twitter side-item">
   		<h3>Twitter</h3>
-  		<a class="twitter-timeline" href="https://twitter.com/Law_Commission" data-widget-id="561108239270809601">Tweets by @Law_Commission</a>
-      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  		<a class="twitter-link" href="https://twitter.com/Law_Commission">Follow us @Law_Commission</a>
+      <div class="timeline-container">
+  		  <a class="twitter-timeline" href="https://twitter.com/Law_Commission" data-widget-id="561108239270809601">Tweets by @Law_Commission</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </div>
     </div>
-		  
-	<?php	
+
+	<?php
 		echo $args['after_widget'];
 	}
 
@@ -58,7 +61,7 @@ class Twitter_Widget extends WP_Widget {
 	 * @return array Updated safe values to be saved.
 	 */
 	public function update( $new_instance, $old_instance ) {
-	
+
 	}
 
 } // class Twitter_Widget

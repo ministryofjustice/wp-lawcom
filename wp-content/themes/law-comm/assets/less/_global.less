@@ -100,6 +100,24 @@ figure {
 		}
 }
 
+.side-item.twitter {
+  .timeline-container {
+    display: none;
+  }
+  .twitter-link {
+    display: block;
+  }
+
+  @media (min-width: @screen-sm) {
+    .timeline-container {
+      display: block;
+    }
+    .twitter-link {
+      display: none;
+    }
+  }
+}
+
 .more-link {
 	display: block;
 	margin: 1em 0 0 0;

@@ -7058,6 +7058,20 @@ ul a {
 .widget:last-child {
   border-bottom: 0;
 }
+.side-item.twitter .timeline-container {
+  display: none;
+}
+.side-item.twitter .twitter-link {
+  display: block;
+}
+@media (min-width: 768px) {
+  .side-item.twitter .timeline-container {
+    display: block;
+  }
+  .side-item.twitter .twitter-link {
+    display: none;
+  }
+}
 .more-link {
   display: block;
   margin: 1em 0 0 0;
