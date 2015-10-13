@@ -15,7 +15,7 @@
 <?php endif; ?>
 
 <div class="pagination">
-<?php echo paginate_links(); ?>
+<?php echo paginate_links(array('show_all' => true)); ?>
 </div>
 
 <?php
