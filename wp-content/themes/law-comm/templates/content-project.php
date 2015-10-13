@@ -106,124 +106,127 @@
 
       <a name="related"></a>
 
-      <!-- <h2>Related documents and downloads</h2> -->
-      <div class="related">
-        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-          <?php
-          $document_types = array('reports-related-documents','consultations-related-documents','other-documents-more-information');
-          $i = 0;
-          foreach($document_types as $document_type):
-          $post = get_post($project_title);
-          $args = array(
-            'post_type' => 'document',
-            'document_type' => $document_type,
-            'meta_query' => array(array(
-              'key' => 'project',
-              'value' => $project_title,
-              'compare' => '='
-            ))
+      <?php if (project_has_documents($project_title)): ?>
+        <div class="related">
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <?php
+            $document_types = array('reports-related-documents','consultations-related-documents','other-documents-more-information');
+            $i = 0;
+            foreach($document_types as $document_type):
+            $post = get_post($project_title);
+            $args = array(
+              'post_type' => 'document',
+              'document_type' => $document_type,
+              'meta_query' => array(array(
+                'key' => 'project',
+                'value' => $project_title,
+                'compare' => '='
+              ))
 
-          );
+            );
 
-          $query = new WP_Query($args);
-          ?>
-          <?php if($query->have_posts()): ?>
-          <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingOneA">
-              <h3 class="panel-title">
-                <a data-toggle="collapse" href="#collapse<?= $i; ?>" aria-expanded="true" aria-controls="collapse<?= $i; ?>">
-                  <?php $docType = get_term_by('slug', $document_type, "document_type"); echo $docType->name; ?><span class="toggleText">Open</span></a>
-              </h3>
-            </div>
-            <div id="collapse<?= $i; ?>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOneA">
-              <div class="panel-body">
-                <ul>
-                <?php while($query->have_posts()): $query->the_post(); ?>
-                  <?php if(have_rows('files') || have_rows('links')): ?>
-                  <li>
-                  <a name="<?= $post->post_name; ?>"></a>
-                    <div class="related-details">
-                      <!-- <h3><?php if(get_field('title')): ?><?= get_field('title'); ?><?php else: ?><?php $taxoField = get_field('Type', get_the_ID()); $docType = get_term($taxoField[0], "document_type"); echo $docType->name; ?><?php endif; ?></h3> -->
-                      <!--<?php the_excerpt(); ?>-->
-                      <div class="row">
-                          <?php if( have_rows('files') ): ?>
-                          <div class="col-sm-<?php if(have_rows('links')): ?>6<?php else: ?>12<?php endif; ?>">
-                            <h4>Documents</h4>
-                            <ul>
-                            <?php while ( have_rows('files') ) : the_row(); ?>
-                              <?php if(get_sub_field('file')): ?>
-                                <?php $img = get_headers(get_sub_field('file'), 1); ?>
-                                <li><a href="<?= get_sub_field('file'); ?>"><?= get_sub_field('title'); ?></a> <span class="file-meta">PDF, <?php if($img[0] != 'HTTP/1.0 404 Not Found'): echo human_filesize($img["Content-Length"]); endif; ?></span></li>
+            $query = new WP_Query($args);
+            ?>
+            <?php if($query->have_posts()): ?>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingOneA">
+                <h3 class="panel-title">
+                  <a data-toggle="collapse" href="#collapse<?= $i; ?>" aria-expanded="true" aria-controls="collapse<?= $i; ?>">
+                    <?php $docType = get_term_by('slug', $document_type, "document_type"); echo $docType->name; ?><span class="toggleText">Open</span></a>
+                </h3>
+              </div>
+              <div id="collapse<?= $i; ?>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOneA">
+                <div class="panel-body">
+                  <ul>
+                  <?php while($query->have_posts()): $query->the_post(); ?>
+                    <?php if(have_rows('files') || have_rows('links')): ?>
+                    <li>
+                    <a name="<?= $post->post_name; ?>"></a>
+                      <div class="related-details">
+                        <!-- <h3><?php if(get_field('title')): ?><?= get_field('title'); ?><?php else: ?><?php $taxoField = get_field('Type', get_the_ID()); $docType = get_term($taxoField[0], "document_type"); echo $docType->name; ?><?php endif; ?></h3> -->
+                        <!--<?php the_excerpt(); ?>-->
+                        <div class="row">
+                            <?php if( have_rows('files') ): ?>
+                            <div class="col-sm-<?php if(have_rows('links')): ?>6<?php else: ?>12<?php endif; ?>">
+                              <h4>Documents</h4>
+                              <ul>
+                              <?php while ( have_rows('files') ) : the_row(); ?>
+                                <?php if(get_sub_field('file')): ?>
+                                  <?php $img = get_headers(get_sub_field('file'), 1); ?>
+                                  <li><a href="<?= get_sub_field('file'); ?>"><?= get_sub_field('title'); ?></a> <span class="file-meta">PDF, <?php if($img[0] != 'HTTP/1.0 404 Not Found'): echo human_filesize($img["Content-Length"]); endif; ?></span></li>
+                                <?php endif; ?>
+                              <?php endwhile; ?>
+                              </ul>
+                            </div>
+                            <?php endif; ?>
+                            <?php if( have_rows('links') ): ?>
+                            <div class="col-sm-<?php if(have_rows('files')): ?>6<?php else: ?>12<?php endif; ?>">
+                              <h4>Links</h4>
+                              <ul>
+                              <?php while ( have_rows('links') ) : the_row(); ?>
+                                <li><a href="<?= get_sub_field('link') ?>"><?= get_sub_field('title') ?></a></li>
+                              <?php endwhile; ?>
+                              </ul>
+                            </div>
+                            <?php endif; ?>
+                        </div>
+                        <hr>
+                        <div class="other-meta">
+                          <table>
+                            <?php if(get_field('reference_number')): ?>
+                              <tr>
+                                <td><strong>Reference:</strong></td> <td><?php the_field('reference_number'); ?></td>
+                              </tr>
+                            <?php endif; ?>
+                            <?php if($document_type == 'consultations-related-documents'): ?>
+                              <?php $date = DateTime::createFromFormat('Y-m-d', get_field('publication_date')); ?>
+                              <?php if (!empty($date)): ?>
+                                <tr>
+                                  <td><strong>Publication date:</strong></td><td><?php echo $date->format('j F Y') ?></td>
+                                </tr>
                               <?php endif; ?>
-                            <?php endwhile; ?>
-                            </ul>
-                          </div>
-                          <?php endif; ?>
-                          <?php if( have_rows('links') ): ?>
-                          <div class="col-sm-<?php if(have_rows('files')): ?>6<?php else: ?>12<?php endif; ?>">
-                            <h4>Links</h4>
-                            <ul>
-                            <?php while ( have_rows('links') ) : the_row(); ?>
-                              <li><a href="<?= get_sub_field('link') ?>"><?= get_sub_field('title') ?></a></li>
-                            <?php endwhile; ?>
-                            </ul>
-                          </div>
-                          <?php endif; ?>
+                              <?php if(get_field('response_date')): ?>
+                                <tr>
+                                  <td><strong>Response date:</strong></td><td><?php the_field('response_date'); ?></td>
+                                </tr>
+                              <?php endif; ?>
+                              <?php else: ?>
+                              <?php if(get_field('open_date')): ?>
+                                <tr>
+                                  <td><strong>Open date:</strong></td><td><?php the_field('open_date'); ?></td>
+                                </tr>
+                              <?php endif; ?>
+                              <?php if(get_field('close_date')): ?>
+                                <tr>
+                                  <td><strong>Close date:</strong></td><td><?php the_field('close_date'); ?></td>
+                                </tr>
+                              <?php endif; ?>
+                            <?php endif; ?>
+                          </table>
+                        </div>
                       </div>
-                      <hr>
-                      <div class="other-meta">
-                        <table>
-                          <?php if(get_field('reference_number')): ?>
-                            <tr>
-                              <td><strong>Reference:</strong></td> <td><?php the_field('reference_number'); ?></td>
-                            </tr>
-                          <?php endif; ?>
-                          <?php if($document_type == 'consultations-related-documents'): ?>
-                            <?php $date = DateTime::createFromFormat('Y-m-d', get_field('publication_date')); ?>
-                            <?php if (!empty($date)): ?>
-                              <tr>
-                                <td><strong>Publication date:</strong></td><td><?php echo $date->format('j F Y') ?></td>
-                              </tr>
-                            <?php endif; ?>
-                            <?php if(get_field('response_date')): ?>
-                              <tr>
-                                <td><strong>Response date:</strong></td><td><?php the_field('response_date'); ?></td>
-                              </tr>
-                            <?php endif; ?>
-                            <?php else: ?>
-                            <?php if(get_field('open_date')): ?>
-                              <tr>
-                                <td><strong>Open date:</strong></td><td><?php the_field('open_date'); ?></td>
-                              </tr>
-                            <?php endif; ?>
-                            <?php if(get_field('close_date')): ?>
-                              <tr>
-                                <td><strong>Close date:</strong></td><td><?php the_field('close_date'); ?></td>
-                              </tr>
-                            <?php endif; ?>
-                          <?php endif; ?>
-                        </table>
-                      </div>
-                    </div>
-                  </li>
-                <?php endif; ?>
-                <?php endwhile; ?>
-                </ul>
+                    </li>
+                  <?php endif; ?>
+                  <?php endwhile; ?>
+                  </ul>
+                </div>
               </div>
             </div>
+          <?php endif; ?>
+          <?php $i++; ?>
+          <?php endforeach; ?>
+          <?php wp_reset_query(); ?>
+          <?php wp_reset_postdata(); ?>
+          <?php $query = NULL; ?>
           </div>
-        <?php endif; ?>
-        <?php $i++; ?>
-        <?php endforeach; ?>
-        <?php wp_reset_query(); ?>
-        <?php wp_reset_postdata(); ?>
-        <?php $query = NULL; ?>
         </div>
-      </div>
+      <?php endif; ?>
     </div>
 
     <div class="col-sm-4 min-col">
-      <a href="#related" class="jumpAround">Documents and downloads</a>
+      <?php if (project_has_documents($project_title)): ?>
+        <a href="#related" class="jumpAround">Documents and downloads</a>
+      <?php endif; ?>
       <div class="project-details">
         <h3>Project details</h3>
         <?php if($field = get_field('areas_of_law')): ?>
