@@ -1,8 +1,12 @@
 <?php
 
+function newDocumentMetaBox() {
+  return new documentMetaBox();
+}
+
 if ( is_admin() && isset( $_GET['post'] ) ) {
-    add_action( 'load-post.php', new documentMetaBox() );
-    add_action( 'load-post-new.php', new documentMetaBox() );
+    add_action( 'load-post.php', 'newDocumentMetaBox' );
+    add_action( 'load-post-new.php', 'newDocumentMetaBox' );
 }
 
 /**
@@ -57,7 +61,7 @@ class documentMetaBox {
   {
     $post_type = get_post_type();
     if( $post_type == 'document' ) {
-      $project = get_field('field_54d37be93594e', $post->ID); 
+      $project = get_field('field_54d37be93594e', $post->ID);
       if( !empty($project) ) {
         echo '<p><strong>Project:</strong> <a href="/wp-admin/post.php?post=' . $project->ID . '&action=edit">' .  get_the_title( $project->ID ) . '</a></p>';
       }

@@ -39,7 +39,7 @@ function document() {
 		'menu_icon'           => 'dashicons-media-document',
 		'can_export'          => true,
 		'has_archive'         => true,
-		'exclude_from_search' => false,
+		'exclude_from_search' => true,
 		'publicly_queryable'  => true,
 		'query_var'           => 'document',
 		'rewrite'             => $rewrite,
