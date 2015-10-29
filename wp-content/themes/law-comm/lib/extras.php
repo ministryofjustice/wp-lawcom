@@ -28,3 +28,11 @@ function human_filesize($bytes, $dec = 0)
 
     return sprintf("%.{$dec}f", $bytes / pow(1024, $factor)) . @$size[$factor];
 }
+
+/**
+ * Configure 'Safe Redirect Manager' plugin
+ */
+function lawcom_srm_restrict_to_capability() {
+  return 'publish_posts';
+}
+add_filter('srm_restrict_to_capability', 'lawcom_srm_restrict_to_capability');
