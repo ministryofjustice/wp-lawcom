@@ -1,11 +1,10 @@
 <?php
 
-require( trailingslashit( get_template_directory() ) . 'advanced-custom-fields/acf.php' );
-require( trailingslashit( get_template_directory() ) . 'acf-repeater/acf-repeater.php' );
-require( trailingslashit( get_template_directory() ) . 'acf-field-date-time-picker/date_time_picker-v4.php' );
-require( trailingslashit( get_template_directory() ) . 'lib/content/metaboxes.php' );
 require( trailingslashit( get_template_directory() ) . 'lib/content/document_meta_box.php' );
 require( trailingslashit( get_template_directory() ) . 'lib/content/custom-queries.php' );
+
+// Hide ACF from the admin menu
+add_filter('acf/settings/show_admin', '__return_false');
 
 $cpts = scandir( get_template_directory() . "/lib/content/cpt/" );
 foreach ( $cpts as $cpt ) {
@@ -133,7 +132,7 @@ function my_acf_admin_head()
 		{
 			$('li a[data-key=field_54d37487ca2f9], li a[data-key=field_54d374b0584bb], li a[data-key=field_54d3749a584ba], li a[data-key=field_54d374c4584bc], li a[data-key=field_54db7210e5fde]').hide();
 		}
-		$(document).live('acf/setup_fields', function(e, postbox){
+    acf.add_action('ready', function( $element ){
       $('#acf-field-Type option').each(function(idx, el){
         var $el = $(el), text;
         text = $el.text();
@@ -141,10 +140,10 @@ function my_acf_admin_head()
           $el.addClass('parent');
         }
       });
-      $('#acf-field-Type').trigger('change');
+      $('.acf-field-54d36485697f8').trigger('change');
       $('li a[data-key=field_54db35cfaa0ea]').hide();
 		});
-		$('#acf-field-Type').live('change', function(){
+		$('.acf-field-54d36485697f8').live('change', function(){
 			parentCheck = $(this).find("option:selected").hasClass('parent')
       child = $(this).find("option:selected").prevAll('.parent').first().text();
       parent = $(this).find("option:selected").text();
@@ -170,12 +169,16 @@ function my_acf_admin_head2() {
     <script type="text/javascript">
     (function($) {
         $(document).ready(function(){
-            if($('.field_key-field_553e9161db1f9')) {
-              $('.field_key-field_553e9161db1f9').append( $('#title') );
+            if($('.acf-field-553e9161db1f9')) {
+              $('.acf-field-553e9161db1f9').append( $('#title') );
               $('#title-prompt-text').hide();
             }
 
-            $('.field_key-field_553e916adb1fa').append( $('#postdivrich') );
+            $('.acf-field-553e916adb1fa').append( $('#postdivrich') );
+            $('.acf-field-553e916adb1fa #wp-content-editor-tools').css({
+              "background-color": "transparent",
+              "padding-top": 0
+            });
         });
     })(jQuery);
     </script>
