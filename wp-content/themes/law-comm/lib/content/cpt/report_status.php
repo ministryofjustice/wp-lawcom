@@ -118,10 +118,6 @@ class ReportStatus {
   }
 
   function pre_get_posts($query) {
-    /**
-     * We only want our code to run in the main WP query
-     * AND if an orderby query variable is designated.
-     */
     if ($query->get('post_type') == 'report_status' && $query->is_main_query()) {
       $orderby = $query->get('orderby');
 
