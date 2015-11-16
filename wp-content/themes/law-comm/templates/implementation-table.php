@@ -39,15 +39,3 @@ $current_year = 0;
     </table>
   </div>
 <?php endif; ?>
-
-<script src="https://rawgit.com/mkoryak/floatThead/1.3.1/dist/jquery.floatThead.min.js"></script>
-<script>
-  jQuery(window).load(function() {
-//    jQuery('.implementation-table').stickyTableHeaders({fixedOffset: $('#wpadminbar')});
-    var top = 0;
-    if ($('#wpadminbar').length > 0) {
-      top = $('#wpadminbar').height();
-    }
-    jQuery('.implementation-table').floatThead({top: top});
-  });
-</script>
