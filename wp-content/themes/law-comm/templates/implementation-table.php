@@ -30,7 +30,23 @@ $current_year = 0;
           <?php endif; ?>
           <tr>
             <td><?php the_field('reference'); ?></td>
-            <td><?php the_title(); ?></td>
+            <td>
+              <?php
+
+              $associatedProject = get_field('associated_project');
+
+              if ($associatedProject) {
+                echo '<a href="' . get_permalink($associatedProject) . '" title="Read more about this project">';
+              }
+
+              the_title();
+
+              if ($associatedProject) {
+                echo '</a>';
+              }
+
+              ?>
+            </td>
             <td><?php echo \Content\CPT\ReportStatus::get_status(get_the_ID()); ?></td>
             <td><?php the_field('related_measures'); ?></td>
           </tr>
