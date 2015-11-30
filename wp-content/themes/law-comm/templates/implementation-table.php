@@ -4,7 +4,7 @@ $records = new WP_Query(array(
   'post_type' => 'report_status',
   'meta_key' => 'reference',
   'orderby' => 'meta_value_num',
-  'order' => 'ASC',
+  'order' => 'DESC',
 ));
 
 $current_year = 0;
