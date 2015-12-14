@@ -7,7 +7,6 @@
 Thumbs.db
 .htaccess
 .idea
-node_modules
 
 # wordpress specific
 wp-config.php
