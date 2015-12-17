@@ -231,17 +231,17 @@
         <h3>Project details</h3>
         <?php if($field = get_field('areas_of_law')): ?>
         <h4>Area of law</h4>
-        <p><?php $area_of_law = get_term($field[0], "areas_of_law"); echo $area_of_law->name; ?></p>
+        <p><?php $area_of_law = get_term($field, "areas_of_law"); echo $area_of_law->name; ?></p>
         <?php endif; ?>
 
         <?php if($field = get_field('team')): ?>
         <h4>Team</h4>
-        <p><?php $team = get_term($field[0], "team"); echo $team->name; ?></p>
+        <p><?php $team = get_term($field, "team"); echo $team->name; ?></p>
         <?php endif; ?>
 
         <?php if($field = get_field('commissioners')): ?>
         <h4>Commissioner</h4>
-        <p><?php $commissioners = get_term($field[0], "commissioner"); echo $commissioners->name; ?></p>
+        <p><?php $commissioners = get_term($field, "commissioner"); echo $commissioners->name; ?></p>
         <?php endif; ?>
 
         <?php if($field = get_field('start_date')): ?>
