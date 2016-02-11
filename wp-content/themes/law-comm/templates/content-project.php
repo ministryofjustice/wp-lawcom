@@ -178,29 +178,30 @@
                                 <td><strong>Reference:</strong></td> <td><?php the_field('reference_number'); ?></td>
                               </tr>
                             <?php endif; ?>
-                            <?php if($document_type == 'consultations-related-documents'): ?>
-                              <?php $date = DateTime::createFromFormat('Y-m-d', get_field('publication_date')); ?>
-                              <?php if (!empty($date)): ?>
-                                <tr>
-                                  <td><strong>Publication date:</strong></td><td><?php echo $date->format('j F Y') ?></td>
-                                </tr>
-                              <?php endif; ?>
-                              <?php if(get_field('response_date')): ?>
-                                <tr>
-                                  <td><strong>Response date:</strong></td><td><?php the_field('response_date'); ?></td>
-                                </tr>
-                              <?php endif; ?>
-                              <?php else: ?>
-                              <?php if(get_field('open_date')): ?>
-                                <tr>
-                                  <td><strong>Open date:</strong></td><td><?php the_field('open_date'); ?></td>
-                                </tr>
-                              <?php endif; ?>
-                              <?php if(get_field('close_date')): ?>
-                                <tr>
-                                  <td><strong>Close date:</strong></td><td><?php the_field('close_date'); ?></td>
-                                </tr>
-                              <?php endif; ?>
+
+                            <?php $date = DateTime::createFromFormat('Y-m-d', get_field('publication_date')); ?>
+                            <?php if (!empty($date)): ?>
+                              <tr>
+                                <td><strong>Publication date:</strong></td><td><?php echo $date->format('j F Y') ?></td>
+                              </tr>
+                            <?php endif; ?>
+
+                            <?php if(get_field('response_date')): ?>
+                              <tr>
+                                <td><strong>Response date:</strong></td><td><?php the_field('response_date'); ?></td>
+                              </tr>
+                            <?php endif; ?>
+
+                            <?php if(get_field('open_date')): ?>
+                              <tr>
+                                <td><strong>Open date:</strong></td><td><?php the_field('open_date'); ?></td>
+                              </tr>
+                            <?php endif; ?>
+
+                            <?php if(get_field('close_date')): ?>
+                              <tr>
+                                <td><strong>Close date:</strong></td><td><?php the_field('close_date'); ?></td>
+                              </tr>
                             <?php endif; ?>
                           </table>
                         </div>
