@@ -5,6 +5,7 @@ $records = new WP_Query(array(
   'meta_key' => 'reference',
   'orderby' => 'meta_value_num',
   'order' => 'DESC',
+  'posts_per_page' => -1,
 ));
 
 $current_year = 0;
