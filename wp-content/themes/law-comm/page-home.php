@@ -5,10 +5,7 @@ Template Name: Homepage
 */
 ?>
 
-
 <?php while (have_posts()) : the_post(); ?>
-  <?php get_template_part( 'header'); ?>
-
 
 	  	<div id="top-banner" class="container-fluid">
 

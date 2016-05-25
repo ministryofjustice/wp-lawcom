@@ -7,10 +7,6 @@
     </div>
   <![endif]-->
 
-    <!--[if lt IE 9]>
-<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/ie7and8.css">
-  <![endif]-->
-
   <?php
     do_action('get_header');
     get_template_part('templates/header');
