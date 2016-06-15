@@ -3,12 +3,6 @@
 require( trailingslashit( get_template_directory() ) . 'lib/content/document_meta_box.php' );
 require( trailingslashit( get_template_directory() ) . 'lib/content/custom-queries.php' );
 
-// Hide ACF from the admin menu
-function should_acf_show_admin() {
-  return !acf_pro_is_license_active();
-}
-add_filter('acf/settings/show_admin', 'should_acf_show_admin');
-
 $cpts = scandir( get_template_directory() . "/lib/content/cpt/" );
 foreach ( $cpts as $cpt ) {
 	if ( $cpt[0] != "." )

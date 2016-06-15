@@ -1,0 +1,40 @@
+{
+    "key": "group_5761695aeb9cb",
+    "title": "Homepage sidebar",
+    "fields": [
+        {
+            "key": "field_5761699aab85b",
+            "label": "Featured image link",
+            "name": "featured_image_link",
+            "type": "url",
+            "instructions": "A link for the featured image. Leave blank for no link.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "6"
+            }
+        ]
+    ],
+    "menu_order": "",
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1466002114
+}
