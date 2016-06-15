@@ -22,7 +22,19 @@ Template Name: Homepage
 		      </div>
 		      <div class="col-sm-6 intro-right">
 
-		      <?php the_post_thumbnail( 'full' ); ?>
+            <?php
+            $link = get_field('featured_image_link');
+            ?>
+
+            <?php if (!empty($link)): ?>
+              <a href="<?php echo esc_attr($link); ?>">
+            <?php endif; ?>
+
+		          <?php the_post_thumbnail( 'full' ); ?>
+
+            <?php if (!empty($link)): ?>
+              </a>
+            <?php endif; ?>
 
 		      </div>
 	    	</div>
