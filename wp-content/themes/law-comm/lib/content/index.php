@@ -191,4 +191,3 @@ function my_acf_admin_head2() {
     <?php
 }
 add_action('acf/input/admin_head', 'my_acf_admin_head2');
-?>
