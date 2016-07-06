@@ -1,0 +1,38 @@
+//
+// Navbars
+// --------------------------------------------------
+
+
+// Both navbar header and collapse
+//
+// When a container is present, change the behavior of the header and collapse.
+
+.container,
+.container-fluid {
+  > .navbar-header,
+  > .navbar-collapse {
+    margin-top: -20px;
+
+    @media (min-width: 480px) {
+        margin-top: -40px;
+    }
+  }
+}
+
+
+// Navbar nav links
+//
+// Builds on top of the `.nav` components with its own modifier class to make
+// the nav the full height of the horizontal nav (above 768px).
+
+.navbar-nav {
+  @media (max-width: @grid-float-breakpoint-max) {
+    // Dropdowns get custom display when collapsed
+    .open .dropdown-menu {
+      > li > a,
+      .dropdown-header {
+        padding: .9em;
+      }
+    }
+  }
+}
