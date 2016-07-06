@@ -2636,7 +2636,11 @@ select[multiple].input-lg {
   .form-inline .input-group {
     display: inline-table;
     vertical-align: middle;
-    width: 100%;
+  }
+  .form-inline .input-group .input-group-addon,
+  .form-inline .input-group .input-group-btn,
+  .form-inline .input-group .form-control {
+    width: auto;
   }
   .form-inline .input-group > .form-control {
     width: 100%;
@@ -3109,9 +3113,8 @@ tbody.collapse.in {
 }
 .dropdown-menu {
   position: absolute;
-  top: 36px;
+  top: 100%;
   left: 0;
-  background-color: #fff;
   z-index: 1000;
   display: none;
   float: left;
@@ -3121,6 +3124,7 @@ tbody.collapse.in {
   list-style: none;
   font-size: 14px;
   text-align: left;
+  background-color: #ffffff;
   border: 1px solid #cccccc;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 4px;
@@ -3815,15 +3819,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .container-fluid > .navbar-collapse {
   margin-right: -15px;
   margin-left: -15px;
-  margin-top: -20px;
-}
-@media (min-width: 480px) {
-  .container > .navbar-header,
-  .container-fluid > .navbar-header,
-  .container > .navbar-collapse,
-  .container-fluid > .navbar-collapse {
-    margin-top: -40px;
-  }
 }
 @media (min-width: 768px) {
   .container > .navbar-header,
@@ -3934,7 +3929,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
   .navbar-nav .open .dropdown-menu > li > a,
   .navbar-nav .open .dropdown-menu .dropdown-header {
-    padding: .9em;
+    padding: 5px 15px 5px 25px;
   }
   .navbar-nav .open .dropdown-menu > li > a {
     line-height: 20px;
@@ -3993,7 +3988,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .navbar-form .input-group {
     display: inline-table;
     vertical-align: middle;
-    width: 100%;
+  }
+  .navbar-form .input-group .input-group-addon,
+  .navbar-form .input-group .input-group-btn,
+  .navbar-form .input-group .form-control {
+    width: auto;
   }
   .navbar-form .input-group > .form-control {
     width: 100%;
@@ -4020,6 +4019,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
   .navbar-form .has-feedback .form-control-feedback {
     top: 0;
+  }
+}
+@media (min-width: 768px) {
+  .navbar-form .input-group {
+    width: 100%;
   }
 }
 @media (max-width: 767px) {
@@ -6981,6 +6985,35 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
   margin-left: -5px;
   margin-right: -5px;
 }
+.dropdown-menu {
+  top: 36px;
+  background-color: #fff;
+}
+@media (min-width: 768px) {
+  .form-inline .input-group {
+    width: 100%;
+  }
+}
+.container > .navbar-header,
+.container-fluid > .navbar-header,
+.container > .navbar-collapse,
+.container-fluid > .navbar-collapse {
+  margin-top: -20px;
+}
+@media (min-width: 480px) {
+  .container > .navbar-header,
+  .container-fluid > .navbar-header,
+  .container > .navbar-collapse,
+  .container-fluid > .navbar-collapse {
+    margin-top: -40px;
+  }
+}
+@media (max-width: 767px) {
+  .navbar-nav .open .dropdown-menu > li > a,
+  .navbar-nav .open .dropdown-menu .dropdown-header {
+    padding: .9em;
+  }
+}
 body {
   font-family: "Roboto", Verdana, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -6989,11 +7022,8 @@ a {
   color: #006a5d;
 }
 img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
-}
-figure {
-  width: 100%!important;
 }
 .page-header {
   margin-top: 0;
