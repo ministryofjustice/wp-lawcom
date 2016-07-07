@@ -5,7 +5,7 @@
  *
  * @access public
  * @param mixed $vars
- * @return void
+ * @return array
  */
 function add_query_vars_filter($vars){
   $vars[] = "keywords";
@@ -35,7 +35,7 @@ function test_input($data) {
  *
  * @access public
  * @param mixed $value
- * @return void
+ * @return int
  */
 function fix_posts_per_page( $value ) {
   return (is_post_type_archive('project') || is_post_type_archive('document')) ? 1 : $value;
@@ -175,17 +175,6 @@ function document_query() {
       'value' => $projectIDs,
       'compare' => 'IN',
     );
-  } else {
-    /*$args['meta_query'][] = array(
-      'key' => 'project',
-      'value'   => "null",
-      'compare' => 'NOT IN'
-    );
-    $args['meta_query'][] = array(
-      'key' => 'project',
-      'value'   => null,
-      'compare' => 'NOT IN'
-    );*/
   }
 
   $doc_title = test_input(get_query_var('doc-title'));
