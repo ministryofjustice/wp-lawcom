@@ -67,27 +67,40 @@ Template Name: Homepage
 
 
 							<li>
-								<div class="news-details">
+                <article <?php post_class('entry'); ?>>
+                  <header>
+                    <h3 class="entry-title">
+                      <a href="<?php the_permalink(); ?>">
+                        <?php
 
-									<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                        if (is_search() && get_post_type() == 'project') {
+                          echo 'Project: ';
+                        }
 
-										<div class="news-meta">
-											<time class="published" datetime="<?php echo get_the_time( 'c' ); ?>"><?php echo get_the_date(); ?></time>
-										</div>
+                        the_title();
 
+                        ?>
+                      </a>
+                    </h3>
+                    <?php if (get_post_type() !== 'project'): ?>
+                      <p><?php get_template_part('templates/entry-meta'); ?></p>
+                    <?php endif; ?>
+                  </header>
 
+                  <?php if ( has_post_thumbnail() ) : ?>
+                    <div class="entry-thumbnail">
+                      <?php the_post_thumbnail(); ?>
+                    </div>
+                  <?php endif; ?>
 
-										<?php if ( has_post_thumbnail() ) : ?>
-											<div class="home-news-img-wrapper">
-												<?php the_post_thumbnail('large'); ?>
-											</div>
+                  <div class="entry-summary">
+                    <?php the_excerpt(); ?>
+                  </div>
 
-										<?php endif; ?>
-										<?php the_excerpt(); ?>
+                  <div class="clearfix"></div>
+                </article>
 
-
-							</div>
-							</li>
+              </li>
 
 
 						<?php endwhile; ?>
