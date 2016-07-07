@@ -30,8 +30,8 @@ class Document_Widget extends WP_Widget {
 		<h3>Search Publications and Consultations</h3>
 		<form action="/document" method="get">
   		<div class="form-group">
-        <label for="title">Project Title or Keywords</label>
-        <input type="text" name="title" id="title" class="form-control" value="<?= test_input(get_query_var( 'title' )); ?>">
+        <label for="project-title">Project Title or Keywords</label>
+        <input type="text" name="project-title" id="project-title" class="form-control" value="<?= test_input(get_query_var( 'project-title' )); ?>">
       </div>
 
       <div class="form-group">
