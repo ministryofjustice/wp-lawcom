@@ -5,11 +5,12 @@
  *
  * @access public
  * @param mixed $vars
- * @return void
+ * @return array
  */
 function add_query_vars_filter($vars){
-  $vars[] = "title";
+  $vars[] = "keywords";
   $vars[] = "doc-title";
+  $vars[] = "project-title";
   $vars[] = "teams";
   $vars[] = "keyword";
   $vars[] = "area_of_law";
@@ -34,7 +35,7 @@ function test_input($data) {
  *
  * @access public
  * @param mixed $value
- * @return void
+ * @return int
  */
 function fix_posts_per_page( $value ) {
   return (is_post_type_archive('project') || is_post_type_archive('document')) ? 1 : $value;
@@ -45,33 +46,29 @@ add_filter( 'option_posts_per_page', 'fix_posts_per_page' );
  * project_query function.
  *
  * @access public
- * @return void
+ * @return WP_Query
  */
 function project_query() {
-  if(isset($wp_query)) {
-    $temp = $wp_query;
-    $wp_query = NULL;
-  }
   $args = array();
   $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
-  $title = test_input(get_query_var('title'));
-  if(!empty($title)) {
+  $keywords = test_input(get_query_var('keywords'));
+  if(!empty($keywords)) {
     $args['meta_query'][] = array(
       'relation' => 'OR',
       array(
         'key' => 'title',
-        'value' => $title,
+        'value' => $keywords,
         'compare' => 'LIKE',
       ),
       array(
         'key' => 'description',
-        'value' => $title,
+        'value' => $keywords,
         'compare' => 'LIKE',
       ),
       array(
         'key' => 'keywords',
-        'value' => $title,
+        'value' => $keywords,
         'compare' => 'LIKE',
       ),
     );
@@ -107,35 +104,35 @@ function project_query() {
  * document_query function.
  *
  * @access public
- * @return void
+ * @return WP_Query
  */
 function document_query() {
-  $title = test_input(get_query_var('title'));
+  $project_title = test_input(get_query_var('project-title'));
   $area_of_law = test_input(get_query_var('area_of_law'));
   $teams = test_input(get_query_var('teams'));
 
-  if(!empty($title) || !empty($area_of_law) || !empty($teams)) {
+  if(!empty($project_title) || !empty($area_of_law) || !empty($teams)) {
     $projectArgs = array(
       'post_type' => 'project',
       'posts_per_page' => -1
     );
 
-    if(!empty($title)) {
+    if(!empty($project_title)) {
       $projectArgs['meta_query'][] = array(
         'relation' => 'OR',
         array(
           'key' => 'title',
-          'value' => $title,
+          'value' => $project_title,
           'compare' => 'LIKE',
         ),
         array(
           'key' => 'description',
-          'value' => $title,
+          'value' => $project_title,
           'compare' => 'LIKE',
         ),
         array(
           'key' => 'keywords',
-          'value' => $title,
+          'value' => $project_title,
           'compare' => 'LIKE',
         ),
       );
@@ -178,17 +175,6 @@ function document_query() {
       'value' => $projectIDs,
       'compare' => 'IN',
     );
-  } else {
-    /*$args['meta_query'][] = array(
-      'key' => 'project',
-      'value'   => "null",
-      'compare' => 'NOT IN'
-    );
-    $args['meta_query'][] = array(
-      'key' => 'project',
-      'value'   => null,
-      'compare' => 'NOT IN'
-    );*/
   }
 
   $doc_title = test_input(get_query_var('doc-title'));

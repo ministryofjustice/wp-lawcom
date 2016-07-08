@@ -1,0 +1,24 @@
+//
+// Forms
+// --------------------------------------------------
+
+
+// Inline forms
+//
+// Make forms appear inline(-block) by adding the `.form-inline` class. Inline
+// forms begin stacked on extra small (mobile) devices and then go inline when
+// viewports reach <768px.
+//
+// Requires wrapping inputs and labels with `.form-group` for proper display of
+// default HTML form controls and our custom form controls (e.g., input groups).
+//
+// Heads up! This is mixin-ed into `.navbar-form` in navbars.less.
+
+.form-inline {
+  // Kick in the inline
+  @media (min-width: @screen-sm-min) {
+    .input-group {
+      width: 100%;
+    }
+  }
+}
