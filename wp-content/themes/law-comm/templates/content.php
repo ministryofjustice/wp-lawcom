@@ -1,4 +1,4 @@
-<article <?php post_class(); ?>>
+<article <?php post_class('entry'); ?>>
   <header>
     <h2 class="entry-title">
       <a href="<?php the_permalink(); ?>">
@@ -17,9 +17,16 @@
       <p><?php get_template_part('templates/entry-meta'); ?></p>
     <?php endif; ?>
   </header>
+
+  <?php if ( has_post_thumbnail() ) : ?>
+    <div class="entry-thumbnail">
+      <?php the_post_thumbnail(); ?>
+    </div>
+  <?php endif; ?>
+
   <div class="entry-summary">
     <?php the_excerpt(); ?>
   </div>
 
-  <hr/>
+  <div class="clearfix"></div>
 </article>
