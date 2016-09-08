@@ -66,10 +66,6 @@ $(document).ready(UTIL.loadEvents);
 
 $(document).ready(function (){
     $('.navbar-default .navbar-nav li:last-child a, .news ul li:last-child').addClass('last-child');
-    $('.datepicker').datepicker();
-    $('.input-daterange').datepicker({
-  });
-
 
 /* Toggle open/close text on project pages */
 
