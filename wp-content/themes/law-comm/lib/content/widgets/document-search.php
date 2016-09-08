@@ -84,12 +84,6 @@ class Document_Widget extends WP_Widget {
         </select>
       </div>
       <?php endif; ?>
-      <label for="start">Publication Date</label>
-      <div class="input-daterange input-group form-group">
-        <input type="text" class="input-sm form-control" name="start" value="<?= test_input(get_query_var( 'start' )); ?>" />
-        <span class="input-group-addon">to</span>
-        <input type="text" class="input-sm form-control" name="end" value="<?= test_input(get_query_var( 'end' )); ?>" />
-      </div>
       <!--<div class="form-group">
         <label for="lccp">LC/CP Number</label>
         <input type="text" class="form-control" id="lccp" name="lccp" placeholder="Enter LC/CP" value="<?= test_input(get_query_var('lccp')); ?>">

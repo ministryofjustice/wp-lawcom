@@ -224,20 +224,6 @@ function document_query() {
     );
   }
 
-  $start = test_input(get_query_var('start'));
-  $end = test_input(get_query_var('end'));
-  if(!empty($start) && !empty($end)) {
-    $stime = DateTime::createFromFormat("m/d/Y", $start);
-    $etime = DateTime::createFromFormat("m/d/Y", $end);
-
-    $args['meta_query'][] = array(
-      'key' => 'publication_date',
-      'value' => array(date_format($stime, 'Y-m-d'),date_format($etime, 'Y-m-d')),
-      'compare' => 'BETWEEN',
-      'type' => 'DATE'
-    );
-  }
-
   $args['post_type'] = 'document';
   $args['paged'] = $paged;
   $args['posts_per_page'] = 10;
