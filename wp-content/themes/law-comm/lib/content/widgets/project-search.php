@@ -44,8 +44,7 @@ class Project_Widget extends WP_Widget {
         </select>
       </div>
       <?php endif; ?>
-      <input type="submit" value="Search" class="btn btn-primary">
-      <input type="reset" value="Clear" class="btn btn-default">
+      <input type="submit" value="Search" class="btn btn-primary btn-block">
 		</form>
 
 	<?php
