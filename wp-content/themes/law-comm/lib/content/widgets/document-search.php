@@ -94,8 +94,7 @@ class Document_Widget extends WP_Widget {
         <label for="lccp">LC/CP Number</label>
         <input type="text" class="form-control" id="lccp" name="lccp" placeholder="Enter LC/CP" value="<?= test_input(get_query_var('lccp')); ?>">
       </div>-->
-      <input type="submit" value="Search" class="btn btn-primary">
-      <input type="reset" value="Clear" class="btn btn-default">
+      <input type="submit" value="Search" class="btn btn-primary btn-block">
 		</form>
 
 	<?php
