@@ -39,29 +39,11 @@ class Document_Widget extends WP_Widget {
         <input type="text" name="doc-title" id="doc-title" class="form-control" value="<?= test_input(get_query_var( 'doc-title' )); ?>">
       </div>
 
-      <!--<?php $areas = get_terms('team', 'hide_empty=0'); if(!empty($areas)): ?>
-      <div class="form-group">
-        <label for="publication">Team</label>
-        <?php
-          wp_dropdown_categories(array(
-            'show_option_all' => '--- Choose Team ---',
-            'taxonomy' => 'team',
-            'hide_empty' => 0,
-            'hierarchical' => 1,
-            'class' => 'form-control',
-            'name' => 'teams',
-            'selected' => test_input(get_query_var( 'teams' ))
-          ));
-        ?>
-      </div>
-      <?php endif; ?>-->
-
-      <?php $areas = get_terms('document_type', 'hide_empty=0'); if(!empty($areas)): ?>
       <div class="form-group">
         <label for="publication">Document Type</label>
         <?php
           wp_dropdown_categories(array(
-            'show_option_all' => '--- Choose Type ---',
+            'show_option_all' => 'Any document type',
             'taxonomy' => 'document_type',
             'hide_empty' => 0,
             'hierarchical' => 1,
@@ -71,23 +53,22 @@ class Document_Widget extends WP_Widget {
           ));
         ?>
       </div>
-      <?php endif; ?>
 
-      <?php $areas = get_terms('areas_of_law'); if(!empty($areas)): ?>
       <div class="form-group">
         <label for="area_of_law">Area of Law</label>
-        <select name="area_of_law" id="area_of_law" class="form-control">
-          <option value=""></option>
-          <?php foreach($areas as $area): ?>
-            <option value="<?= $area->term_id ?>"<?php if(get_query_var('area_of_law') == $area->term_id) { echo ' selected="selected"'; } ?>><?= $area->name ?></option>
-          <?php endforeach; ?>
-        </select>
+        <?php
+        wp_dropdown_categories(array(
+          'show_option_all' => 'Any area of law',
+          'taxonomy' => 'areas_of_law',
+          'hide_empty' => 0,
+          'hierarchical' => 1,
+          'class' => 'form-control',
+          'name' => 'area_of_law',
+          'selected' => test_input(get_query_var( 'area_of_law' ))
+        ));
+        ?>
       </div>
-      <?php endif; ?>
-      <!--<div class="form-group">
-        <label for="lccp">LC/CP Number</label>
-        <input type="text" class="form-control" id="lccp" name="lccp" placeholder="Enter LC/CP" value="<?= test_input(get_query_var('lccp')); ?>">
-      </div>-->
+
       <input type="submit" value="Search" class="btn btn-primary btn-block">
 		</form>
 

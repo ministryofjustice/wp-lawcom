@@ -11,11 +11,9 @@ function add_query_vars_filter($vars){
   $vars[] = "keywords";
   $vars[] = "doc-title";
   $vars[] = "project-title";
-  $vars[] = "teams";
   $vars[] = "keyword";
   $vars[] = "area_of_law";
   $vars[] = "publication";
-  $vars[] = "lccp";
   $vars[] = "start";
   $vars[] = "end";
   return $vars;
