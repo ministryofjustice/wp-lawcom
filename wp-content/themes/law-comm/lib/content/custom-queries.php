@@ -211,51 +211,25 @@ function document_query() {
 
   $keywords = get_query_var('keywords');
   if (!empty($keywords)) {
-    $keywords_contains_reference = preg_match('/(LC|CP|LCCP)\s*(\d+)/i', $keywords, $reference);
-
-    if ( $keywords_contains_reference ) {
+    if (contains_document_reference($keywords)) {
       /**
        * The keywords field contains a document reference number.
        * Find documents with a matching reference number.
        */
-
-      $ref_meta_query = array();
-
-      switch ( strtoupper( $reference[1] ) ) {
-        case 'LC':
-          $prefix = 'LC';
-          break;
-
-        case 'CP':
-        case 'LCCP':
-          $prefix = 'CP';
-          break;
-
-        default:
-          $prefix = false;
-          break;
-      }
-
-      if ( $prefix ) {
-        $ref_meta_query[] = array(
+      $reference = extract_document_reference($keywords);
+      $args['meta_query'][] = array(
+        array(
           'key'   => 'reference_number_prefix',
-          'value' => $prefix,
-        );
-      }
-
-      $ref_meta_query[] = array(
-        'key'   => 'reference_number_number',
-        'value' => intval( $reference[2] ),
-        'type'  => 'NUMERIC',
+          'value' => $reference['prefix'],
+        ),
+        array(
+          'key'   => 'reference_number_number',
+          'value' => $reference['number'],
+          'type'  => 'NUMERIC',
+        ),
       );
-
-      /**
-       * @TODO: need to create additional postmeta fields on post save,
-       *        and create a script to re-save for all documents.
-       */
-
-      $args['meta_query'][] = $ref_meta_query;
-    } else {
+    }
+    else {
       /**
        * This looks like a normal keywords query.
        *
