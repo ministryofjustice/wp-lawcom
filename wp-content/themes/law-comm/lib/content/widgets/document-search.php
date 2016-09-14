@@ -29,7 +29,12 @@ class Document_Widget extends WP_Widget {
   ?>
 		<h3>Search Publications and Consultations</h3>
 		<form action="/document" method="get">
-  		<div class="form-group">
+      <div class="form-group">
+        <label for="keywords">Publication Name or Reference</label>
+        <input type="text" name="keywords" id="keywords" class="form-control" value="<?= test_input(get_query_var('keywords')); ?>" placeholder="e.g. &quot;adult social care&quot;, or &quot;CP192&quot;">
+      </div>
+
+  		<!-- <div class="form-group">
         <label for="project-title">Project Title or Keywords</label>
         <input type="text" name="project-title" id="project-title" class="form-control" value="<?= test_input(get_query_var( 'project-title' )); ?>">
       </div>
@@ -37,7 +42,7 @@ class Document_Widget extends WP_Widget {
       <div class="form-group">
         <label for="title">Document Title</label>
         <input type="text" name="doc-title" id="doc-title" class="form-control" value="<?= test_input(get_query_var( 'doc-title' )); ?>">
-      </div>
+      </div> -->
 
       <div class="form-group">
         <label for="publication">Document Type</label>
