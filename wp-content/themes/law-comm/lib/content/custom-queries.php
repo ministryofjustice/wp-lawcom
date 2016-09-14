@@ -119,27 +119,6 @@ function document_query() {
       'posts_per_page' => -1
     );
 
-    if(!empty($project_title)) {
-      $projectArgs['meta_query'][] = array(
-        'relation' => 'OR',
-        array(
-          'key' => 'title',
-          'value' => $project_title,
-          'compare' => 'LIKE',
-        ),
-        array(
-          'key' => 'description',
-          'value' => $project_title,
-          'compare' => 'LIKE',
-        ),
-        array(
-          'key' => 'keywords',
-          'value' => $project_title,
-          'compare' => 'LIKE',
-        ),
-      );
-    }
-
     if(!empty($area_of_law)) {
       $projectArgs['tax_query'][] = array(
         'taxonomy' => 'areas_of_law',
@@ -177,36 +156,6 @@ function document_query() {
       'compare' => 'IN',
     );
   }
-
-  $doc_title = test_input(get_query_var('doc-title'));
-  if(!empty($doc_title)) {
-    $args['meta_query'][][] = array(
-      'relation' => 'OR',
-      array(
-        'key' => 'title',
-        'value' => $doc_title,
-        'compare' => 'LIKE',
-      ),
-      array(
-        'key' => 'description',
-        'value' => $doc_title,
-        'compare' => 'LIKE',
-      ),
-      array(
-        'key' => 'keywords',
-        'value' => $doc_title,
-        'compare' => 'LIKE',
-      ),
-    );
-  }
-
-  $lccp = test_input(get_query_var('lccp'));
-  if(!empty($lccp)) {
-    $args['meta_query'][] = array(
-      'key' => 'reference_number',
-      'value' => $lccp,
-      'compare' => 'LIKE',
-    );
   }*/
 
   $keywords = get_query_var('keywords');
@@ -267,24 +216,37 @@ function document_query() {
 
       // Add a filter to replace the 'project-title-placeholder' condition with a
       // project 'post_title' condition.
-      add_filter( 'posts_where', 'document_query_where_project_title', 10, 2 );
+      add_filter('posts_where', 'document_query_where_project_title', 10, 2);
     }
   }
 
-  $publication = test_input(get_query_var('publication'));
-  if(!empty($publication)) {
+  $area_of_law = trim(get_query_var('area_of_law'));
+  if ($area_of_law) {
+    $args['meta_query'][] = array(
+      'key' => 'project',
+      'compare' => 'EXISTS',
+    );
+
+    $args['area_of_law'] = intval($area_of_law);
+    add_filter('posts_where', 'document_query_where_project_area_of_law', 10, 2);
+  }
+
+  $publication = trim(get_query_var('publication'));
+  if (!empty($publication)) {
+    $publication = intval($publication);
+
     $args['tax_query'][] = array(
       'taxonomy' => 'document_type',
       'terms' => $publication,
     );
-  }
 
-  if(!empty($publication) && $publication == 17) {
-    $args['meta_query'][] = array(
-      'key' => 'open_consultation',
-      'value' => 1,
-      'compare' => '==',
-    );
+    if ($publication == 17) {
+      $args['meta_query'][] = array(
+        'key' => 'open_consultation',
+        'value' => 1,
+        'compare' => '==',
+      );
+    }
   }
 
   $args['post_type'] = 'document';
@@ -296,12 +258,13 @@ function document_query() {
   }
 
   if (!empty($args['meta_query'])) {
-    add_filter('posts_join', 'document_query_join_projects', 10, 2);
+    add_filter( 'posts_join', 'document_query_join_projects', 10, 2 );
   }
 
   $query = new WP_Query($args);
   remove_filter('posts_join', 'document_query_join_projects', 10);
   remove_filter('posts_where', 'document_query_where_project_title', 10);
+  remove_filter('posts_where', 'document_query_where_project_area_of_law', 10);
 
   return $query;
 }
@@ -341,4 +304,33 @@ function document_query_where_project_title($where, WP_Query $query) {
   $find_pattern = '/\(.*?meta_key.*?project-title-placeholder.*?LIKE.*?[\'"]%(.*?)%[\'"].*?\)/';
   $replace_with = "( projects.post_title LIKE '%$1%' )";
   return preg_replace($find_pattern, $replace_with, $where);
+}
+
+/**
+ * Adjust SQL to add WHERE condition on the project ID associated with the document.
+ * This relies on the JOIN statement being added by document_query_join_projects().
+ *
+ * @TODO: Add better documentation here.
+ *
+ * @param string $where
+ * @param WP_Query $query
+ * @return string
+ */
+function document_query_where_project_area_of_law($where, WP_Query $query) {
+  global $wpdb;
+
+  $area_of_law = $query->query['area_of_law'];
+
+  $sql = "SELECT {$wpdb->posts}.ID
+            FROM {$wpdb->posts}
+            INNER JOIN {$wpdb->term_relationships} ON ( {$wpdb->posts}.ID = {$wpdb->term_relationships}.object_id )
+            INNER JOIN wp_term_taxonomy ON ( {$wpdb->term_relationships}.term_taxonomy_id = {$wpdb->term_taxonomy}.term_taxonomy_id )
+            WHERE wp_posts.post_type = 'project' AND
+            wp_posts.post_status = 'publish' AND
+            wp_term_taxonomy.term_id = %d";
+
+  $sql = $wpdb->prepare($sql, array($area_of_law));
+  $sql = ' AND projects.ID IN ( ' . $sql . ' ) ';
+
+  return $where . $sql;
 }
