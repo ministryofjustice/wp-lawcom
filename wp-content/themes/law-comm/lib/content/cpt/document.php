@@ -55,10 +55,8 @@ add_action( 'init', 'document', 0 );
  * for later use by the publications search.
  *
  * @param int $post_id
- * @param WP_Post $post
- * @param bool $update
  */
-function format_document_reference($post_id, WP_Post $post, $update) {
+function format_document_reference($post_id) {
   $reference = get_post_meta($post_id, 'reference_number', true);
 
   if (empty($reference) || !contains_document_reference($reference)) return;
@@ -68,7 +66,7 @@ function format_document_reference($post_id, WP_Post $post, $update) {
   update_post_meta($post_id, 'reference_number_prefix', $reference['prefix']);
   update_post_meta($post_id, 'reference_number_number', $reference['number']);
 }
-add_action('save_post_document', 'format_document_reference', 10, 3);
+add_action('save_post_document', 'format_document_reference');
 
 /**
  * Test if a string is (or contains) a document reference.
