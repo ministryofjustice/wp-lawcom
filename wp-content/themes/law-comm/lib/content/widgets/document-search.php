@@ -45,31 +45,35 @@ class Document_Widget extends WP_Widget {
       </div> -->
 
       <div class="form-group">
-        <label for="publication">Document Type</label>
+        <label for="document-type">Document Type</label>
         <?php
           wp_dropdown_categories(array(
-            'show_option_all' => 'Any document type',
+            'show_option_none' => 'Any document type',
+            'option_none_value' => 'any',
             'taxonomy' => 'document_type',
             'hide_empty' => 0,
             'hierarchical' => 1,
             'class' => 'form-control',
-            'name' => 'publication',
-            'selected' => test_input(get_query_var( 'publication' ))
+            'name' => 'document-type',
+            'selected' => get_query_var('document-type'),
+            'value_field' => 'slug',
           ));
         ?>
       </div>
 
       <div class="form-group">
-        <label for="area_of_law">Area of Law</label>
+        <label for="area-of-law">Area of Law</label>
         <?php
         wp_dropdown_categories(array(
-          'show_option_all' => 'Any area of law',
+          'show_option_none' => 'Any area of law',
+          'option_none_value' => 'any',
           'taxonomy' => 'areas_of_law',
           'hide_empty' => 0,
           'hierarchical' => 1,
           'class' => 'form-control',
-          'name' => 'area_of_law',
-          'selected' => test_input(get_query_var( 'area_of_law' ))
+          'name' => 'area-of-law',
+          'selected' => get_query_var('area-of-law'),
+          'value_field' => 'slug',
         ));
         ?>
       </div>

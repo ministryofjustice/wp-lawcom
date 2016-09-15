@@ -12,8 +12,8 @@ function add_query_vars_filter($vars){
   $vars[] = "doc-title";
   $vars[] = "project-title";
   $vars[] = "keyword";
-  $vars[] = "area_of_law";
-  $vars[] = "publication";
+  $vars[] = "area-of-law";
+  $vars[] = "document-type";
   $vars[] = "start";
   $vars[] = "end";
   return $vars;
@@ -229,23 +229,25 @@ function document_query() {
   /**
    * Area of Law
    */
-  $area_of_law = trim(get_query_var('area_of_law'));
-  if ($area_of_law) {
-    $args['area_of_law'] = intval($area_of_law);
+  $area_of_law = trim(get_query_var('area-of-law'));
+  if (!empty($area_of_law) && $area_of_law !== 'any') {
+    $args['area_of_law'] = $area_of_law;
     add_filter('posts_where', 'document_query_where_project_area_of_law', 10, 2);
     $require_projects_join = true;
   }
 
-  $publication = trim(get_query_var('publication'));
-  if (!empty($publication)) {
-    $publication = intval($publication);
-
+  /**
+   * Document Type
+   */
+  $document_type = trim(get_query_var('document-type'));
+  if (!empty($document_type) && $document_type !== 'any') {
     $args['tax_query'][] = array(
       'taxonomy' => 'document_type',
-      'terms' => $publication,
+      'terms' => $document_type,
+      'field' => 'slug',
     );
 
-    if ($publication == 17) {
+    if ($document_type == 'consultations-related-documents') {
       $args['meta_query'][] = array(
         'key' => 'open_consultation',
         'value' => 1,
@@ -345,10 +347,11 @@ function document_query_where_project_area_of_law($where, WP_Query $query) {
   $sql = "SELECT {$wpdb->posts}.ID
             FROM {$wpdb->posts}
             INNER JOIN {$wpdb->term_relationships} ON ( {$wpdb->posts}.ID = {$wpdb->term_relationships}.object_id )
-            INNER JOIN wp_term_taxonomy ON ( {$wpdb->term_relationships}.term_taxonomy_id = {$wpdb->term_taxonomy}.term_taxonomy_id )
+            INNER JOIN {$wpdb->term_taxonomy} ON ( {$wpdb->term_relationships}.term_taxonomy_id = {$wpdb->term_taxonomy}.term_taxonomy_id )
+            INNER JOIN {$wpdb->terms} ON ( {$wpdb->term_taxonomy}.term_taxonomy_id = {$wpdb->terms}.term_id )
             WHERE wp_posts.post_type = 'project' AND
-            wp_posts.post_status = 'publish' AND
-            wp_term_taxonomy.term_id = %d";
+            {$wpdb->posts}.post_status = 'publish' AND
+            {$wpdb->terms}.slug = %s";
 
   $sql = $wpdb->prepare($sql, array($area_of_law));
   $sql = ' AND projects.ID IN ( ' . $sql . ' ) ';
