@@ -158,6 +158,11 @@ function document_query() {
   }
   }*/
 
+  $require_projects_join = false;
+
+  /**
+   * Publication Name or Reference
+   */
   $keywords = get_query_var('keywords');
   if (!empty($keywords)) {
     if (contains_document_reference($keywords)) {
@@ -217,18 +222,18 @@ function document_query() {
       // Add a filter to replace the 'project-title-placeholder' condition with a
       // project 'post_title' condition.
       add_filter('posts_where', 'document_query_where_project_title', 10, 2);
+      $require_projects_join = true;
     }
   }
 
+  /**
+   * Area of Law
+   */
   $area_of_law = trim(get_query_var('area_of_law'));
   if ($area_of_law) {
-    $args['meta_query'][] = array(
-      'key' => 'project',
-      'compare' => 'EXISTS',
-    );
-
     $args['area_of_law'] = intval($area_of_law);
     add_filter('posts_where', 'document_query_where_project_area_of_law', 10, 2);
+    $require_projects_join = true;
   }
 
   $publication = trim(get_query_var('publication'));
@@ -252,13 +257,20 @@ function document_query() {
   $args['post_type'] = 'document';
   $args['paged'] = get_query_var('paged') ? get_query_var('paged') : 1;
   $args['posts_per_page'] = 10;
-  $args['order'] = 'ASC';
+
   if (empty($args['meta_query'])) {
     $args['orderby'] = 'title';
+    $args['order'] = 'ASC';
+  }
+  else {
+    $args['orderby'] = 'meta_value';
+    $args['meta_key'] = 'publication_date';
+    $args['meta_type'] = 'DATE';
+    $args['order'] = 'DESC';
   }
 
-  if (!empty($args['meta_query'])) {
-    add_filter( 'posts_join', 'document_query_join_projects', 10, 2 );
+  if ($require_projects_join) {
+    add_filter('posts_join', 'document_query_join_projects', 10, 2);
   }
 
   $query = new WP_Query($args);
@@ -270,7 +282,9 @@ function document_query() {
 }
 
 /**
- * Adjust SQL to create a LEFT JOIN to attach documents to their associated project.
+ * Add SQL LEFT JOIN statement to include the project record that the document
+ * belongs to.
+ *
  * This joint table (called 'projects') can be used to add WHERE conditions against
  * projects that documents belong to.
  *
@@ -283,16 +297,20 @@ function document_query() {
  */
 function document_query_join_projects($join, WP_Query $query) {
   global $wpdb;
-  $projects = "LEFT JOIN {$wpdb->posts} AS projects ON ( {$wpdb->postmeta}.meta_key = 'project' AND {$wpdb->postmeta}.meta_value = projects.ID )";
-  return $join . " \n$projects ";
+  $postmeta = "LEFT JOIN {$wpdb->postmeta} AS document_project ON ( {$wpdb->posts}.ID = document_project.post_id AND document_project.meta_key = 'project' )";
+  $projects = "LEFT JOIN {$wpdb->posts} AS projects ON ( document_project.meta_value = projects.ID )";
+  return implode(" \n ", array($join, $postmeta, $projects));
 }
 
 /**
- * Adjust SQL to add a WHERE condition on the project title associated with the
- * document. This relies on the JOIN statement being added by document_query_join_projects().
+ * Add SQL WHERE condition to find documents based on the associated project title.
  *
  * The existing WHERE condition for the 'project-title-placeholder' post meta field
  * will be replaced with one for the joint projects.post_title field.
+ *
+ * Requires the 'product' JOIN statement to be added by document_query_join_projects()
+ *
+ * Filter: posts_where
  *
  * @param string $where
  * @param WP_Query $query
@@ -307,13 +325,16 @@ function document_query_where_project_title($where, WP_Query $query) {
 }
 
 /**
- * Adjust SQL to add WHERE condition on the project ID associated with the document.
- * This relies on the JOIN statement being added by document_query_join_projects().
+ * Add SQL WHERE condition to find documents where the associated project
+ * has the 'area of law' taxonomy term specified by $query->query['area_of_law']
  *
- * @TODO: Add better documentation here.
+ * Requires the 'product' JOIN statement to be added by document_query_join_projects()
+ *
+ * Filter: posts_where
  *
  * @param string $where
  * @param WP_Query $query
+ *
  * @return string
  */
 function document_query_where_project_area_of_law($where, WP_Query $query) {
