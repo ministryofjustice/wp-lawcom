@@ -17,7 +17,9 @@
     <?php $date = DateTime::createFromFormat('Y-m-d', get_field('publication_date')); ?>
     <?php if (!empty($date)): ?>
       <p><strong>Publication date:</strong> <?php echo $date->format('j F Y') ?></p>
-      <p><strong>Response date:</strong> <?php the_field('response_date'); ?></p>
+      <?php if (get_field('response_date')): ?>
+        <p><strong>Response date:</strong> <?php the_field('response_date'); ?></p>
+      <?php endif; ?>
     <?php endif; ?>
     <hr>
   <?php endwhile; ?>
