@@ -34,16 +34,6 @@ class Document_Widget extends WP_Widget {
         <input type="text" name="keywords" id="keywords" class="form-control" value="<?= test_input(get_query_var('keywords')); ?>" placeholder="e.g. &quot;adult social care&quot;, or &quot;CP192&quot;">
       </div>
 
-  		<!-- <div class="form-group">
-        <label for="project-title">Project Title or Keywords</label>
-        <input type="text" name="project-title" id="project-title" class="form-control" value="<?= test_input(get_query_var( 'project-title' )); ?>">
-      </div>
-
-      <div class="form-group">
-        <label for="title">Document Title</label>
-        <input type="text" name="doc-title" id="doc-title" class="form-control" value="<?= test_input(get_query_var( 'doc-title' )); ?>">
-      </div> -->
-
       <div class="form-group">
         <label for="document-type">Document Type</label>
         <?php
