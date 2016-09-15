@@ -109,55 +109,6 @@ function document_query() {
     'meta_query' => array(),
   );
 
-  /*$project_title = test_input(get_query_var('project-title'));
-  $area_of_law = test_input(get_query_var('area_of_law'));
-  $teams = test_input(get_query_var('teams'));
-
-  if(!empty($project_title) || !empty($area_of_law) || !empty($teams)) {
-    $projectArgs = array(
-      'post_type' => 'project',
-      'posts_per_page' => -1
-    );
-
-    if(!empty($area_of_law)) {
-      $projectArgs['tax_query'][] = array(
-        'taxonomy' => 'areas_of_law',
-        'terms' => $area_of_law,
-      );
-    }
-
-    if(!empty($teams)) {
-      $projectArgs['tax_query'][] = array(
-        'taxonomy' => 'team',
-        'terms' => $teams,
-      );
-    }
-
-    if(!empty($projectArgs['tax_query']) && count($projectArgs['tax_query']) > 1) {
-      $projectArgs['tax_query']['relation'] = 'AND';
-    }
-
-    $projects = get_posts($projectArgs);
-    $projectIDs = array();
-    foreach($projects as $project) {
-      $projectIDs[] = $project->ID;
-    }
-  }
-
-  if(!empty($wp_query)) {
-    $temp = $wp_query;
-    $wp_query = NULL;
-  }
-
-  if(!empty($projectIDs)) {
-    $args['meta_query'][] = array(
-      'key' => 'project',
-      'value' => $projectIDs,
-      'compare' => 'IN',
-    );
-  }
-  }*/
-
   $require_projects_join = false;
 
   /**
