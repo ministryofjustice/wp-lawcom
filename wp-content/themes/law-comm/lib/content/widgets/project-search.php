@@ -31,7 +31,7 @@ class Project_Widget extends WP_Widget {
 		<form action="/project" method="get">
   		<div class="form-group">
         <label for="keywords">Title or keyword</label>
-        <input type="text" name="keywords" id="keywords" class="form-control" value="<?= test_input(get_query_var( 'keywords' )); ?>">
+        <input type="text" name="keywords" id="keywords" class="form-control" value="<?= esc_attr(get_query_var_unslashed('keywords')); ?>">
       </div>
       <?php $areas = get_terms('areas_of_law'); if(!empty($areas)): ?>
       <div class="form-group">
@@ -44,8 +44,7 @@ class Project_Widget extends WP_Widget {
         </select>
       </div>
       <?php endif; ?>
-      <input type="submit" value="Search" class="btn btn-primary">
-      <input type="reset" value="Clear" class="btn btn-default">
+      <input type="submit" value="Search" class="btn btn-primary btn-block">
 		</form>
 
 	<?php

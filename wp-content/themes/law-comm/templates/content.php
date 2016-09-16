@@ -13,8 +13,13 @@
         ?>
       </a>
     </h2>
+
     <?php if (get_post_type() !== 'project'): ?>
       <p><?php get_template_part('templates/entry-meta'); ?></p>
+    <?php endif; ?>
+
+    <?php if (get_post_type() == 'project' && get_field('implementation_status')): ?>
+      <p><strong>Project status:</strong> <?php the_field('implementation_status');  ?></p>
     <?php endif; ?>
   </header>
 
