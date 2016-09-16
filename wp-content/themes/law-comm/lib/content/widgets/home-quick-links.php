@@ -27,11 +27,10 @@ class QuickLinks_Widget extends WP_Widget {
 		echo $args['before_widget'];
   ?>
 		<div class="quick-links side-item">
-<!--   		<h2>Quick links</h2> -->
 			<ul>
-				<li class="ql1"><a href="/project/">Find a Project</a></li>
-				<li class="ql2"><a href="/document/?title=&doc-title=&publication=17&area_of_law=&start=&end=">Find Open Consultations</a></li>
-				<li class="ql3"><a href="/document/">Find a Publication</a></li>
+				<li class="ql1"><a href="<?= home_url('/project/'); ?>">Find a Project</a></li>
+				<li class="ql2"><a href="<?= home_url('/document/?document-type=consultations-related-documents&consultation-status=open'); ?>">Find Open Consultations</a></li>
+				<li class="ql3"><a href="<?= home_url('/document/'); ?>">Find a Publication</a></li>
 			</ul>
 		</div>
 

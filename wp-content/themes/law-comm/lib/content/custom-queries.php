@@ -15,6 +15,7 @@ function add_query_vars_filter($vars){
   $vars[] = "area_of_law";
   $vars[] = "area-of-law";
   $vars[] = "document-type";
+  $vars[] = "consultation-status";
   $vars[] = "start";
   $vars[] = "end";
   return $vars;
@@ -177,7 +178,7 @@ function document_query() {
   /**
    * Area of Law
    */
-  $area_of_law = trim(get_query_var('area-of-law'));
+  $area_of_law = get_query_var('area-of-law');
   if (!empty($area_of_law) && $area_of_law !== 'any') {
     $args['area_of_law'] = $area_of_law;
     add_filter('posts_where', 'document_query_where_project_area_of_law', 10, 2);
@@ -187,21 +188,25 @@ function document_query() {
   /**
    * Document Type
    */
-  $document_type = trim(get_query_var('document-type'));
+  $document_type = get_query_var('document-type');
   if (!empty($document_type) && $document_type !== 'any') {
     $args['tax_query'][] = array(
       'taxonomy' => 'document_type',
       'terms' => $document_type,
       'field' => 'slug',
     );
+  }
 
-    if ($document_type == 'consultations-related-documents') {
-      $args['meta_query'][] = array(
-        'key' => 'open_consultation',
-        'value' => 1,
-        'compare' => '==',
-      );
-    }
+  /**
+   * Open Consultations
+   */
+  $consultation_status = get_query_var('consultation-status');
+  if ($document_type == 'consultations-related-documents' && $consultation_status == 'open') {
+    $args['meta_query'][] = array(
+      'key' => 'open_consultation',
+      'value' => 1,
+      'compare' => '==',
+    );
   }
 
   $args['post_type'] = 'document';
