@@ -12,6 +12,7 @@ function add_query_vars_filter($vars){
   $vars[] = "doc-title";
   $vars[] = "project-title";
   $vars[] = "keyword";
+  $vars[] = "area_of_law";
   $vars[] = "area-of-law";
   $vars[] = "document-type";
   $vars[] = "start";
