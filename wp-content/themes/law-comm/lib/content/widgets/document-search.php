@@ -31,7 +31,7 @@ class Document_Widget extends WP_Widget {
 		<form action="/document" method="get">
       <div class="form-group">
         <label for="keywords">Publication Name or Reference</label>
-        <input type="text" name="keywords" id="keywords" class="form-control" value="<?= test_input(get_query_var('keywords')); ?>" placeholder="e.g. &quot;adult social care&quot;, or &quot;CP192&quot;">
+        <input type="text" name="keywords" id="keywords" class="form-control" value="<?= esc_attr(get_query_var_unslashed('keywords')); ?>" placeholder="e.g. &quot;adult social care&quot;, or &quot;CP192&quot;">
       </div>
 
       <div class="form-group">

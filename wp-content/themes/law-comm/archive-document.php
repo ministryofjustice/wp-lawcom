@@ -25,7 +25,7 @@
   <?php endwhile; ?>
 <?php else: ?>
   <div class="alert alert-warning">
-    <?php _e('Sorry, no results were found.', 'roots'); ?>
+    <?php _e('Sorry, no documents were found.', 'roots'); ?>
   </div>
   <p>Please adjust your search and try again.</p>
 <?php endif; ?>

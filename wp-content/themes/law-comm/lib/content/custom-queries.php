@@ -21,12 +21,8 @@ function add_query_vars_filter($vars){
 }
 add_filter('query_vars', 'add_query_vars_filter');
 
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  $data = esc_sql($data);
-  return $data;
+function get_query_var_unslashed($var) {
+  return stripslashes_deep(get_query_var($var));
 }
 
 /**
@@ -51,8 +47,8 @@ function project_query() {
   $args = array();
   $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
-  $keywords = test_input(get_query_var('keywords'));
-  if(!empty($keywords)) {
+  $keywords = get_query_var_unslashed('keywords');
+  if (!empty($keywords)) {
     $args['meta_query'][] = array(
       'relation' => 'OR',
       array(
@@ -73,7 +69,7 @@ function project_query() {
     );
   }
 
-  $area_of_law = test_input(get_query_var('area_of_law'));
+  $area_of_law = get_query_var('area_of_law');
   if(!empty($area_of_law)) {
     $args['tax_query'][] = array(
       'taxonomy' => 'areas_of_law',
@@ -115,7 +111,7 @@ function document_query() {
   /**
    * Publication Name or Reference
    */
-  $keywords = get_query_var('keywords');
+  $keywords = get_query_var_unslashed('keywords');
   if (!empty($keywords)) {
     if (contains_document_reference($keywords)) {
       /**
