@@ -29,73 +29,46 @@ class Document_Widget extends WP_Widget {
   ?>
 		<h3>Search Publications and Consultations</h3>
 		<form action="/document" method="get">
-  		<div class="form-group">
-        <label for="project-title">Project Title or Keywords</label>
-        <input type="text" name="project-title" id="project-title" class="form-control" value="<?= test_input(get_query_var( 'project-title' )); ?>">
+      <div class="form-group">
+        <label for="keywords">Publication Name or Reference</label>
+        <input type="text" name="keywords" id="keywords" class="form-control" value="<?= esc_attr(get_query_var_unslashed('keywords')); ?>" placeholder="e.g. &quot;adult social care&quot;, or &quot;CP192&quot;">
       </div>
 
       <div class="form-group">
-        <label for="title">Document Title</label>
-        <input type="text" name="doc-title" id="doc-title" class="form-control" value="<?= test_input(get_query_var( 'doc-title' )); ?>">
-      </div>
-
-      <!--<?php $areas = get_terms('team', 'hide_empty=0'); if(!empty($areas)): ?>
-      <div class="form-group">
-        <label for="publication">Team</label>
+        <label for="document-type">Document Type</label>
         <?php
           wp_dropdown_categories(array(
-            'show_option_all' => '--- Choose Team ---',
-            'taxonomy' => 'team',
-            'hide_empty' => 0,
-            'hierarchical' => 1,
-            'class' => 'form-control',
-            'name' => 'teams',
-            'selected' => test_input(get_query_var( 'teams' ))
-          ));
-        ?>
-      </div>
-      <?php endif; ?>-->
-
-      <?php $areas = get_terms('document_type', 'hide_empty=0'); if(!empty($areas)): ?>
-      <div class="form-group">
-        <label for="publication">Document Type</label>
-        <?php
-          wp_dropdown_categories(array(
-            'show_option_all' => '--- Choose Type ---',
+            'show_option_none' => 'Any document type',
+            'option_none_value' => 'any',
             'taxonomy' => 'document_type',
             'hide_empty' => 0,
             'hierarchical' => 1,
             'class' => 'form-control',
-            'name' => 'publication',
-            'selected' => test_input(get_query_var( 'publication' ))
+            'name' => 'document-type',
+            'selected' => get_query_var('document-type'),
+            'value_field' => 'slug',
           ));
         ?>
       </div>
-      <?php endif; ?>
 
-      <?php $areas = get_terms('areas_of_law'); if(!empty($areas)): ?>
       <div class="form-group">
-        <label for="area_of_law">Area of Law</label>
-        <select name="area_of_law" id="area_of_law" class="form-control">
-          <option value=""></option>
-          <?php foreach($areas as $area): ?>
-            <option value="<?= $area->term_id ?>"<?php if(get_query_var('area_of_law') == $area->term_id) { echo ' selected="selected"'; } ?>><?= $area->name ?></option>
-          <?php endforeach; ?>
-        </select>
+        <label for="area-of-law">Area of Law</label>
+        <?php
+        wp_dropdown_categories(array(
+          'show_option_none' => 'Any area of law',
+          'option_none_value' => 'any',
+          'taxonomy' => 'areas_of_law',
+          'hide_empty' => 0,
+          'hierarchical' => 1,
+          'class' => 'form-control',
+          'name' => 'area-of-law',
+          'selected' => get_query_var('area-of-law'),
+          'value_field' => 'slug',
+        ));
+        ?>
       </div>
-      <?php endif; ?>
-      <label for="start">Publication Date</label>
-      <div class="input-daterange input-group form-group">
-        <input type="text" class="input-sm form-control" name="start" value="<?= test_input(get_query_var( 'start' )); ?>" />
-        <span class="input-group-addon">to</span>
-        <input type="text" class="input-sm form-control" name="end" value="<?= test_input(get_query_var( 'end' )); ?>" />
-      </div>
-      <!--<div class="form-group">
-        <label for="lccp">LC/CP Number</label>
-        <input type="text" class="form-control" id="lccp" name="lccp" placeholder="Enter LC/CP" value="<?= test_input(get_query_var('lccp')); ?>">
-      </div>-->
-      <input type="submit" value="Search" class="btn btn-primary">
-      <input type="reset" value="Clear" class="btn btn-default">
+
+      <input type="submit" value="Search" class="btn btn-primary btn-block">
 		</form>
 
 	<?php

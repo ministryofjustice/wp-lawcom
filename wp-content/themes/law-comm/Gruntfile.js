@@ -9,7 +9,6 @@ module.exports = function(grunt) {
     'assets/vendor/bootstrap/js/transition.js',
     'assets/vendor/bootstrap/js/collapse.js',
     'assets/vendor/bootstrap/js/dropdown.js',
-    'assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js',
     'assets/vendor/StickyTableHeaders/js/jquery.stickytableheaders.js',
     'assets/js/plugins/*.js',
     'assets/js/src/*.js',
