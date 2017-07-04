@@ -152,8 +152,10 @@
                               <ul>
                               <?php while ( have_rows('files') ) : the_row(); ?>
                                 <?php if(get_sub_field('file')): ?>
-                                  <?php $img = get_headers(get_sub_field('file'), 1); ?>
-                                  <li><a href="<?= get_sub_field('file'); ?>"><?= get_sub_field('title'); ?></a> <span class="file-meta">PDF, <?php if($img[0] != 'HTTP/1.0 404 Not Found'): echo human_filesize($img["Content-Length"]); endif; ?></span></li>
+                                  <li>
+                                    <a href="<?= get_sub_field('file'); ?>"><?= get_sub_field('title'); ?></a>
+                                    <span class="file-meta"><?= attachment_file_meta(get_attachment_id_from_url(get_sub_field('file'))) ?></span>
+                                  </li>
                                 <?php endif; ?>
                               <?php endwhile; ?>
                               </ul>
