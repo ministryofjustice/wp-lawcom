@@ -2,7 +2,7 @@
   <div class="container">
 
 <div id="branding">
-  <a href="<?php echo site_url(); ?>">
+  <a href="<?php echo home_url(); ?>">
     <img alt="<?php bloginfo('name'); ?> Logo" src="<?php bloginfo('template_directory'); ?>/assets/img/law-comm-logo.png" />
   </a>
 </div>
