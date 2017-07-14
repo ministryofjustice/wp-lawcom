@@ -63,7 +63,7 @@ class documentMetaBox {
     if( $post_type == 'document' ) {
       $project = get_field('field_54d37be93594e', $post->ID);
       if( !empty($project) ) {
-        echo '<p><strong>Project:</strong> <a href="/wp-admin/post.php?post=' . $project->ID . '&action=edit">' .  get_the_title( $project->ID ) . '</a></p>';
+        echo '<p><strong>Project:</strong> <a href="' . get_edit_post_link($project->ID) . '">' .  get_the_title($project->ID) . '</a></p>';
       }
       $id = $project->ID;
     } else {
@@ -90,7 +90,7 @@ class documentMetaBox {
 
       while ( $query->have_posts() ) {
         $query->the_post();
-        echo '<li><a href="/wp-admin/post.php?post=' . get_the_id() . '&action=edit">' . get_the_title() . '</a></li>';
+        echo '<li><a href="' . get_edit_post_link() . '">' . get_the_title() . '</a></li>';
       }
       echo '</ul>';
     }
