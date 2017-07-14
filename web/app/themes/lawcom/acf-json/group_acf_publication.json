@@ -115,7 +115,10 @@
                 "id": ""
             },
             "message": "",
-            "default_value": 0
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         },
         {
             "key": "field_5548dbbc4bd49",
@@ -133,7 +136,8 @@
             "default_value": "",
             "toolbar": "full",
             "media_upload": 0,
-            "tabs": "all"
+            "tabs": "all",
+            "delay": 0
         },
         {
             "key": "field_54d36479697f7",
@@ -167,9 +171,7 @@
             "post_type": [
                 "project"
             ],
-            "taxonomy": [
-
-            ],
+            "taxonomy": [],
             "allow_null": 1,
             "multiple": 0,
             "return_format": "object",
@@ -233,6 +235,7 @@
             "button_label": "Add Row",
             "min": 0,
             "max": 0,
+            "collapsed": "",
             "sub_fields": [
                 {
                     "key": "field_54d49177e9931",
@@ -265,14 +268,14 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": 30,
+                        "width": "30",
                         "class": "",
                         "id": ""
                     },
+                    "return_format": "id",
                     "library": "all",
-                    "return_format": "url",
-                    "min_size": 0,
-                    "max_size": 0,
+                    "min_size": "",
+                    "max_size": "",
                     "mime_types": ""
                 },
                 {
@@ -317,6 +320,7 @@
             "button_label": "Add Row",
             "min": 0,
             "max": 0,
+            "collapsed": "",
             "sub_fields": [
                 {
                     "key": "field_54d49180e9932",
@@ -539,5 +543,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1447340726
+    "modified": 1500045519
 }

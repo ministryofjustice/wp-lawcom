@@ -152,9 +152,10 @@
                               <ul>
                               <?php while ( have_rows('files') ) : the_row(); ?>
                                 <?php if(get_sub_field('file')): ?>
+                                  <?php $file = get_sub_field('file'); ?>
                                   <li>
-                                    <a href="<?= get_sub_field('file'); ?>"><?= get_sub_field('title'); ?></a>
-                                    <span class="file-meta"><?= attachment_file_meta(get_attachment_id_from_url(get_sub_field('file'))) ?></span>
+                                    <a href="<?= wp_get_attachment_url($file); ?>"><?= get_sub_field('title'); ?></a>
+                                    <span class="file-meta"><?= attachment_file_meta($file) ?></span>
                                   </li>
                                 <?php endif; ?>
                               <?php endwhile; ?>

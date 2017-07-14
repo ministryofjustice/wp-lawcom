@@ -10,8 +10,9 @@
 				<?php while ( have_rows('files') ) : the_row(); ?>
           <?php if(get_sub_field('file')): ?>
             <li class="doc-list">
-              <a href="<?= get_sub_field('file'); ?>"><?= get_sub_field('title'); ?></a>
-              <span class="file-meta"><?= attachment_file_meta(get_attachment_id_from_url(get_sub_field('file'))) ?></span>
+              <?php $file = get_sub_field('file'); ?>
+              <a href="<?= wp_get_attachment_url($file); ?>"><?= get_sub_field('title'); ?></a>
+              <span class="file-meta"><?= attachment_file_meta($file) ?></span>
               <span class="file-desc"><?php the_sub_field('description'); ?></span>
             </li>
           <?php endif; ?>
