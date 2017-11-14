@@ -44,16 +44,16 @@
     "php": ">=5.6",
     "composer/installers": "~1.2.0",
     "vlucas/phpdotenv": "^2.0.1",
-    "johnpbloch/wordpress": "^4.8",
-    "koodimonni-language/core-en_gb": "^4.8",
+    "johnpbloch/wordpress": "*",
+    "koodimonni-language/core-en_gb": "*",
     "oscarotero/env": "^1.0",
-    "roots/wp-password-bcrypt": "1.0.0",
-    "wpackagist-plugin/google-analytics-dashboard-for-wp": "^5",
+    "roots/wp-password-bcrypt": "*",
+    "wpackagist-plugin/google-analytics-dashboard-for-wp": "*",
     "ministryofjustice/wp-rewrite-media-to-s3": "^0.1.1",
-    "acf/advanced-custom-fields-pro": "^5.5",
-    "wpackagist-plugin/advanced-responsive-video-embedder": "^8.6",
-    "wpackagist-plugin/safe-redirect-manager": "^1.7.8",
-    "wpackagist-plugin/tao-schedule-update": "^1.13"
+    "acf/advanced-custom-fields-pro": "*",
+    "wpackagist-plugin/advanced-responsive-video-embedder": "*",
+    "wpackagist-plugin/safe-redirect-manager": "*",
+    "wpackagist-plugin/tao-schedule-update": "*"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1"
