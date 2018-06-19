@@ -8,12 +8,12 @@
     "packages": [
         {
             "name": "acf/advanced-custom-fields-pro",
-            "version": "5.6.5",
+            "version": "5.6.10",
             "dist": {
                 "type": "zip",
-                "url": "https://composer.wp.dsd.io/dist/acf/advanced-custom-fields-pro/acf-advanced-custom-fields-pro-5.6.5.zip",
+                "url": "https://composer.wp.dsd.io/dist/acf/advanced-custom-fields-pro/acf-advanced-custom-fields-pro-5.6.10.zip",
                 "reference": null,
-                "shasum": "89bd06576649ad93d02ae019d7dde1afb84d30ec"
+                "shasum": "6d3b5a8c1b8608c09fdce2c72c8dc2ca4255c1db"
             },
             "type": "wordpress-plugin"
         },
@@ -126,20 +126,20 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "4.9.0",
+            "version": "4.9.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "b15c463dc04c79483058a3da16865c356393408d"
+                "reference": "ecca35c283591e3f40732522334415521f5aa4b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/b15c463dc04c79483058a3da16865c356393408d",
-                "reference": "b15c463dc04c79483058a3da16865c356393408d",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/ecca35c283591e3f40732522334415521f5aa4b7",
+                "reference": "ecca35c283591e3f40732522334415521f5aa4b7",
                 "shasum": ""
             },
             "require": {
-                "johnpbloch/wordpress-core": "4.9.0",
+                "johnpbloch/wordpress-core": "4.9.6",
                 "johnpbloch/wordpress-core-installer": "^1.0",
                 "php": ">=5.3.2"
             },
@@ -161,32 +161,32 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2017-11-16T01:32:51+00:00"
+            "time": "2018-05-17T20:03:03+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core",
-            "version": "4.9.0",
+            "version": "4.9.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "bf2ed9c364d35bcabd15c4bb139c2581ea8513a9"
+                "reference": "6ff81eb3d93d326b78a8bc0f120e72c161ec58c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/bf2ed9c364d35bcabd15c4bb139c2581ea8513a9",
-                "reference": "bf2ed9c364d35bcabd15c4bb139c2581ea8513a9",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/6ff81eb3d93d326b78a8bc0f120e72c161ec58c8",
+                "reference": "6ff81eb3d93d326b78a8bc0f120e72c161ec58c8",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
             },
             "provide": {
-                "wordpress/core-implementation": "4.9.0"
+                "wordpress/core-implementation": "4.9.6"
             },
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -201,20 +201,20 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2017-11-16T01:32:46+00:00"
+            "time": "2018-05-17T20:02:55+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
-            "version": "1.0.0",
+            "version": "1.0.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core-installer.git",
-                "reference": "e9e767f2d9f994f358c34b41def2c410ad8717f2"
+                "reference": "7941acd71725710a789daabe0557429da63e7ac6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core-installer/zipball/e9e767f2d9f994f358c34b41def2c410ad8717f2",
-                "reference": "e9e767f2d9f994f358c34b41def2c410ad8717f2",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core-installer/zipball/7941acd71725710a789daabe0557429da63e7ac6",
+                "reference": "7941acd71725710a789daabe0557429da63e7ac6",
                 "shasum": ""
             },
             "require": {
@@ -250,14 +250,14 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2017-05-31T18:42:33+00:00"
+            "time": "2018-01-29T14:49:29+00:00"
         },
         {
             "name": "koodimonni-language/core-en_gb",
-            "version": "4.9",
+            "version": "4.9.6",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/core/4.9/en_GB.zip",
+                "url": "https://downloads.wordpress.org/translation/core/4.9.6/en_GB.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -275,16 +275,16 @@
         },
         {
             "name": "koodimonni/composer-dropin-installer",
-            "version": "1.1.0",
+            "version": "1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Koodimonni/Composer-Dropin-Installer.git",
-                "reference": "b09dd53d7bcbe41afec63bd142b17575935e2349"
+                "reference": "a749f19e3a3bc05529190961ed7529592b20138e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Koodimonni/Composer-Dropin-Installer/zipball/b09dd53d7bcbe41afec63bd142b17575935e2349",
-                "reference": "b09dd53d7bcbe41afec63bd142b17575935e2349",
+                "url": "https://api.github.com/repos/Koodimonni/Composer-Dropin-Installer/zipball/a749f19e3a3bc05529190961ed7529592b20138e",
+                "reference": "a749f19e3a3bc05529190961ed7529592b20138e",
                 "shasum": ""
             },
             "require": {
@@ -314,7 +314,7 @@
                 }
             ],
             "description": "Install packages or a few files from packages into custom paths without overwriting existing stuff.",
-            "time": "2017-01-11T19:10:05+00:00"
+            "time": "2018-02-04T10:52:01+00:00"
         },
         {
             "name": "ministryofjustice/wp-rewrite-media-to-s3",
@@ -533,7 +533,7 @@
         },
         {
             "name": "wpackagist-plugin/advanced-responsive-video-embedder",
-            "version": "8.7.2",
+            "version": "8.9.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/advanced-responsive-video-embedder/",
@@ -541,7 +541,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/advanced-responsive-video-embedder.zip?timestamp=1504135110",
+                "url": "https://downloads.wordpress.org/plugin/advanced-responsive-video-embedder.zip?timestamp=1528361543",
                 "reference": null,
                 "shasum": null
             },
@@ -553,15 +553,15 @@
         },
         {
             "name": "wpackagist-plugin/google-analytics-dashboard-for-wp",
-            "version": "5.1.2.2",
+            "version": "5.3.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/google-analytics-dashboard-for-wp/",
-                "reference": "tags/5.1.2.2"
+                "reference": "tags/5.3.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/google-analytics-dashboard-for-wp.5.1.2.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/google-analytics-dashboard-for-wp.5.3.5.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -573,15 +573,15 @@
         },
         {
             "name": "wpackagist-plugin/safe-redirect-manager",
-            "version": "1.7.8",
+            "version": "1.9",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/safe-redirect-manager/",
-                "reference": "tags/1.7.8"
+                "reference": "tags/1.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/safe-redirect-manager.1.7.8.zip",
+                "url": "https://downloads.wordpress.org/plugin/safe-redirect-manager.1.9.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -593,15 +593,15 @@
         },
         {
             "name": "wpackagist-plugin/tao-schedule-update",
-            "version": "1.13",
+            "version": "1.14.01",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/tao-schedule-update/",
-                "reference": "tags/1.13"
+                "reference": "tags/1.14.01"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/tao-schedule-update.1.13.zip",
+                "url": "https://downloads.wordpress.org/plugin/tao-schedule-update.1.14.01.zip",
                 "reference": null,
                 "shasum": null
             },
