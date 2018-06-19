@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "37d6ebe3f3d581d53d9d675fb3b51f97",
+    "content-hash": "50fd6a5e0646cc9f32d38e1871d08e46",
     "packages": [
         {
             "name": "acf/advanced-custom-fields-pro",
@@ -346,6 +346,41 @@
                 "issues": "https://github.com/ministryofjustice/wp-rewrite-media-to-s3/issues"
             },
             "time": "2017-03-06T17:20:15+00:00"
+        },
+        {
+            "name": "ministryofjustice/wp-user-roles",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ministryofjustice/wp-user-roles.git",
+                "reference": "3c43d45c11180a32145bed7ad126f360bfd5a8cb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://composer.wp.dsd.io/dist/ministryofjustice/wp-user-roles/ministryofjustice-wp-user-roles-3c43d45c11180a32145bed7ad126f360bfd5a8cb-zip-3d5c48.zip",
+                "reference": "3c43d45c11180a32145bed7ad126f360bfd5a8cb",
+                "shasum": "af5d7334f0ce1f0f53b78e432970f4ffd40a8f9e"
+            },
+            "require": {
+                "composer/installers": "^1.0"
+            },
+            "type": "wordpress-plugin",
+            "authors": [
+                {
+                    "name": "Ollie Treend",
+                    "email": "ollie.treend@digital.justice.gov.uk"
+                },
+                {
+                    "name": "James Devon",
+                    "email": "james.devon@digital.justice.gov.uk"
+                }
+            ],
+            "description": "A WordPress plugin to create user roles typically required by a MOJDigital WordPress site",
+            "support": {
+                "source": "https://github.com/ministryofjustice/wp-user-roles/tree/0.1.0",
+                "issues": "https://github.com/ministryofjustice/wp-user-roles/issues"
+            },
+            "time": "2018-06-15T13:57:30+00:00"
         },
         {
             "name": "oscarotero/env",
