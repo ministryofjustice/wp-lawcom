@@ -349,17 +349,17 @@
         },
         {
             "name": "ministryofjustice/wp-user-roles",
-            "version": "0.1.0",
+            "version": "0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ministryofjustice/wp-user-roles.git",
-                "reference": "3c43d45c11180a32145bed7ad126f360bfd5a8cb"
+                "reference": "2f5e176a6b7977c0f396526d523df68c1fba6009"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://composer.wp.dsd.io/dist/ministryofjustice/wp-user-roles/ministryofjustice-wp-user-roles-3c43d45c11180a32145bed7ad126f360bfd5a8cb-zip-3d5c48.zip",
-                "reference": "3c43d45c11180a32145bed7ad126f360bfd5a8cb",
-                "shasum": "af5d7334f0ce1f0f53b78e432970f4ffd40a8f9e"
+                "url": "https://composer.wp.dsd.io/dist/ministryofjustice/wp-user-roles/ministryofjustice-wp-user-roles-2f5e176a6b7977c0f396526d523df68c1fba6009-zip-ebf40d.zip",
+                "reference": "2f5e176a6b7977c0f396526d523df68c1fba6009",
+                "shasum": "acd4e0d78ed502ed15ac09b5e26d476a0991ddfb"
             },
             "require": {
                 "composer/installers": "^1.0"
@@ -377,10 +377,10 @@
             ],
             "description": "A WordPress plugin to create user roles typically required by a MOJDigital WordPress site",
             "support": {
-                "source": "https://github.com/ministryofjustice/wp-user-roles/tree/0.1.0",
+                "source": "https://github.com/ministryofjustice/wp-user-roles/tree/0.1.1",
                 "issues": "https://github.com/ministryofjustice/wp-user-roles/issues"
             },
-            "time": "2018-06-15T13:57:30+00:00"
+            "time": "2018-06-20T08:14:37+00:00"
         },
         {
             "name": "oscarotero/env",
