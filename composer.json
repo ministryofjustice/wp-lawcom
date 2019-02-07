@@ -54,7 +54,8 @@
     "wpackagist-plugin/advanced-responsive-video-embedder": "*",
     "wpackagist-plugin/safe-redirect-manager": "*",
     "wpackagist-plugin/tao-schedule-update": "*",
-    "ministryofjustice/wp-user-roles": "^0.1.0"
+    "ministryofjustice/wp-user-roles": "^0.1.0",
+    "wpackagist-plugin/classic-editor": "*"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1"
