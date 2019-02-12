@@ -34,3 +34,23 @@ foreach ( $roots_includes as $file ) {
 	require_once $filepath;
 }
 unset( $file, $filepath );
+
+/**
+ * Get the current version of WP
+ *
+ * This is provided for external resources to resolve the current wp_version
+ *
+ * @return string
+ */
+function moj_wp_version()
+{
+  global $wp_version;
+  return $wp_version;
+}
+
+add_action('rest_api_init', function () {
+  register_rest_route('moj', '/version', array(
+    'methods' => 'GET',
+    'callback' => 'moj_wp_version'
+  ));
+});
