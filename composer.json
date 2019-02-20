@@ -51,7 +51,7 @@
     "wpackagist-plugin/google-analytics-dashboard-for-wp": "*",
     "ministryofjustice/wp-rewrite-media-to-s3": "^0.1.1",
     "acf/advanced-custom-fields-pro": "*",
-    "wpackagist-plugin/advanced-responsive-video-embedder": "*",
+    "wpackagist-plugin/advanced-responsive-video-embedder": "^8.10.4",
     "wpackagist-plugin/safe-redirect-manager": "*",
     "wpackagist-plugin/tao-schedule-update": "*",
     "ministryofjustice/wp-user-roles": "^0.1.0",
