@@ -8,12 +8,12 @@
     "packages": [
         {
             "name": "acf/advanced-custom-fields-pro",
-            "version": "5.7.10",
+            "version": "5.7.11",
             "dist": {
                 "type": "zip",
-                "url": "https://composer.wp.dsd.io/dist/acf/advanced-custom-fields-pro/acf-advanced-custom-fields-pro-5.7.10.zip",
+                "url": "https://composer.wp.dsd.io/dist/acf/advanced-custom-fields-pro/acf-advanced-custom-fields-pro-5.7.11.zip",
                 "reference": null,
-                "shasum": "ee844bbfe638d15403a159af47c77dcc1df05ea3"
+                "shasum": "d01e265cd643da016688e6ee6b01d62b45728ec3"
             },
             "type": "wordpress-plugin"
         },
@@ -592,15 +592,15 @@
         },
         {
             "name": "wpackagist-plugin/advanced-responsive-video-embedder",
-            "version": "8.10.4",
+            "version": "master",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/advanced-responsive-video-embedder/",
-                "reference": "trunk"
+                "reference": "tags/master"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/advanced-responsive-video-embedder.zip?timestamp=1548238858",
+                "url": "https://downloads.wordpress.org/plugin/advanced-responsive-video-embedder.master.zip",
                 "reference": null,
                 "shasum": null
             },
