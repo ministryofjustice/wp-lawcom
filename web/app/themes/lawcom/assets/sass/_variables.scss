@@ -1,0 +1,40 @@
+// Grid settings
+// -------------------------
+
+$main-sm-columns: $grid-columns;
+$sidebar-sm-columns: 4;
+
+// Brand colours
+// -------------------------
+
+$brand-primary: #006a5d;
+$brand-secondary: #cbe1dc;
+$body-text-link: #006a5d;
+$thin-divider-clr: #c5c5c5;
+$dark-text-clr: #000;
+$light-text-clr: #fff;
+$meta-text-clr: #aaa;
+$left-link-arrow: #006a5d;
+$emph-box-bg: #f0f0f0;
+
+// Navbar colours
+// -------------------------
+$navbar-default-bg: #fff;
+$navbar-default-link-color: #000;
+$navbar-default-link-bg: #e1eaf1;
+$navbar-default-link-hover-bg: lighten($navbar-default-link-bg, 6%);
+$navbar-default-link-hover-dropdown-bg: lighten($navbar-default-link-bg, 16%);
+$navbar-default-link-active-color: #000;
+$navbar-default-link-active-bg: lighten($navbar-default-link-bg, 8%);
+
+// Font sizes
+// -------------------------
+
+$main-body-text-size: 16px;
+$caption-text-size: .85em;
+$larger-link-size: 1.4em;
+
+// Glyphicons path
+// -------------------------
+
+$icon-font-path: "../vendor/bootstrap/fonts/";

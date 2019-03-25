@@ -1,34 +1,8 @@
 {
-  "name": "roots/bedrock",
+  "name": "moj/lawcom",
   "type": "project",
-  "license": "MIT",
-  "description": "WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure",
-  "homepage": "https://roots.io/bedrock/",
-  "authors": [
-    {
-      "name": "Scott Walkinshaw",
-      "email": "scott.walkinshaw@gmail.com",
-      "homepage": "https://github.com/swalkinshaw"
-    },
-    {
-      "name": "Ben Word",
-      "email": "ben@benword.com",
-      "homepage": "https://github.com/retlehs"
-    }
-  ],
-  "keywords": [
-    "bedrock",
-    "roots",
-    "wordpress",
-    "stack",
-    "composer",
-    "vagrant",
-    "wp"
-  ],
-  "support": {
-    "issues": "https://github.com/roots/bedrock/issues",
-    "forum": "https://discourse.roots.io/category/bedrock"
-  },
+  "description": "This is a Bedrock based (https://roots.io/bedrock/) WordPress website for the Independent Monitoring Boards (https://imb.org.uk) - a group of volunteers who monitor the day-to-day life in their local prison or removal centre and ensure that proper standards of care and decency are maintained.",
+  "homepage": "https://github.com/ministryofjustice/wp-imb",
   "config": {
     "preferred-install": "dist"
   },
@@ -57,11 +31,12 @@
     "wpackagist-plugin/google-analytics-dashboard-for-wp": "*",
     "ministryofjustice/wp-rewrite-media-to-s3": "^0.1.1",
     "acf/advanced-custom-fields-pro": "*",
-    "wpackagist-plugin/advanced-responsive-video-embedder": "^8.10.4",
+    "wpackagist-plugin/advanced-responsive-video-embedder": "8.*",
     "wpackagist-plugin/safe-redirect-manager": "*",
     "wpackagist-plugin/tao-schedule-update": "*",
-    "ministryofjustice/wp-user-roles": "^0.1.0",
-    "wpackagist-plugin/classic-editor": "*"
+    "wpackagist-plugin/classic-editor": "*",
+    "wpackagist-plugin/fast-user-switching": "*",
+    "ministryofjustice/wp-user-roles": "^0.1.1"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1"

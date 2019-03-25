@@ -1,11 +1,11 @@
 .sidebar {
-  .make-sm-column(@sidebar-sm-columns);
+  @include make-sm-column($sidebar-sm-columns);
 }
 
 .signup {
 
 		.form-group {
-		background: @brand-secondary;
+		background: $brand-secondary;
 		padding: 10px;
 			input.btn {
 				margin: 10px 0;

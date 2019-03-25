@@ -12,11 +12,11 @@
 // Requires wrapping inputs and labels with `.form-group` for proper display of
 // default HTML form controls and our custom form controls (e.g., input groups).
 //
-// Heads up! This is mixin-ed into `.navbar-form` in navbars.less.
+// Heads up! This is mixin-ed into `.navbar-form` in navbars.scss.
 
 .form-inline {
   // Kick in the inline
-  @media (min-width: @screen-sm-min) {
+  @media (min-width: $screen-sm-min) {
     .input-group {
       width: 100%;
     }

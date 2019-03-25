@@ -64,7 +64,7 @@ $(document).ready(UTIL.loadEvents);
 
 //Add class to last menu item for old IE
 
-$(document).ready(function (){
+jQuery(document).ready(function ($){
     $('.navbar-default .navbar-nav li:last-child a, .news ul li:last-child').addClass('last-child');
 
 /* Toggle open/close text on project pages */
@@ -85,7 +85,7 @@ $(document).ready(function (){
 });
 
 /*  Open document boxes when there's a # in the url */
-$(document).ready(function (){
+jQuery(document).ready(function ($){
   $(function() {
       if ( document.location.href.indexOf('#') > -1 ) {
           $('.collapse').css("display", "block");
