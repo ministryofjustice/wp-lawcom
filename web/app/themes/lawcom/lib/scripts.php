@@ -26,8 +26,8 @@ function roots_scripts() {
     $get_assets = file_get_contents(get_template_directory() . '/dist/mix-manifest.json');
     $assets     = json_decode($get_assets, true);
     $assets     = array(
-      'css'       => '/dist/css/main.min.css?' . $assets['/css/main.min.css'],
-      'js'        => '/dist/js/main.min.js?' . $assets['/js/main.min.js'],
+      'css'       => '/dist' . $assets['/css/main.min.css'],
+      'js'        => '/dist' . $assets['/js/main.min.js'],
       'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'
     );
   //}

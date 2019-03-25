@@ -2,7 +2,7 @@
   <div class="container navbar-expand-md navbar navbar-default navbar-static-top flex-wrap">
     <div id="branding" class="flex-fill">
       <a href="<?php echo home_url(); ?>">
-        <img alt="IMB Logo" src="<?php bloginfo('template_directory'); ?>/assets/img/IMBLogo_2X.png" />
+        <img alt="Law Commissioners logo Logo" src="<?php bloginfo('template_directory'); ?>/assets/img/law-comm-logo.png" />
       </a>
     </div>
 
