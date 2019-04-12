@@ -1,0 +1,55 @@
+.content-info { 
+	background: @brand-secondary;
+	display: inline-block;
+	min-height: 160px;
+	width: 100%; 
+	// position: absolute;
+	// bottom: 0;
+	margin-top: 1em;
+	color: @dark-text-clr;
+		#footer-links {
+			margin: 9em 0 2.5em 0;
+			display: block;
+			overflow: hidden;
+			}
+}
+
+
+
+.content-info #footer-links {
+ 		ul {
+ 			display: block;
+ 			width: 100%;
+ 			overflow: hidden;
+ 			padding: 12px 0 0 0;
+	 			li {
+				display: inline-block;
+				width: 24%;
+				font-size: .9em;
+				padding: 0 12px 0 12px;
+				margin-top: 12px;
+				text-align: center;
+
+
+					@media (min-width: @screen-xs) {
+						margin-top: 0;
+						width: auto;
+						white-space: nowrap;
+						border-right: 2px solid @dark-text-clr;
+							&:last-child {
+								border-right: 0;
+							}
+
+						
+					}
+					@media (min-width: @screen-md) {
+						
+						font-size: 1em;
+						}
+			}
+
+		a {
+			color: @dark-text-clr;
+		}
+	}
+}

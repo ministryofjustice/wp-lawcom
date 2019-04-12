@@ -4,16 +4,16 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a57b4d4896ac630510330facf7cfbd98",
+    "content-hash": "e182beb974cece42d264ddcb671b475c",
     "packages": [
         {
             "name": "acf/advanced-custom-fields-pro",
-            "version": "5.7.12",
+            "version": "5.7.13",
             "dist": {
                 "type": "zip",
-                "url": "https://composer.wp.dsd.io/dist/acf/advanced-custom-fields-pro/acf-advanced-custom-fields-pro-5.7.12.zip",
+                "url": "https://composer.wp.dsd.io/dist/acf/advanced-custom-fields-pro/acf-advanced-custom-fields-pro-5.7.13.zip",
                 "reference": null,
-                "shasum": "06f8c2f9a72e865107abf5a280e9a804a0215276"
+                "shasum": "b6995bd0a83e52d67551929b5fa141b157911d18"
             },
             "type": "wordpress-plugin"
         },
@@ -349,17 +349,17 @@
         },
         {
             "name": "ministryofjustice/wp-user-roles",
-            "version": "0.1.1",
+            "version": "0.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ministryofjustice/wp-user-roles.git",
-                "reference": "2f5e176a6b7977c0f396526d523df68c1fba6009"
+                "reference": "85a4e655e5b54dca738c6c06670ff1f0559fd00c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://composer.wp.dsd.io/dist/ministryofjustice/wp-user-roles/ministryofjustice-wp-user-roles-2f5e176a6b7977c0f396526d523df68c1fba6009-zip-ebf40d.zip",
-                "reference": "2f5e176a6b7977c0f396526d523df68c1fba6009",
-                "shasum": "acd4e0d78ed502ed15ac09b5e26d476a0991ddfb"
+                "url": "https://composer.wp.dsd.io/dist/ministryofjustice/wp-user-roles/ministryofjustice-wp-user-roles-85a4e655e5b54dca738c6c06670ff1f0559fd00c-zip-bfef65.zip",
+                "reference": "85a4e655e5b54dca738c6c06670ff1f0559fd00c",
+                "shasum": "5fb799887078d06b6d300624ebda0a954e547102"
             },
             "require": {
                 "composer/installers": "^1.0"
@@ -377,26 +377,27 @@
             ],
             "description": "A WordPress plugin to create user roles typically required by a MOJDigital WordPress site",
             "support": {
-                "source": "https://github.com/ministryofjustice/wp-user-roles/tree/0.1.1",
+                "source": "https://github.com/ministryofjustice/wp-user-roles/tree/0.1.2",
                 "issues": "https://github.com/ministryofjustice/wp-user-roles/issues"
             },
-            "time": "2018-06-20T08:14:37+00:00"
+            "time": "2019-03-21T11:57:44+00:00"
         },
         {
             "name": "oscarotero/env",
-            "version": "v1.1.0",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/oscarotero/env.git",
-                "reference": "0f676e41d758fa984806c32e27f0cf7afa63d8db"
+                "reference": "4ab45ce5c1f2c62549208426bfa20a3d5fa008c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/oscarotero/env/zipball/0f676e41d758fa984806c32e27f0cf7afa63d8db",
-                "reference": "0f676e41d758fa984806c32e27f0cf7afa63d8db",
+                "url": "https://api.github.com/repos/oscarotero/env/zipball/4ab45ce5c1f2c62549208426bfa20a3d5fa008c6",
+                "reference": "4ab45ce5c1f2c62549208426bfa20a3d5fa008c6",
                 "shasum": ""
             },
             "require": {
+                "ext-ctype": "*",
                 "php": ">=5.2"
             },
             "type": "library",
@@ -422,7 +423,7 @@
             "keywords": [
                 "env"
             ],
-            "time": "2017-07-17T20:41:59+00:00"
+            "time": "2019-04-03T18:28:43+00:00"
         },
         {
             "name": "roots/wp-password-bcrypt",

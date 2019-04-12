@@ -7,13 +7,13 @@
 # Application
 web/app/languages
 web/app/plugins/*
-!web/app/plugins/.gitkeep
 web/app/mu-plugins/*
-!web/app/mu-plugins/.gitkeep
 web/app/upgrade
 web/app/uploads/*
+
+!web/app/mu-plugins/.gitkeep
+!web/app/plugins/.gitkeep
 !web/app/uploads/.gitkeep
-web/app/themes/lawcom/dist/
 
 # WordPress
 web/wp
@@ -29,5 +29,5 @@ vendor/*
 !vendor/.gitkeep
 
 # Theme
+web/app/themes/lawcom/dist
 web/app/themes/lawcom/node_modules
-web/app/themes/lawcom/assets/vendor
