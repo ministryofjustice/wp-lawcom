@@ -10,7 +10,8 @@
  * 2. /theme/assets/js/vendor/modernizr.min.js
  * 3. /theme/assets/js/scripts.js (in footer)
  */
-function roots_scripts() {
+function roots_scripts()
+{
   /**
    * The build task in Grunt renames production assets with a hash
    * Read the asset names from assets-manifest.json
@@ -20,17 +21,17 @@ function roots_scripts() {
       'css'       => '/assets/css/main.css',
       'js'        => '/assets/js/scripts.js',
       'modernizr' => '/assets/vendor/modernizr/modernizr.js',
-      'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js'
+      'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.js'
     );
   } else {*/
-    $get_assets = file_get_contents(get_template_directory() . '/assets/manifest.json');
-    $assets     = json_decode($get_assets, true);
-    $assets     = array(
-      'css'       => '/assets/css/main.min.css?' . $assets['assets/css/main.min.css']['hash'],
-      'js'        => '/assets/js/scripts.min.js?' . $assets['assets/js/scripts.min.js']['hash'],
-      'modernizr' => '/assets/js/vendor/modernizr.min.js',
-      'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'
-    );
+  $get_assets = file_get_contents(get_template_directory() . '/dist/mix-manifest.json');
+  $assets = json_decode($get_assets, true);
+  $assets = array(
+    'css' => '/dist' . $assets['/css/main.min.css'],
+    'js' => '/dist' . $assets['/js/main.min.js'],
+    //'modernizr' => '/assets/vendor/modernizr/modernizr.js',
+    'jquery' => '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'
+  );
   //}
 
   wp_enqueue_style('roots_css', get_template_directory_uri() . $assets['css'], false, null);
@@ -44,20 +45,29 @@ function roots_scripts() {
     wp_deregister_script('jquery');
     wp_register_script('jquery', $assets['jquery'], array(), null, false);
     add_filter('script_loader_src', 'roots_jquery_local_fallback', 10, 2);
+
+    wp_deregister_script('jquery-migrate');
+    wp_register_script('jquery-migrate', '//code.jquery.com/jquery-migrate-3.0.1.min.js', array('jquery'), '3.0.1',
+      false);
+    wp_enqueue_script('jquery-migrate');
   }
 
   if (is_single() && comments_open() && get_option('thread_comments')) {
     wp_enqueue_script('comment-reply');
   }
 
-  wp_enqueue_script('modernizr', get_template_directory_uri() . $assets['modernizr'], array(), null, false);
+  //wp_enqueue_script('modernizr', get_template_directory_uri() . $assets['modernizr'], array(), null, false);
   wp_enqueue_script('jquery');
-  wp_enqueue_script('roots_js', get_template_directory_uri() . $assets['js'], array(), null, true);
+  wp_enqueue_script('jquery-ui-autocomplete');
+  wp_enqueue_script('roots_js', get_template_directory_uri() . $assets['js'], array('jquery'), null, true);
+  wp_localize_script('roots_js', 'ajax_url', admin_url('admin-ajax.php'));
 }
+
 add_action('wp_enqueue_scripts', 'roots_scripts', 100);
 
 // http://wordpress.stackexchange.com/a/12450
-function roots_jquery_local_fallback($src, $handle = null) {
+function roots_jquery_local_fallback($src, $handle = null)
+{
   static $add_jquery_fallback = false;
 
   if ($add_jquery_fallback) {
@@ -71,4 +81,5 @@ function roots_jquery_local_fallback($src, $handle = null) {
 
   return $src;
 }
+
 add_action('wp_head', 'roots_jquery_local_fallback');

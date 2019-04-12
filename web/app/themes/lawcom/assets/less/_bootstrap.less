@@ -4,90 +4,94 @@
 // Comment out any unused components
 // --------------------------------------------------
 
+@less-module-path: "../../node_modules/bootstrap/less";
+
 // Variables
-@import "../vendor/bootstrap/less/variables";
+@import "@{less-module-path}/variables";
 @import "_variables"; // Bootstrap variable overrides and custom variables
 
 // Mixins: Utilities
-@import "../vendor/bootstrap/less/mixins/hide-text";
-@import "../vendor/bootstrap/less/mixins/opacity";
-@import "../vendor/bootstrap/less/mixins/image";
-@import "../vendor/bootstrap/less/mixins/labels";
-@import "../vendor/bootstrap/less/mixins/reset-filter";
-@import "../vendor/bootstrap/less/mixins/resize";
-@import "../vendor/bootstrap/less/mixins/responsive-visibility";
-@import "../vendor/bootstrap/less/mixins/size";
-@import "../vendor/bootstrap/less/mixins/tab-focus";
-@import "../vendor/bootstrap/less/mixins/text-emphasis";
-@import "../vendor/bootstrap/less/mixins/text-overflow";
-@import "../vendor/bootstrap/less/mixins/vendor-prefixes";
+@import "@{less-module-path}/mixins/hide-text";
+@import "@{less-module-path}/mixins/opacity";
+@import "@{less-module-path}/mixins/image";
+@import "@{less-module-path}/mixins/labels";
+@import "@{less-module-path}/mixins/reset-filter";
+@import "@{less-module-path}/mixins/resize";
+@import "@{less-module-path}/mixins/responsive-visibility";
+@import "@{less-module-path}/mixins/size";
+@import "@{less-module-path}/mixins/tab-focus";
+@import "@{less-module-path}/mixins/text-emphasis";
+@import "@{less-module-path}/mixins/text-overflow";
+@import "@{less-module-path}/mixins/vendor-prefixes";
 
 // Mixins: Components
-@import "../vendor/bootstrap/less/mixins/alerts";
-@import "../vendor/bootstrap/less/mixins/buttons";
-@import "../vendor/bootstrap/less/mixins/panels";
-@import "../vendor/bootstrap/less/mixins/pagination";
-@import "../vendor/bootstrap/less/mixins/list-group";
-@import "../vendor/bootstrap/less/mixins/nav-divider";
-@import "../vendor/bootstrap/less/mixins/forms";
-@import "../vendor/bootstrap/less/mixins/progress-bar";
-@import "../vendor/bootstrap/less/mixins/table-row";
+@import "@{less-module-path}/mixins/alerts";
+@import "@{less-module-path}/mixins/buttons";
+@import "@{less-module-path}/mixins/panels";
+@import "@{less-module-path}/mixins/pagination";
+@import "@{less-module-path}/mixins/list-group";
+@import "@{less-module-path}/mixins/nav-divider";
+@import "@{less-module-path}/mixins/forms";
+@import "@{less-module-path}/mixins/progress-bar";
+@import "@{less-module-path}/mixins/table-row";
 
 // Mixins: Skins
-@import "../vendor/bootstrap/less/mixins/background-variant";
-@import "../vendor/bootstrap/less/mixins/border-radius";
-@import "../vendor/bootstrap/less/mixins/gradients";
+@import "@{less-module-path}/mixins/background-variant";
+@import "@{less-module-path}/mixins/border-radius";
+@import "@{less-module-path}/mixins/gradients";
 
 // Mixins: Layout
-@import "../vendor/bootstrap/less/mixins/clearfix";
-@import "../vendor/bootstrap/less/mixins/center-block";
-@import "../vendor/bootstrap/less/mixins/nav-vertical-align";
-@import "../vendor/bootstrap/less/mixins/grid-framework";
-@import "../vendor/bootstrap/less/mixins/grid";
+@import "@{less-module-path}/mixins/clearfix";
+@import "@{less-module-path}/mixins/center-block";
+@import "@{less-module-path}/mixins/nav-vertical-align";
+@import "@{less-module-path}/mixins/grid-framework";
+@import "@{less-module-path}/mixins/grid";
 
 // Reset
-@import "../vendor/bootstrap/less/normalize";
-@import "../vendor/bootstrap/less/print";
-@import "../vendor/bootstrap/less/glyphicons";
+@import "@{less-module-path}/normalize";
+@import "@{less-module-path}/print";
+@import "@{less-module-path}/glyphicons";
 
 // Core CSS
-@import "../vendor/bootstrap/less/scaffolding";
-@import "../vendor/bootstrap/less/type";
-@import "../vendor/bootstrap/less/code";
-@import "../vendor/bootstrap/less/grid";
-@import "../vendor/bootstrap/less/tables";
-@import "../vendor/bootstrap/less/forms";
-@import "../vendor/bootstrap/less/buttons";
+@import "@{less-module-path}/scaffolding";
+@import "@{less-module-path}/type";
+@import "@{less-module-path}/code";
+@import "@{less-module-path}/grid";
+@import "@{less-module-path}/tables";
+@import "@{less-module-path}/forms";
+@import "@{less-module-path}/buttons";
 
 // Components
-@import "../vendor/bootstrap/less/component-animations";
-@import "../vendor/bootstrap/less/dropdowns";
-@import "../vendor/bootstrap/less/button-groups";
-@import "../vendor/bootstrap/less/input-groups";
-@import "../vendor/bootstrap/less/navs";
-@import "../vendor/bootstrap/less/navbar";
-@import "../vendor/bootstrap/less/breadcrumbs";
-@import "../vendor/bootstrap/less/pagination";
-@import "../vendor/bootstrap/less/pager";
-@import "../vendor/bootstrap/less/labels";
-@import "../vendor/bootstrap/less/badges";
-@import "../vendor/bootstrap/less/jumbotron";
-@import "../vendor/bootstrap/less/thumbnails";
-@import "../vendor/bootstrap/less/alerts";
-@import "../vendor/bootstrap/less/progress-bars";
-@import "../vendor/bootstrap/less/media";
-@import "../vendor/bootstrap/less/list-group";
-@import "../vendor/bootstrap/less/panels";
-@import "../vendor/bootstrap/less/responsive-embed";
-@import "../vendor/bootstrap/less/wells";
-@import "../vendor/bootstrap/less/close";
+@import "@{less-module-path}/component-animations";
+@import "@{less-module-path}/dropdowns";
+@import "@{less-module-path}/button-groups";
+@import "@{less-module-path}/input-groups";
+@import "@{less-module-path}/navs";
+@import "@{less-module-path}/navbar";
+@import "@{less-module-path}/breadcrumbs";
+@import "@{less-module-path}/pagination";
+@import "@{less-module-path}/pager";
+@import "@{less-module-path}/labels";
+@import "@{less-module-path}/badges";
+@import "@{less-module-path}/jumbotron";
+@import "@{less-module-path}/thumbnails";
+@import "@{less-module-path}/alerts";
+@import "@{less-module-path}/progress-bars";
+@import "@{less-module-path}/media";
+@import "@{less-module-path}/list-group";
+@import "@{less-module-path}/panels";
+@import "@{less-module-path}/responsive-embed";
+@import "@{less-module-path}/wells";
+@import "@{less-module-path}/close";
+
+
 
 // Components w/ JavaScript
-@import "../vendor/bootstrap/less/modals";
-@import "../vendor/bootstrap/less/tooltip";
-@import "../vendor/bootstrap/less/popovers";
-@import "../vendor/bootstrap/less/carousel";
+@import "@{less-module-path}/modals";
+/*@import "@{less-module-path}/tooltip";
+@import "@{less-module-path}/popovers";*/
+@import "@{less-module-path}/carousel";
 
 // Utility classes
-@import "../vendor/bootstrap/less/utilities";
-@import "../vendor/bootstrap/less/responsive-utilities";
+@import "@{less-module-path}/utilities";
+@import "@{less-module-path}/responsive-utilities";

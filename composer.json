@@ -60,7 +60,7 @@
     "wpackagist-plugin/advanced-responsive-video-embedder": "^8.10.4",
     "wpackagist-plugin/safe-redirect-manager": "*",
     "wpackagist-plugin/tao-schedule-update": "*",
-    "ministryofjustice/wp-user-roles": "^0.1.0",
+    "ministryofjustice/wp-user-roles": "*",
     "wpackagist-plugin/classic-editor": "*"
   },
   "require-dev": {

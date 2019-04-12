@@ -1,10 +1,17 @@
+# PhpStorm
+.idea/
+
+# DB
+*.sql
+
 # Application
-web/app/plugins/*
-!web/app/plugins/.gitkeep
-web/app/mu-plugins/*/
-web/app/upgrade
 web/app/languages
+web/app/plugins/*
+web/app/upgrade
 web/app/uploads/*
+
+!web/app/mu-plugins/.gitkeep
+!web/app/plugins/.gitkeep
 !web/app/uploads/.gitkeep
 
 # WordPress
@@ -19,3 +26,7 @@ web/.htaccess
 # Composer
 vendor/*
 !vendor/.gitkeep
+
+# Theme
+web/app/themes/lawcom/dist
+web/app/themes/lawcom/node_modules
