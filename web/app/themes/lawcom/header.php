@@ -1,3 +1,4 @@
+<?php get_template_part('head'); ?>
 <header class="banner" role="banner">
   <div class="container navbar-expand-md navbar navbar-default navbar-static-top flex-wrap">
     <div id="branding" class="flex-fill">
