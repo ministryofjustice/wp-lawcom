@@ -36,7 +36,9 @@
     "wpackagist-plugin/tao-schedule-update": "*",
     "wpackagist-plugin/fast-user-switching": "*",
     "ministryofjustice/wp-user-roles": "*",
-    "wpackagist-plugin/classic-editor": "*"
+    "wpackagist-plugin/classic-editor": "*",
+    "ministryofjustice/wp-moj-components": "*",
+    "ministryofjustice/cookie-compliance-for-wordpress": "*"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1"

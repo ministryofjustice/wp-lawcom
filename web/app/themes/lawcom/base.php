@@ -1,4 +1,3 @@
-<?php get_template_part('templates/head'); ?>
 <body <?php body_class(); ?>>
 
   <!--[if lt IE 8]>
@@ -9,7 +8,7 @@
 
   <?php
     do_action('get_header');
-    get_template_part('templates/header');
+    get_header();
   ?>
 
   <div class="wrap container" role="document">
@@ -25,7 +24,7 @@
     </div><!-- /.content -->
   </div><!-- /.wrap -->
 
-  <?php get_template_part('templates/footer'); ?>
+  <?php get_footer(); ?>
 
 </body>
 </html>
