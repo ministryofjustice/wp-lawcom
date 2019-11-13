@@ -16,24 +16,17 @@ function roots_scripts()
    * The build task in Grunt renames production assets with a hash
    * Read the asset names from assets-manifest.json
    */
-  /*if (WP_ENV === 'development') {
-    $assets = array(
-      'css'       => '/assets/css/main.css',
-      'js'        => '/assets/js/scripts.js',
-      'modernizr' => '/assets/vendor/modernizr/modernizr.js',
-      'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.js'
-    );
-  } else {*/
   $get_assets = file_get_contents(get_template_directory() . '/dist/mix-manifest.json');
   $assets = json_decode($get_assets, true);
   $assets = array(
     'css' => '/dist' . $assets['/css/main.min.css'],
     'js' => '/dist' . $assets['/js/main.min.js'],
     //'modernizr' => '/assets/vendor/modernizr/modernizr.js',
-    'jquery' => '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'
+    'jquery' => '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js',
+    'g_fonts' => 'https://fonts.googleapis.com/css?family=Roboto:400,500,700'
   );
-  //}
 
+  wp_enqueue_style('g_fonts', $assets['g_fonts'], false, null);
   wp_enqueue_style('roots_css', get_template_directory_uri() . $assets['css'], false, null);
 
   /**

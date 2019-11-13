@@ -1,13 +1,17 @@
 # PhpStorm
 .idea/
 
+# Mac
+.DS_*
+._DS_*
+
 # DB
 *.sql
 
 # Application
 web/app/languages
 web/app/plugins/*
-web/app/mu-plugins/*
+web/app/mu-plugins/wp-*/*
 web/app/upgrade
 web/app/uploads/*
 
