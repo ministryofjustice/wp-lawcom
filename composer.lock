@@ -4,16 +4,15 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "92074f7e66268d476e891d7f97b0beca",
+    "content-hash": "3252061ae6f336aab44c465e3badb99f",
     "packages": [
         {
             "name": "acf/advanced-custom-fields-pro",
-            "version": "5.8.1",
+            "version": "5.8.7",
             "dist": {
                 "type": "zip",
-                "url": "https://composer.wp.dsd.io/dist/acf/advanced-custom-fields-pro/acf-advanced-custom-fields-pro-5.8.1.zip",
-                "reference": null,
-                "shasum": "1ba6174e31db0d3c2728d7bd5258c621d8eb9391"
+                "url": "https://composer.wp.dsd.io/dist/acf/advanced-custom-fields-pro/acf-advanced-custom-fields-pro-5.8.7.zip",
+                "shasum": "fda8da676a1af2211229f8b9d02a5c2bbee197fb"
             },
             "type": "wordpress-plugin"
         },
@@ -126,20 +125,20 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "5.2.4",
+            "version": "5.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "33fca34d16818a8d893d374eecd5c8c46cab6e88"
+                "reference": "a463d27a25d317c270e93f7259e2b138287bf8c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/33fca34d16818a8d893d374eecd5c8c46cab6e88",
-                "reference": "33fca34d16818a8d893d374eecd5c8c46cab6e88",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/a463d27a25d317c270e93f7259e2b138287bf8c4",
+                "reference": "a463d27a25d317c270e93f7259e2b138287bf8c4",
                 "shasum": ""
             },
             "require": {
-                "johnpbloch/wordpress-core": "5.2.4",
+                "johnpbloch/wordpress-core": "5.3.2",
                 "johnpbloch/wordpress-core-installer": "^1.0",
                 "php": ">=5.6.20"
             },
@@ -161,27 +160,27 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2019-10-14T20:47:31+00:00"
+            "time": "2019-12-18T22:32:20+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core",
-            "version": "5.2.4",
+            "version": "5.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "01530fea56649a4040971fc614baa546273d964c"
+                "reference": "a282ab0051fac21d4e0cdd828519e6739743ba92"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/01530fea56649a4040971fc614baa546273d964c",
-                "reference": "01530fea56649a4040971fc614baa546273d964c",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/a282ab0051fac21d4e0cdd828519e6739743ba92",
+                "reference": "a282ab0051fac21d4e0cdd828519e6739743ba92",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.6.20"
             },
             "provide": {
-                "wordpress/core-implementation": "5.2.4"
+                "wordpress/core-implementation": "5.3.2"
             },
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
@@ -201,7 +200,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2019-10-14T20:47:26+00:00"
+            "time": "2019-12-18T22:32:15+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -254,12 +253,10 @@
         },
         {
             "name": "koodimonni-language/core-en_gb",
-            "version": "5.2.4",
+            "version": "5.3.2",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/core/5.2.4/en_GB.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/translation/core/5.3.2/en_GB.zip"
             },
             "require": {
                 "koodimonni/composer-dropin-installer": ">=0.2.3"
@@ -318,17 +315,17 @@
         },
         {
             "name": "ministryofjustice/cookie-compliance-for-wordpress",
-            "version": "1.3.0",
+            "version": "1.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ministryofjustice/cookie-compliance-for-wordpress.git",
-                "reference": "4c8e929d5120a9982b575c9790c2dd1d24597f8e"
+                "reference": "cb04cfb9e912d780f176747dbd6796fb0741f738"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://composer.wp.dsd.io/dist/ministryofjustice/cookie-compliance-for-wordpress/ministryofjustice-cookie-compliance-for-wordpress-4c8e929d5120a9982b575c9790c2dd1d24597f8e-zip-6e6b0f.zip",
-                "reference": "4c8e929d5120a9982b575c9790c2dd1d24597f8e",
-                "shasum": "55ca392b6d77271c4d2400bb02ac60b92efaa76e"
+                "url": "https://composer.wp.dsd.io/dist/ministryofjustice/cookie-compliance-for-wordpress/ministryofjustice-cookie-compliance-for-wordpress-cb04cfb9e912d780f176747dbd6796fb0741f738-zip-d7164c.zip",
+                "reference": "cb04cfb9e912d780f176747dbd6796fb0741f738",
+                "shasum": "0c89ea4ab1046876a0aeed7c11377f46aa1e045c"
             },
             "require": {
                 "composer/installers": "^1.0"
@@ -353,10 +350,10 @@
             ],
             "description": "WP plugin that presents visitor with a cookie consent banner and opt-out setting page.",
             "support": {
-                "source": "https://github.com/ministryofjustice/cookie-compliance-for-wordpress/tree/1.3.0",
+                "source": "https://github.com/ministryofjustice/cookie-compliance-for-wordpress/tree/1.3.2",
                 "issues": "https://github.com/ministryofjustice/cookie-compliance-for-wordpress/issues"
             },
-            "time": "2019-10-15T10:36:15+00:00"
+            "time": "2019-12-23T20:06:00+00:00"
         },
         {
             "name": "ministryofjustice/wp-moj-components",
@@ -582,16 +579,16 @@
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.12.0",
+            "version": "v1.13.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
-                "reference": "550ebaac289296ce228a706d0867afc34687e3f4"
+                "reference": "f8f0b461be3385e56d6de3dbb5a0df24c0c275e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/550ebaac289296ce228a706d0867afc34687e3f4",
-                "reference": "550ebaac289296ce228a706d0867afc34687e3f4",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/f8f0b461be3385e56d6de3dbb5a0df24c0c275e3",
+                "reference": "f8f0b461be3385e56d6de3dbb5a0df24c0c275e3",
                 "shasum": ""
             },
             "require": {
@@ -603,7 +600,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.12-dev"
+                    "dev-master": "1.13-dev"
                 }
             },
             "autoload": {
@@ -636,7 +633,7 @@
                 "polyfill",
                 "portable"
             ],
-            "time": "2019-08-06T08:03:45+00:00"
+            "time": "2019-11-27T13:56:44+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -699,9 +696,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/advanced-responsive-video-embedder.8.10.20.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/advanced-responsive-video-embedder.8.10.20.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -719,9 +714,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/classic-editor.1.5.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/classic-editor.1.5.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -739,9 +732,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/fast-user-switching.zip?timestamp=1551360022",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/fast-user-switching.zip?timestamp=1551360022"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -751,17 +742,15 @@
         },
         {
             "name": "wpackagist-plugin/google-analytics-dashboard-for-wp",
-            "version": "5.3.9",
+            "version": "5.3.10",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/google-analytics-dashboard-for-wp/",
-                "reference": "tags/5.3.9"
+                "reference": "tags/5.3.10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/google-analytics-dashboard-for-wp.5.3.9.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/google-analytics-dashboard-for-wp.5.3.10.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -771,17 +760,15 @@
         },
         {
             "name": "wpackagist-plugin/safe-redirect-manager",
-            "version": "1.9.2",
+            "version": "1.9.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/safe-redirect-manager/",
-                "reference": "tags/1.9.2"
+                "reference": "tags/1.9.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/safe-redirect-manager.1.9.2.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/safe-redirect-manager.1.9.3.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -799,9 +786,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/tao-schedule-update.1.15.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/tao-schedule-update.1.15.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
