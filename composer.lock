@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ddaedc6c34b63314a035ae63fc8a2195",
+    "content-hash": "3252061ae6f336aab44c465e3badb99f",
     "packages": [
         {
             "name": "acf/advanced-custom-fields-pro",
@@ -253,10 +253,10 @@
         },
         {
             "name": "koodimonni-language/core-en_gb",
-            "version": "5.2.4",
+            "version": "5.3.2",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/core/5.2.4/en_GB.zip"
+                "url": "https://downloads.wordpress.org/translation/core/5.3.2/en_GB.zip"
             },
             "require": {
                 "koodimonni/composer-dropin-installer": ">=0.2.3"
