@@ -1,80 +1,81 @@
 {
-  "name": "moj/lawcom",
-  "type": "project",
-  "description": "This is a Bedrock based (https://roots.io/bedrock/) WordPress website for the Independent Monitoring Boards (https://imb.org.uk) - a group of volunteers who monitor the day-to-day life in their local prison or removal centre and ensure that proper standards of care and decency are maintained.",
-  "homepage": "https://github.com/ministryofjustice/wp-imb",
-  "config": {
-    "preferred-install": "dist"
-  },
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://wpackagist.org"
+    "name": "moj/lawcom",
+    "type": "project",
+    "description": "This is a Bedrock based (https://roots.io/bedrock/) WordPress website for the Independent Monitoring Boards (https://imb.org.uk) - a group of volunteers who monitor the day-to-day life in their local prison or removal centre and ensure that proper standards of care and decency are maintained.",
+    "homepage": "https://github.com/ministryofjustice/wp-imb",
+    "config": {
+        "preferred-install": "dist"
     },
-    {
-      "type": "composer",
-      "url": "https://composer.wp.dsd.io"
-    },
-    {
-      "type": "composer",
-      "url": "https://wp-languages.github.io"
-    }
-  ],
-  "require": {
-    "php": ">=5.6",
-    "composer/installers": "~1.2.0",
-    "vlucas/phpdotenv": "^2.0.1",
-    "johnpbloch/wordpress": "*",
-    "koodimonni-language/core-en_gb": "*",
-    "oscarotero/env": "^1.0",
-    "roots/wp-password-bcrypt": "*",
-    "wpackagist-plugin/google-analytics-dashboard-for-wp": "*",
-    "ministryofjustice/wp-rewrite-media-to-s3": "^0.1.1",
-    "acf/advanced-custom-fields-pro": "*",
-    "wpackagist-plugin/advanced-responsive-video-embedder": "8.*",
-    "wpackagist-plugin/safe-redirect-manager": "*",
-    "wpackagist-plugin/tao-schedule-update": "*",
-    "wpackagist-plugin/fast-user-switching": "*",
-    "ministryofjustice/wp-user-roles": "*",
-    "wpackagist-plugin/classic-editor": "*",
-    "ministryofjustice/wp-moj-components": "*",
-    "ministryofjustice/cookie-compliance-for-wordpress": "*"
-  },
-  "require-dev": {
-    "squizlabs/php_codesniffer": "^2.5.1"
-  },
-  "extra": {
-    "installer-paths": {
-      "web/app/mu-plugins/{$name}/": [
-        "type:wordpress-muplugin",
-        "ministryofjustice/wp-user-roles"
-      ],
-      "web/app/plugins/{$name}/": [
-        "type:wordpress-plugin"
-      ],
-      "web/app/themes/{$name}/": [
-        "type:wordpress-theme"
-      ]
-    },
-    "dropin-paths": {
-      "web/app/languages/": [
-        "vendor:koodimonni-language"
-      ],
-      "web/app/languages/plugins/": [
-        "vendor:koodimonni-plugin-language"
-      ],
-      "web/app/languages/themes/": [
-        "vendor:koodimonni-theme-language"
-      ]
-    },
-    "wordpress-install-dir": "web/wp"
-  },
-  "scripts": {
-    "post-root-package-install": [
-      "php -r \"copy('.env.example', '.env');\""
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        },
+        {
+            "type": "composer",
+            "url": "https://composer.wp.dsd.io"
+        },
+        {
+            "type": "composer",
+            "url": "https://wp-languages.github.io"
+        }
     ],
-    "test": [
-      "vendor/bin/phpcs"
-    ]
-  }
+    "require": {
+        "php": ">=5.6",
+        "composer/installers": "~1.2.0",
+        "vlucas/phpdotenv": "^2.0.1",
+        "johnpbloch/wordpress": "*",
+        "koodimonni-language/core-en_gb": "*",
+        "oscarotero/env": "^1.0",
+        "roots/wp-password-bcrypt": "*",
+        "wpackagist-plugin/wp-analytify": "*",
+        "wpackagist-plugin/analytify-analytics-dashboard-widget": "*",
+        "ministryofjustice/wp-rewrite-media-to-s3": "^0.1.1",
+        "acf/advanced-custom-fields-pro": "*",
+        "wpackagist-plugin/advanced-responsive-video-embedder": "8.*",
+        "wpackagist-plugin/safe-redirect-manager": "*",
+        "wpackagist-plugin/tao-schedule-update": "*",
+        "wpackagist-plugin/fast-user-switching": "*",
+        "ministryofjustice/wp-user-roles": "*",
+        "wpackagist-plugin/classic-editor": "*",
+        "ministryofjustice/wp-moj-components": "*",
+        "ministryofjustice/cookie-compliance-for-wordpress": "*"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^2.5.1"
+    },
+    "extra": {
+        "installer-paths": {
+            "web/app/mu-plugins/{$name}/": [
+                "type:wordpress-muplugin",
+                "ministryofjustice/wp-user-roles"
+            ],
+            "web/app/plugins/{$name}/": [
+                "type:wordpress-plugin"
+            ],
+            "web/app/themes/{$name}/": [
+                "type:wordpress-theme"
+            ]
+        },
+        "dropin-paths": {
+            "web/app/languages/": [
+                "vendor:koodimonni-language"
+            ],
+            "web/app/languages/plugins/": [
+                "vendor:koodimonni-plugin-language"
+            ],
+            "web/app/languages/themes/": [
+                "vendor:koodimonni-theme-language"
+            ]
+        },
+        "wordpress-install-dir": "web/wp"
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "php -r \"copy('.env.example', '.env');\""
+        ],
+        "test": [
+            "vendor/bin/phpcs"
+        ]
+    }
 }
