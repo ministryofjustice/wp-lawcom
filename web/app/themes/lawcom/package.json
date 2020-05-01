@@ -29,13 +29,9 @@
   },
   "dependencies": {
     "bootstrap": "^3.4.1",
-    "bootstrap-dropdown-replacement": "^1.0.7",
     "jquery": "^3.3.1"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.7",
-    "browser-sync-webpack-plugin": "^2.0.1",
-    "cross-env": "^5.2.0",
     "details-element-polyfill": "^2.3.1",
     "laravel-mix": "^4.0.15",
     "less": "^3.9.0",
