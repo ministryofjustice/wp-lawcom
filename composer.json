@@ -35,7 +35,6 @@
         "wpackagist-plugin/advanced-responsive-video-embedder": "8.*",
         "wpackagist-plugin/safe-redirect-manager": "*",
         "wpackagist-plugin/tao-schedule-update": "*",
-        "wpackagist-plugin/user-switching": "*",
         "ministryofjustice/wp-user-roles": "*",
         "wpackagist-plugin/classic-editor": "*",
         "ministryofjustice/wp-moj-components": "*",
