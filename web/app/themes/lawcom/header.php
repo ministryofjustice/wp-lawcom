@@ -52,3 +52,10 @@
         </nav>
     </div>
 </header>
+<div class="container">
+    <div class="feedback-banner">
+        <h3>Website feedback</h3>
+        <p>We are looking at improving this website and we need your feedback.</p>
+        <a  class="feedback-banner-link" href="https://www.lawcom.gov.uk/">Give Feedback</a>
+    </div>
+</div>
