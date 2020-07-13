@@ -27,3 +27,9 @@ function project_has_documents($projectId) {
 
   return $documents->have_posts();
 }
+
+// Tell WordPress to use searchform.php from the templates/ directory
+function get_feedback_banner() {
+  locate_template('/templates/feedback-banner.php', true, false);
+}
+add_filter('get_feedback_banner', 'get_feedback_banner');
