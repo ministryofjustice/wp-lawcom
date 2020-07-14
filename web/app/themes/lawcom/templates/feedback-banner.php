@@ -14,7 +14,7 @@
             ?>
             <h2 class="feedback-banner-title"><?php echo $banner_title; ?></h2>
             <p><?php echo $banner_text; ?></p>
-            <a class="feedback-banner-link" href="'<?php echo $banner_link; ?>'"><?php echo $banner_button_text; ?></a>
+            <a class="feedback-banner-link" href="<?php echo $banner_link; ?>"><?php echo $banner_button_text; ?></a>
         </div>
     </div>
 <?php } ?>
