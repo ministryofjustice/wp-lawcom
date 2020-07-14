@@ -23,6 +23,7 @@ $roots_includes = array(
 	'lib/comments.php', // Custom comments modifications
 	'lib/scripts.php', // Scripts and stylesheets
 	'lib/extras.php', // Custom functions
+	'lib/content/settings.php', // Add new settings to the Settings tab
 	'lib/content/index.php',
 );
 
