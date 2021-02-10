@@ -144,6 +144,20 @@
                 "zend",
                 "zikula"
             ],
+            "funding": [
+                {
+                    "url": "https://packagist.com",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/composer",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2021-01-14T11:07:16+00:00"
         },
         {
@@ -341,17 +355,17 @@
         },
         {
             "name": "ministryofjustice/cookie-compliance-for-wordpress",
-            "version": "2.0.2",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ministryofjustice/cookie-compliance-for-wordpress.git",
-                "reference": "f680a40845c155cdd0b40db848cf7e92de854424"
+                "reference": "bc1d36db673ba450020435e82be616bca3fc6aa2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://composer.wp.dsd.io/dist/ministryofjustice/cookie-compliance-for-wordpress/ministryofjustice-cookie-compliance-for-wordpress-f680a40845c155cdd0b40db848cf7e92de854424-zip-c765e4.zip",
-                "reference": "f680a40845c155cdd0b40db848cf7e92de854424",
-                "shasum": "143feaa11c4b02dd664da114a55bd63bc7b315ab"
+                "url": "https://composer.wp.dsd.io/dist/ministryofjustice/cookie-compliance-for-wordpress/ministryofjustice-cookie-compliance-for-wordpress-bc1d36db673ba450020435e82be616bca3fc6aa2-zip-e59aa1.zip",
+                "reference": "bc1d36db673ba450020435e82be616bca3fc6aa2",
+                "shasum": "7f80c9fd5029ac3b15df11293d5e25648dde1df0"
             },
             "require-dev": {
                 "composer/composer": "*",
@@ -374,10 +388,10 @@
             ],
             "description": "WP plugin that presents visitor with a cookie consent banner and opt-in setting page.",
             "support": {
-                "source": "https://github.com/ministryofjustice/cookie-compliance-for-wordpress/tree/2.0.2",
+                "source": "https://github.com/ministryofjustice/cookie-compliance-for-wordpress/tree/2.0.3",
                 "issues": "https://github.com/ministryofjustice/cookie-compliance-for-wordpress/issues"
             },
-            "time": "2021-01-22T14:48:09+00:00"
+            "time": "2021-02-10T16:57:13+00:00"
         },
         {
             "name": "ministryofjustice/wp-moj-components",
@@ -661,6 +675,20 @@
                 "polyfill",
                 "portable"
             ],
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2021-01-07T16:49:33+00:00"
         },
         {
@@ -722,6 +750,16 @@
                 "dotenv",
                 "env",
                 "environment"
+            ],
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/vlucas/phpdotenv",
+                    "type": "tidelift"
+                }
             ],
             "time": "2021-01-20T14:39:13+00:00"
         },
@@ -922,5 +960,6 @@
     "platform": {
         "php": ">=5.6"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }
