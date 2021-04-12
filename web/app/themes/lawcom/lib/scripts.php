@@ -53,7 +53,6 @@ function roots_scripts()
   wp_enqueue_script('jquery');
   wp_enqueue_script('jquery-ui-autocomplete');
   wp_enqueue_script('roots_js', get_template_directory_uri() . $assets['js'], array('jquery'), null, true);
-  wp_localize_script('roots_js', 'ajax_url', admin_url('admin-ajax.php'));
 }
 
 add_action('wp_enqueue_scripts', 'roots_scripts', 10);
