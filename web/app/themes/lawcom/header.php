@@ -50,9 +50,6 @@ wp_body_open();
         <div class="navbar-header">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
                     aria-controls=".navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
             </button>
         </div>
 
