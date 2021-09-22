@@ -16,7 +16,7 @@
     <![endif]-->
 </head>
 <body <?php body_class(); ?>>
-
+<a href="#content" class="app-skip-link">Skip to main content</a>
 <?php
 if ( ! function_exists( 'wp_body_open' ) ) {
 	/**

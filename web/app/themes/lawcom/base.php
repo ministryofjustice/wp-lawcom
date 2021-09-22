@@ -3,7 +3,7 @@
     get_header();
 ?>
 
-  <div class="wrap container" role="document">
+  <div id="content" class="wrap container" role="document">
     <div class="content row">
       <?php if (roots_display_sidebar()) : ?>
         <aside class="sidebar" role="complementary">
