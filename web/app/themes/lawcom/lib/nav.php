@@ -21,10 +21,10 @@ class Roots_Nav_Walker extends Walker_Nav_Menu {
 
   function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
     $item_html = '';
-    $slug = sanitize_title($item->title);
+    $welsh = get_field("welsh",get_post_meta( $item->ID, '_menu_item_object_id', true ));
     parent::start_el($item_html, $item, $depth, $args);
 
-    if (strcasecmp("cymraeg",$slug) == 0) {
+    if ($welsh) {
       $item_html = str_replace('<a', '<a lang="cy-GB"', $item_html);
     }
     if ($item->is_dropdown && ($depth === 0)) {

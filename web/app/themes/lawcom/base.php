@@ -12,7 +12,7 @@
       <?php endif; ?>
       <main class="main" role="main"
         <?php
-          if (trim(get_the_title()) == "Cymraeg") {
+          if (get_field("welsh")) {
             echo 'lang="cy-GB"';
           }
         ?>
