@@ -10,7 +10,13 @@
           <?php include roots_sidebar_path(); ?>
         </aside><!-- /.sidebar -->
       <?php endif; ?>
-      <main class="main" role="main">
+      <main class="main" role="main"
+        <?php
+          if (get_field("welsh")) {
+            echo 'lang="cy-GB"';
+          }
+        ?>
+      >
         <?php include roots_template_path(); ?>
       </main><!-- /.main -->
     </div><!-- /.content -->
