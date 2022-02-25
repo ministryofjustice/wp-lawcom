@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1f9138315d567b4cd272d5ef711ea399",
+    "content-hash": "02445bf651d9f0415ac7660fd4046004",
     "packages": [
         {
             "name": "acf/advanced-custom-fields-pro",
@@ -854,15 +854,15 @@
         },
         {
             "name": "wpackagist-plugin/advanced-responsive-video-embedder",
-            "version": "8.10.28",
+            "version": "9.7.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/advanced-responsive-video-embedder/",
-                "reference": "tags/8.10.28"
+                "reference": "tags/9.7.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/advanced-responsive-video-embedder.8.10.28.zip"
+                "url": "https://downloads.wordpress.org/plugin/advanced-responsive-video-embedder.9.7.5.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
