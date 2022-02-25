@@ -30,7 +30,7 @@
         "roots/wp-password-bcrypt": "*",
         "wpackagist-plugin/wp-analytify": "*",
         "wpackagist-plugin/analytify-analytics-dashboard-widget": "*",
-        "ministryofjustice/wp-rewrite-media-to-s3": "^0.1.1",
+        "ministryofjustice/wp-rewrite-media-to-s3": "*",
         "acf/advanced-custom-fields-pro": "*",
         "wpackagist-plugin/advanced-responsive-video-embedder": "8.*",
         "wpackagist-plugin/safe-redirect-manager": "*",
