@@ -26,6 +26,7 @@ $roots_includes = array(
 	'lib/pages.php', //Settings and styling for list of pages page
 	'lib/content/settings.php', // Add new settings to the Settings tab
 	'lib/content/index.php',
+	'lib/emergency-banner-settings.php',
 );
 
 foreach ( $roots_includes as $file ) {
