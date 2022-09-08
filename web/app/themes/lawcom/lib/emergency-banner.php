@@ -31,21 +31,25 @@
 				echo get_field('banner_subtext', 'option');
 			?>
 			</div>
-			<div style="
-
-			">
-				<a class="govuk-header__link emergency-banner-link" style="
-					color:#fff;
-					text-decoration:underline;
-				"
-				href="
-					<?php
-						echo get_field('banner_subtext', 'option');
-					?>
+			<?php
+				$moreinfolink = get_field('banner_link_destination', 'option');
+				if (isset($moreinfolink) && $moreinfolink != "") {
+			?>
+				<div style="
 				">
-					More information
-				</a>
-			</div>
+					<a class="govuk-header__link emergency-banner-link" style="
+						color:#fff;
+						text-decoration:underline;
+					"
+					href="
+						<?php
+							echo get_field('banner_link_destination', 'option');
+						?>
+					">
+						More information
+					</a>
+				</div>
+			<?php } ?>
 		</div>
 	</div>
 <?php } ?>

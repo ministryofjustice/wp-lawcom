@@ -64,8 +64,8 @@
             "label": "Banner Link Destination",
             "name": "banner_link_destination",
             "type": "url",
-            "instructions": "",
-            "required": 1,
+            "instructions": "If anything is entered, it will be linked to via a \"more information\" link at the bottom of the banner.",
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -94,5 +94,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1662660391
+    "modified": 1662663203
 }
