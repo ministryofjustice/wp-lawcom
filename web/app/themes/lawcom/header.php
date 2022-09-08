@@ -34,7 +34,9 @@ wp_body_open();
     <?php _e('You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.', 'roots'); ?>
 </div>
 <![endif]-->
-
+<?php
+  include "lib/emergency-banner.php";
+?>
 <header class="banner" role="banner">
     <div class="container navbar-expand-md navbar navbar-default navbar-static-top flex-wrap">
         <div id="branding" class="flex-fill">
