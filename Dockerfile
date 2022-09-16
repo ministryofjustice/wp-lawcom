@@ -1,4 +1,4 @@
-FROM ministryofjustice/wordpress-base:latest
+FROM ministryofjustice/wordpress-base:php7.4
 
 ADD . /bedrock
 
