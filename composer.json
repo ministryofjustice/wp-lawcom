@@ -4,7 +4,12 @@
     "description": "This is a Bedrock based (https://roots.io/bedrock/) WordPress website for the Independent Monitoring Boards (https://imb.org.uk) - a group of volunteers who monitor the day-to-day life in their local prison or removal centre and ensure that proper standards of care and decency are maintained.",
     "homepage": "https://github.com/ministryofjustice/wp-imb",
     "config": {
-        "preferred-install": "dist"
+        "preferred-install": "dist",
+        "allow-plugins": {
+            "composer/installers": true,
+            "johnpbloch/wordpress-core-installer": true,
+            "koodimonni/composer-dropin-installer": true
+        }
     },
     "repositories": [
         {
@@ -28,6 +33,7 @@
         "koodimonni-language/core-en_gb": "*",
         "oscarotero/env": "^1.0",
         "roots/wp-password-bcrypt": "*",
+        "wpackagist-plugin/wordpress-seo": "*",
         "wpackagist-plugin/wp-analytify": "*",
         "wpackagist-plugin/analytify-analytics-dashboard-widget": "*",
         "ministryofjustice/wp-rewrite-media-to-s3": "*",
